@@ -39,6 +39,15 @@
         <td><a href="">Github</a></td>
         <td><a href="">LinkedIn</a></td>
      </tr>
+      <tr>
+      <td>Daniela dos Santos Meirelles</td>
+        <td>
+          <img src= "" width="50px">
+        </td>
+      <td>Desenvolvedor Back-End</td>
+      <td><a href="">Github</a></td>
+      <td><a href="">LinkedIn</a></td>
+     </tr>
      <tr>
       <td>Eduardo Pereira Carvalho </td>
         <td>
