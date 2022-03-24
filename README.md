@@ -26,16 +26,16 @@
         <td>
           <img src= "" width="50px">
         </td>
-      <td>Desenvolvedor Back-End</td>
+      <td>Desenvolvedor</td>
       <td><a href="https://github.com/AnaChristina"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
       <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
      </tr>
      <tr>
-      <td>André Luis ods Santos Fagundes</td>
+      <td>André Luis dos Santos Fagundes</td>
         <td>
           <img src= "" width="50px">
         </td>
-        <td>Scrum Master</td>
+        <td>Desenvolvedor</td>
         <td><a href="https://github.com/Andre-lsf"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
         <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
      </tr>
@@ -44,7 +44,7 @@
         <td>
           <img src= "" width="50px">
         </td>
-      <td>Desenvolvedor Back-End</td>
+      <td>Product Owner</td>
       <td><a href="https://github.com/DanielaMeirelles"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
       <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
      </tr>
@@ -53,7 +53,7 @@
         <td>
           <img src= "" width="50px">
         </td>
-        <td>Desenvolvedor Back-End</td>
+        <td>Scrum Master</td>
         <td><a href="https://github.com/EduardoPereiraCarvalho"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
         <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
      </tr>
@@ -63,7 +63,7 @@
         <td>
           <img src= "" width="50px">
         </td>
-        <td>Desenvolvedor Front-End</td>
+        <td>Desenvolvedor</td>
         <td><a href="https://github.com/FelipeASousa"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
         <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
      </tr>
@@ -72,7 +72,7 @@
         <td>
           <img src= "" width="50px">
         </td>
-        <td>Desenvolvedor Front-End</td>
+        <td>Desenvolvedor</td>
         <td><a href="https://github.com/guilherme0066"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
         <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
      </tr>
