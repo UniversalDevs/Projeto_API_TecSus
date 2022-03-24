@@ -17,65 +17,52 @@
       <th>Nome</th>
       <th>Foto</th>
       <th>Função</th>
-      <th>Contato</th>
+      <th>Github</th>
+      <th>LinkedInb</th>
     </thead>
     <tbody>
      <tr>
-      <td>Eduardo Pereira Carvalho</tb>
+      <td>Ana Christina Ferreira Dias da Silva</td>
         <td>
-          <img src= "" width="50px">
+          <img src= "https://github.com/UniversalDevs/Projeto_API/blob/main/Imagens/Fotos%20Equipe/Eduardo.jpeg?raw=true" width="50px">
         </td>
-      <td>Desenvolvedor</td>
-      <td><a href="">LinkedIn</a></td>
+      <td>Desenvolvedor Back-End</td>
+      <td><a href="https://www.linkedin.com/in/eduardo-carvalho-0a1411213/">LinkedIn</a></td>
      </tr>
      <tr>
-      <td>Eduardo Pereira Carvalho</tb>
+      <td>André Luis ods Santos Fagundes</td>
         <td>
-          <img src= "" width="50px">
+          <img src= "https://github.com/UniversalDevs/Projeto_API/blob/main/Imagens/Fotos%20Equipe/Felipe.jpg?raw=true" width="50px">
         </td>
-      <td>Desenvolvedor</td>
-      <td><a href="">LinkedIn</a></td>
+        <td>Scrum Master</td>
+        <td><a href="https://www.linkedin.com/in/felipe-s-89938418a/">LinkedIn</a></td>
      </tr>
      <tr>
-      <td>Eduardo Pereira Carvalho</tb>
+      <td>Eduardo Pereira Carvalho </td>
         <td>
-          <img src= "" width="50px">
+          <img src= "https://github.com/UniversalDevs/Projeto_API/blob/main/Imagens/Fotos%20Equipe/Ramos.jpeg?raw=true" width="50px">
         </td>
-      <td>Desenvolvedor</td>
-      <td><a href="">LinkedIn</a></td>
+        <td>Desenvolvedor Back-End</td>
+        <td><a href="https://www.linkedin.com/in/gabriel-ramos-b845581a3/">LinkedIn</a></td>
      </tr>
      <tr>
-      <td>Eduardo Pereira Carvalho</tb>
+     <tr>
+      <td>Felipe Augusto dos Santos Sousa</td>
         <td>
-          <img src= "" width="50px">
+          <img src= "https://github.com/UniversalDevs/Projeto_API/blob/main/Imagens/Fotos%20Equipe/Guilherme.PNG?raw=true" width="50px">
         </td>
-      <td>Desenvolvedor</td>
-      <td><a href="">LinkedIn</a></td>
+        <td>Desenvolvedor Front-End</td>
+        <td><a href="https://www.linkedin.com/in/guilherme-cursino-679410213/">LinkedIn</a></td>
      </tr>
      <tr>
-      <td>Eduardo Pereira Carvalho</tb>
+      <td>Guilherme Alves Cursino</td>
         <td>
-          <img src= "" width="50px">
+          <img src= "https://github.com/UniversalDevs/Projeto_API/blob/main/Imagens/Fotos%20Equipe/Guilherme.PNG?raw=true" width="50px">
         </td>
-      <td>Desenvolvedor</td>
-      <td><a href="">LinkedIn</a></td>
-     </tr>
-     <tr>
-      <td>Eduardo Pereira Carvalho</tb>
-        <td>
-          <img src= "" width="50px">
-        </td>
-      <td>Desenvolvedor</td>
-      <td><a href="">LinkedIn</a></td>
-     </tr>
-     <tr>
-      <td>Eduardo Pereira Carvalho</tb>
-        <td>
-          <img src= "" width="50px">
-        </td>
-      <td>Desenvolvedor</td>
-      <td><a href="">LinkedIn</a></td>
+        <td>Desenvolvedor Front-End</td>
+        <td><a href="https://www.linkedin.com/in/guilherme-cursino-679410213/">LinkedIn</a></td>
      </tr>
     </tbody>
   </table>
   
+ 
