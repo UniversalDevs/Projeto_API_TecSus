@@ -73,7 +73,7 @@
           <img src= "" width="50px">
         </td>
         <td>Desenvolvedor Front-End</td>
-        <td><a href="https://github.com/guilherme0066"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"></a></td>
+        <td><a href="https://github.com/guilherme0066"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="20px"></a></td>
         <td><a href="">LinkedIn</a></td>
      </tr>
     </tbody>
