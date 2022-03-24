@@ -28,7 +28,7 @@
         </td>
       <td>Desenvolvedor Back-End</td>
       <td><a href="https://github.com/AnaChristina"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
-      <td><a href="">LinkedIn</a></td>
+      <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
      </tr>
      <tr>
       <td>André Luis ods Santos Fagundes</td>
@@ -37,7 +37,7 @@
         </td>
         <td>Scrum Master</td>
         <td><a href="https://github.com/Andre-lsf"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
-        <td><a href="">LinkedIn</a></td>
+        <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
      </tr>
       <tr>
       <td>Daniela dos Santos Meirelles</td>
@@ -46,7 +46,7 @@
         </td>
       <td>Desenvolvedor Back-End</td>
       <td><a href="https://github.com/DanielaMeirelles"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
-      <td><a href="">LinkedIn</a></td>
+      <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
      </tr>
      <tr>
       <td>Eduardo Pereira Carvalho </td>
@@ -55,7 +55,7 @@
         </td>
         <td>Desenvolvedor Back-End</td>
         <td><a href="https://github.com/EduardoPereiraCarvalho"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
-        <td><a href="">LinkedIn</a></td>
+        <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
      </tr>
      <tr>
      <tr>
@@ -65,7 +65,7 @@
         </td>
         <td>Desenvolvedor Front-End</td>
         <td><a href="https://github.com/FelipeASousa"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
-        <td><a href="">LinkedIn</a></td>
+        <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
      </tr>
      <tr>
       <td>Guilherme Alves Cursino</td>
@@ -74,7 +74,7 @@
         </td>
         <td>Desenvolvedor Front-End</td>
         <td><a href="https://github.com/guilherme0066"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
-        <td><a href="">LinkedIn</a></td>
+        <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
      </tr>
     </tbody>
   </table>
