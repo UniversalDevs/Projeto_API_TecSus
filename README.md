@@ -1,6 +1,4 @@
-<p align="center">
 <h1> TecSuS </h1>
-</p>
 <hr>
 
 <p align="center">
