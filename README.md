@@ -27,7 +27,7 @@
           <img src= "" width="50px">
         </td>
       <td>Desenvolvedor Back-End</td>
-      <td><a href="">Github</a></td>
+      <td><a href="https://github.com/AnaChristina">Github</a></td>
       <td><a href="">LinkedIn</a></td>
      </tr>
      <tr>
@@ -36,7 +36,7 @@
           <img src= "" width="50px">
         </td>
         <td>Scrum Master</td>
-        <td><a href="">Github</a></td>
+        <td><a href="https://github.com/Andre-lsf">Github</a></td>
         <td><a href="">LinkedIn</a></td>
      </tr>
       <tr>
@@ -45,7 +45,7 @@
           <img src= "" width="50px">
         </td>
       <td>Desenvolvedor Back-End</td>
-      <td><a href="">Github</a></td>
+      <td><a href="https://github.com/DanielaMeirelles">Github</a></td>
       <td><a href="">LinkedIn</a></td>
      </tr>
      <tr>
@@ -54,7 +54,7 @@
           <img src= "" width="50px">
         </td>
         <td>Desenvolvedor Back-End</td>
-        <td><a href="">Github</a></td>
+        <td><a href="https://github.com/EduardoPereiraCarvalho">Github</a></td>
         <td><a href="">LinkedIn</a></td>
      </tr>
      <tr>
@@ -64,7 +64,7 @@
           <img src= "" width="50px">
         </td>
         <td>Desenvolvedor Front-End</td>
-        <td><a href="">Github</a></td>
+        <td><a href="https://github.com/FelipeASousa">Github</a></td>
         <td><a href="">LinkedIn</a></td>
      </tr>
      <tr>
@@ -73,7 +73,7 @@
           <img src= "" width="50px">
         </td>
         <td>Desenvolvedor Front-End</td>
-        <td><a href="">Github</a></td>
+        <td><a href="https://github.com/guilherme0066">Github</a></td>
         <td><a href="">LinkedIn</a></td>
      </tr>
     </tbody>
