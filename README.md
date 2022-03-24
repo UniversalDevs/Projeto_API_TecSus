@@ -2,7 +2,7 @@
 <hr>
 
 <p align="center">
-    <a href =""> Equipe </a>  •
+    <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/README.md#globe_with_meridians-equipe-de-desenvolvedores"> Equipe </a>  •
     <a href =""> Objetivos do Projeto</a>  • 
     <a href ="> Requisitos do Cliente</a>  • 
     <a href =""> Sprints</a>  • 
