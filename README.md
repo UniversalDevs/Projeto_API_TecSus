@@ -73,7 +73,8 @@
           <img src= "" width="50px">
         </td>
         <td>Desenvolvedor Front-End</td>
-        <td><a href="https://github.com/guilherme0066">Github</a></td>
+        <td><a href="https://github.com/guilherme0066"><img src="![image](https://user-images.githubusercontent.com/79467858/159924968-b008a76d-af55-4d3b-bf73-02449cdaf39b.png)
+"></a></td>
         <td><a href="">LinkedIn</a></td>
      </tr>
     </tbody>
