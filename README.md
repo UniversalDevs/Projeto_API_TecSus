@@ -1,4 +1,4 @@
-<h1> TecSus </h1>
+# TecSus
 <hr>
 
 <p align="center">
