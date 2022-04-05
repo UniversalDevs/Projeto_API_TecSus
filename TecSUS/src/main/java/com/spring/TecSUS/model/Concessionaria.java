@@ -82,11 +82,11 @@ public class Concessionaria {
     }
 
     public String getconcessionaria_endereco() {
-        return concessionaria_endereco;
+        return concessionaria_end;
     }
 
     public void setConcessionaria_endereco(String concessionaria_endereco) {
-        this.concessionaria_endereco = concessionaria_endereco;
+        this.concessionaria_end = concessionaria_endereco;
     }
 
     public String getconcessionaria_cidade() {
