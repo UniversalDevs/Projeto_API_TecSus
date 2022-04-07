@@ -10,24 +10,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ConcessionariaServiceImpl implements ConcessionariaService{
+    public class ConcessionariaServiceImpl implements ConcessionariaService {
+//public class ConcessionariaServiceImpl implements ConcessionariaService {
 
     @Autowired
-    ConcessionariaRepository ConcessionariaRepository;
+    ConcessionariaRepository concessionariaRepository;
 
     @Override
     public List<Concessionaria> findAll() {
-        return ConcessionariaRepository.findAll();
+        return concessionariaRepository.findAll();
     }
 
     @Override
     public Concessionaria findById(long id) {
-        return ConcessionariaRepository.findById(id).get();
+        return concessionariaRepository.findById(id).get();
     }
 
     @Override
-    public Concessionaria save(Concessionaria Concessionaria) {
-        return ConcessionariaRepository.save(Concessionaria);
+    public Concessionaria save(Concessionaria concessionaria) {
+        return concessionariaRepository.save(concessionaria);
     }
     
 }
