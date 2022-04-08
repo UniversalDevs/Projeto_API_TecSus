@@ -20,7 +20,6 @@ public class DummyData {
     ClienteRepository clienteRepository;
 
     //@PostConstruct
-    //Testando Adicionando um novo comentario
     public void saveClientes(){
         List<Cliente> clienteList = new ArrayList<>();
         Cliente cli1 = new Cliente();
