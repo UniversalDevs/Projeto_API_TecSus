@@ -71,8 +71,8 @@ span {
 }
 
 #sidebar.active {
-    min-width: 80px;
-    max-width: 80px;
+    min-width: 60px;
+    max-width: 60px;
     text-align: center;
 }
 
@@ -94,7 +94,7 @@ span {
 #sidebar.active ul li a {
     padding: 20px 10px;
     text-align: center;
-    font-size: 0.85em;
+    font-size: 0.65em;
 }
 
 #sidebar.active ul li a i {
@@ -118,7 +118,7 @@ span {
 }
 
 #sidebar .sidebar-header {
-    padding: 15px;
+    padding: 5px;
     background-color: #ffffff;
     
 }
@@ -134,8 +134,8 @@ span {
 }
 
 #sidebar ul li a {
-    padding: 10px;
-    font-size: 1.2em;
+    padding: 5px;
+    font-size: 1em;
     display: block;
     text-decoration: none;
     color: #ffffff;
