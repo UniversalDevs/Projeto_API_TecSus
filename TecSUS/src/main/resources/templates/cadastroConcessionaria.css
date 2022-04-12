@@ -1,26 +1,127 @@
-*{  /*o arterisco seleciona todos os elementos da pagina html*/
-    margin: 0;
-    padding: 0;
+/*cores da tecsus 
+verde: 74DB23
+roxo: 5751D4
+azul: 1E75F9
+vermelho: EB1616
+*/
+*{
+    padding: 0px;
+    margin: 0px;
 }
+
+h1{
+    font-size: 30px;
+    text-align: center;
+}
+
+
+a{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    display: block;
+    padding: 20px 5px;
+    color: white;
+}
+a:hover{
+    background-color: white;
+    color: rgb(0, 0, 0);
+}
+
+.lab_menu{
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+    background-color: #74DB23;
+    height: 100%;
+}
+
+ul {
+    
+    list-style: none;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+}
+
+img{
+    width: 30px;
+   /* background-color: #74DB23;*/
+}
+
+input[type="checkbox"]
+{
+    display: none;
+}
+nav {
+    background-color: #73db23ee;
+    width: 350px;
+    height: 100%;
+    left: -350px;
+    position: absolute;
+    transition: all .5s;
+}
+input[type="checkbox"]:checked ~ nav
+{
+    transform:translateX(350px);
+}
+
+.botao_voltar{
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bolder;
+    margin-left: 80%;
+    padding: 5px;
+    width: 5%;
+    background-color: #5751D4;
+    color: white;
+    border: 2px solid #5751D4;
+}
+
 body{
     background-color: #ffffff;
     font-family: sans-serif;
     font-size: 1em;
     color: #000000;
-    margin-left: 20%;
-    margin-top: 2%;
-    justify-content: center;
+   /* text-align: center;*/
+}
+.form_concessionaria{
+    text-align: center;
 }
 
 .campo{
-height: 70px;
+    text-align: center;
+    height: 70px;
+    letter-spacing: 1px;
 }
-#Nome{
-    margin-top:3%;
+
+.end {
+    display: inline-block;
 }
-#End{
-    overflow:auto;
-    margin-top:0;
-    margin-left: 50%;
-    padding-top: 0;
+
+.botao{
+    font-size: 18px;
+    font-weight: bolder;
+    text-transform: Uppercase;
+    padding: 15px;
+    width: 50%;
+    letter-spacing: 1px;
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50; 
+    
 }
+
+.botao:hover {
+    transition-duration: 0.3s;
+    background-color: #73db23e1;
+    color: white;
+}
+/*
+.lista .campo ul li{
+    display: inline-block; /*muda o tipo do elemento. No caso o elemento vai se comportar como elemnto de linha mas com caracteristicas de elementos de bloco.
+    list-style: none;
+    border: 1px solid rgb(255, 0, 0);
+    /*margin: 0px 5px 0px 5px; margens para afastar uma li da outra, "menuzinho". mesmo esquema que de baixo.
+    margin-left: 10px; /*margem para afastar o menuzinho. 
+}*/

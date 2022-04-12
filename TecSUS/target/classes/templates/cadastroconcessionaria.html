@@ -8,51 +8,60 @@
     <link rel="stylesheet" type="text/css" href="cadastroConcessionaria.css" media="screen"> <!--vinculando arquivo css. -->
 </head>
 <body>
-    <h1> Cadastro de Concessionaria</h1>
-    <div id="form_concessionaria">
-        <form action="http://google.com/search" method="get" target="_blank">  
-          <!--  Nome: <input type="text" name="nome" target="_blank">
-            Endereço: <input type="text" name="end">
-            Cidade: <input type="text" name="cidade">
-            Estado: <input type="text" name="estado">
-            CEP: <input type="text" name="cep">
-            Caixa Postal: <input type="text" name="caixa_postal">
-            CNPj: <input type="text" name="cnpj">
-            I.E: <input type="text" name="ie">
-            Inscrição Unica Reg. Esp. Processo: <input type="text" name="insc">
-            <input type="submit" value="CADASTRAR"><!--botão--> 
+    <header class="header-top">
+        <h1> Cadastro de Concessionaria</h1>
+    </header>
 
+    <input type="checkbox" id="check">
+    <label class="lab_menu" for="check"> <img src="menu.svg"></label>
+    <nav>
+        <ul class="menu_lateral">
+            <li><a href="">Home</a></li>
+            <li><a href="">Pagina1</a></li>
+            <li><a href="">Pagina2</a></li>
+            <li><a href="">Pagina3</a></li>
+        </ul>
+    </nav>
     
-            <fieldset class="grupo">  <!--agrupa elementos dentro de um formulario web-->
+    <button class="botao_voltar" type="button" onsubmit="">Voltar</button>
+    
 
-                <div class="Nome" id="Nome">
-                    <label for="nome"><strong>Nome</strong></label> <!--STRONG deixa em negrito-->
-                    <input type="text" name="nome" id="nome" required> <!--required é ora qnd esse campo tem que ser preenchido para poder enviar o formulario, obrigatorio-->
+
+    <div class="form_concessionaria">
+        <form action="http://google.com/search" method="get" target="_blank">  
+           <!-- <fieldset class="grupo"> agrupa elementos dentro de um formulario web-->
+
+            
+                <div class="campo" id="Nome">
+                     <label class="form" for="nome"><strong>Nome</strong></label>    
+                     <input type="text" name="nome" id="nome" size="80" required>    <!--required é pra qnd esse campo tem que ser preenchido para poder enviar o formulario, obrigatorio-->
                 </div>
-
+        <!--FAZER ESTE CAMPO DENTRO DE UMA LISTA PARA PODER MANIPULAR EM BLOCOS -->
+        
                 <div class="campo" id="End"> 
                     <label for="end"><strong>Endereço</strong></label>
-                    <input type="text" name="end" id="end" required>
+                    <input type="text" name="end" id="end" size="80" required>
                 </div>
-    
+            
                 <div class="campo" >
                     <label for="cidade"><strong>Cidade</strong></label>
-                    <input type="text" name="cidade" id="cidade" required>
+                    <input type="text" name="cidade" id="cidade" size="80" required>
                 </div>
-
+                
                 <div class="campo"> 
                     <label for="estado"><strong>Estado</strong></label>
-                    <input type="text" name="estado" id="estado" required>
+                    <input type="text" name="estado" id="estado" size="40" required>
                 </div>
+            
 
                 <div class="campo"> 
                     <label for="cep"><strong>CEP</strong></label>
-                    <input type="text" name="cep" id="cep" required>
+                    <input type="text" name="cep" size="5" maxlength="5" id="cep" required> - <input type="text" name="cep2" size="3" maxlength="3" id="cep" required>
                 </div>
 
                 <div class="campo"> 
                     <label for="cx_postal"><strong>Caixa Postal</strong></label>
-                    <input type="text" name="cx_postal" id="cx_postal" required>
+                    <input type="text" name="cx_postal" id="cx_postal" size="40" required>
                 </div>
 
                 <div class="campo"> 
@@ -67,87 +76,14 @@
 
                 <div class="campo"> 
                     <label for="insc"><strong> Inscrição Unica Reg. Esp. Processo</strong></label>
-                    <input type="text" name="insc" id="insc" required>
+                    <input type="text" name="insc" id="insc" size="40"required>
                 </div>
 
-             </fieldset>
+            <!-- </fieldset>-->
+        <div>
              <button class="botao" type="submit" onsubmit="">CADASTRAR</button>
+        </div>
         </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 </body>
 </html>
