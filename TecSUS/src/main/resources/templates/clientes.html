@@ -96,12 +96,14 @@
                 <tbody>
                   <tr th:each="cliente : ${clientes}">
                     <th scope="row" th:text="${cliente.cli_id}"></th>
-                    <td><a href="#"  th:text="${cliente.cli_nome}"></a></td>
+                    <td><a th:href="${(#mvc.url('CC#getClienteDetails').arg(0, cliente.cli_id)).build()}" th:text="${cliente.cli_nome}" style="text-decoration: none;"></a></td>
                     <td th:text="${cliente.cli_cidade}"></td>
                     <td th:text="${cliente.cli_estado}"></td>
                   </tr>
                 </tbody>
               </table>
+
+              <a class="btn btn-primary" href="/clientes/novocliente" role="button">Cadastrar</a>
 
             <div class="line"></div>
 
