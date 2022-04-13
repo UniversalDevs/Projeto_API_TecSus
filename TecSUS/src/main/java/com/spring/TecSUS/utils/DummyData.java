@@ -9,36 +9,33 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import com.spring.TecSUS.model.Cliente;
-import com.spring.TecSUS.repository.ClienteRepository;
+import com.spring.TecSUS.model.Concessionaria;
+import com.spring.TecSUS.repository.ConcessionariaRepository;
 
 
 @Component
 public class DummyData {
     
     @Autowired
-    ClienteRepository clienteRepository;
+    ConcessionariaRepository ConcessionariaRepository;
 
     //@PostConstruct
     //Testando Adicionando um novo comentario
-    public void saveClientes(){
-        List<Cliente> clienteList = new ArrayList<>();
-        Cliente cli1 = new Cliente();
-        cli1.setCli_nome("Felipe Augusto");
-        cli1.setCli_dataNasc(LocalDate.of(2003, 3, 10));
-        cli1.setCli_bairro("Campo");
-        cli1.setCli_cep("12223-232");
-        cli1.setCli_cidade("São José dos Campos");
-        cli1.setCli_estado("São Paulo");
-        cli1.setCli_rg("56.433.434-3");
-        cli1.setCli_cpf("233.323.232-23");
-        cli1.setCli_endereco("Rua dos Camundongos");
+    public void saveConcessionarias(){
+        List<Concessionaria> ConcessionariaList = new ArrayList<>();
+        Concessionaria con2 = new Concessionaria();
+        con2.setConcessionaria_cep("01107900");
+        con2.setConcessionaria_nome("SABESPSP");
+        con2.setConcessionaria_endereco("Avenida do Estado 561");
+        con2.setConcessionaria_cidade("São Paulo");
+        con2.setConcessionaria_estado("SP");
+        con2.setconcessionaria_modalidade("Água");
 
-        clienteList.add(cli1);
+        ConcessionariaList.add(con2);
 
-        for(Cliente cliente: clienteList){
-            Cliente clienteSaved = clienteRepository.save(cliente);
-            System.out.println(clienteSaved.getCli_id());
+        for(Concessionaria Concessionaria: ConcessionariaList){
+            Concessionaria Concessionariasaved = ConcessionariaRepository.save(Concessionaria);
+            System.out.println(Concessionariasaved.getConcessionaria_id());
         }
     }
 }

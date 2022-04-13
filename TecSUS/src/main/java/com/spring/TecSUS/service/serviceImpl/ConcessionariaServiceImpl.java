@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 @Service
     public class ConcessionariaServiceImpl implements ConcessionariaService {
-//public class ConcessionariaServiceImpl implements ConcessionariaService {
 
     @Autowired
     ConcessionariaRepository concessionariaRepository;
