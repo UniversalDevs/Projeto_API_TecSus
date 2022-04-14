@@ -6,12 +6,11 @@ import com.spring.TecSUS.model.Instalacao;
 import com.spring.TecSUS.repository.InstalacaoRepository;
 import com.spring.TecSUS.service.InstalacaoService;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-    public class InstalacaoServiceImpl implements InstalacaoService {
+public class InstalacaoServiceImpl implements InstalacaoService {
 
     @Autowired
     InstalacaoRepository InstalacaoRepository;
