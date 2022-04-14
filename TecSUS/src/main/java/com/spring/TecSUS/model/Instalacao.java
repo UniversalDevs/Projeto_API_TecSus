@@ -32,13 +32,13 @@ public class Instalacao implements Serializable{
 
     private String classe_subclasse;
 
-    private String código_fiscal_operacao;
+    private String codigo_fiscal_operacao;
 
     private String modalidade_tarifaria;
 
     private String roteiro_leitura;
 
-    private String número_medidor;
+    private String numero_medidor;
 
     private String tensao_nominal;
 
@@ -69,12 +69,12 @@ public class Instalacao implements Serializable{
         this.classe_subclasse = classe_subclasse;
     }
 
-    public String getCódigo_fiscal_operacao() {
-        return código_fiscal_operacao;
+    public String getCodigo_fiscal_operacao() {
+        return codigo_fiscal_operacao;
     }
 
-    public void setCódigo_fiscal_operacao(String código_fiscal_operacao) {
-        this.código_fiscal_operacao = código_fiscal_operacao;
+    public void setCodigo_fiscal_operacao(String codigo_fiscal_operacao) {
+        this.codigo_fiscal_operacao = codigo_fiscal_operacao;
     }
 
     public String getModalidade_tarifaria() {
@@ -93,12 +93,12 @@ public class Instalacao implements Serializable{
         this.roteiro_leitura = roteiro_leitura;
     }
 
-    public String getNúmero_medidor() {
-        return número_medidor;
+    public String getNumero_medidor() {
+        return numero_medidor;
     }
 
-    public void setNúmero_medidor(String número_medidor) {
-        this.número_medidor = número_medidor;
+    public void setNumero_medidor(String numero_medidor) {
+        this.numero_medidor = numero_medidor;
     }
 
     public String getTensao_nominal() {

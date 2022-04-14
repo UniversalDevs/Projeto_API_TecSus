@@ -273,12 +273,3 @@ a.article:hover {
 .btn.btn-info:hover {
     background-color: #6fff00;
 }
-/*Tela de dados*/
-
-#dados {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px)
-    color: red;
-    border-right: 1px solid rgb(124, 124, 124);
-}

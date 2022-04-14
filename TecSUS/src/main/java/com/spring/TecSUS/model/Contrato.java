@@ -2,10 +2,13 @@ package com.spring.TecSUS.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -23,12 +26,36 @@ public class Contrato {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long contrato_id;
 
-    @OneToMany
-    @NotBlank
-    private String contrato_cli;
+    @ManyToOne
+    @JoinColumn(name =  "cli_id")
+    private Cliente cliente;
 
-    @OneToMany
-    @NotBlank
-    private String contrato_con;
+    @ManyToOne
+    @JoinColumn(name = "concessionaria_id")
+    private Concessionaria concessionaria;
     
+    public Long getContrato_id(){
+        return contrato_id;
+    }
+
+    public void setContrato_id(Long contrato_id){
+        this.contrato_id = contrato_id;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Concessionaria getConcessionaria() {
+        return concessionaria;
+    }
+
+    public void setConcessionaria(Concessionaria concessionaria) {
+        this.concessionaria = concessionaria;
+    }
+
 }

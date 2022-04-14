@@ -46,7 +46,7 @@ public class Cliente {
     @NotBlank
     private String cli_bairro;
 
-    @NotBlank
+    
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private LocalDate cli_dataNasc;
 

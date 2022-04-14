@@ -53,10 +53,6 @@ public class Concessionaria {
     @NotBlank
     private String concessionaria_estado;
 
-    @NotBlank
-    private String concessionaria_modalidade;
-
-
 
 
     //Getters and Setters
@@ -109,7 +105,4 @@ public class Concessionaria {
         this.concessionaria_estado = concessionaria_estado;
     }
 
-    public void setconcessionaria_modalidade(String concessionaria_modalidade) {
-        this.concessionaria_modalidade = concessionaria_modalidade;
-    }
 }

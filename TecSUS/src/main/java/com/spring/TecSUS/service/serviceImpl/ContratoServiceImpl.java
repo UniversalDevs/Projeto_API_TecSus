@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ContratoServiceImp implements ContratoService{
+public class ContratoServiceImpl implements ContratoService{
 
     @Autowired
     ContratoRepository contratoRepository;
@@ -29,5 +29,5 @@ public class ContratoServiceImp implements ContratoService{
     public Contrato save(Contrato contrato) {
         return contratoRepository.save(contrato);
     }
-    
+           
 }

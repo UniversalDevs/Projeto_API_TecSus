@@ -7,6 +7,6 @@ import com.spring.TecSUS.model.Instalacao;
 public interface InstalacaoService {
     
     List<Instalacao> findAll();
-    Instalacao findById(long id);
+    Instalacao findById(long codigo_identificador);
     Instalacao save(Instalacao instalacao);
 }

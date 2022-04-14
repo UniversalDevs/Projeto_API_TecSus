@@ -87,22 +87,22 @@
              <div class="card" style="width: 50em; margin-left: auto; margin-right: auto;">
                 <div class="card-header" style="background-color: #5652c736;">
                     <h3>
-                        Cliente:
-                        <small class="text-muted" th:text="${cliente.cli_id}"></small>
+                        Instalação:
+                        <small class="text-muted" th:text="${instalacao.codigo_identificador"></small>
                       </h3>
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><strong>Nome: <p class="fw-normal" th:text="${cliente.cli_nome}"></p></strong></li>
-                  <li class="list-group-item"><strong>Data de Nascimento: <p class="fw-normal" th:text="${cliente.cli_dataNasc}"></p></strong></li>
-                  <li class="list-group-item"><strong>RG: <p class="fw-normal" th:text="${cliente.cli_rg}"></p></strong></li>
-                  <li class="list-group-item"><strong>CPF:<p class="fw-normal" th:text="${cliente.cli_cpf}"></p></strong></li>
-                  <li class="list-group-item"><strong>CEP: <p class="fw-normal" th:text="${cliente.cli_cep}"></p></strong></li>
-                  <li class="list-group-item"><strong>Endereço: <p class="fw-normal" th:text="${cliente.cli_endereco}"></p></strong></li>
-                  <li class="list-group-item"><strong>Cidade: <p class="fw-normal" th:text="${cliente.cli_cidade}"></p></strong></li>
-                  <li class="list-group-item"><strong>Estado: <p class="fw-normal" th:text="${cliente.cli_estado}"></p></strong></li>
+                    <li class="list-group-item"><strong>Grupo/Subgrupo: <p class="fw-normal" th:text="${instalacao.grupo_subgrupo}"></p></strong></li>
+                  <li class="list-group-item"><strong>Tipo de Fornecimento: <p class="fw-normal" th:text="${instalacao.tipo_fornecimento}"></p></strong></li>
+                  <li class="list-group-item"><strong>Classe/Subclasse: <p class="fw-normal" th:text="${instalacao.classe_subclasse}"></p></strong></li>
+                  <li class="list-group-item"><strong>Código Fiscal da Operação: <p class="fw-normal" th:text="${instalacao.codigo_fiscal_operacao}"></p></strong></li>
+                  <li class="list-group-item"><strong>Modalidade Tarifária:<p class="fw-normal" th:text="${instalacao.modalidade_tarifaria}"></p></strong></li>
+                  <li class="list-group-item"><strong>Roteiro de Leitura: <p class="fw-normal" th:text="${instalacao.roteiro_leitura}"></p></strong></li>
+                  <li class="list-group-item"><strong>Número do Medidor <p class="fw-normal" th:text="${instalação.numero_medidor}"></p></strong></li>
+                  <li class="list-group-item"><strong>Tensão Mominal: <p class="fw-normal" th:text="${instalacao.tensao_nominal}"></p></strong></li>
                 </ul> 
                 <p></p>
-                <a href="/clientes" class="btn btn-success btn-lg active" role="button" aria-pressed="true" style="margin-left: auto; margin-right: auto; width: 4.5em;">Voltar</a>
+                <a href="/instalacoes" class="btn btn-success btn-lg active" role="button" aria-pressed="true" style="margin-left: auto; margin-right: auto; width: 4.5em;">Voltar</a>
                 <p></p>
                 <!-- style="margin-left: auto; margin-right: auto;" -->
             </div>

@@ -21,8 +21,8 @@ import org.springframework.stereotype.Service;
     }
 
     @Override
-    public Instalacao findById(long id) {
-        return InstalacaoRepository.findById(id).get();
+    public Instalacao findById(long codigo_identificador) {
+        return InstalacaoRepository.findById(codigo_identificador).get();
     }
 
     @Override
