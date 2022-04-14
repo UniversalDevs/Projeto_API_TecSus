@@ -1,1 +1,178 @@
-guilherme e viado
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Tecsus</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet"  type="text/css" href="" th:href="@{/css/style.css}">
+
+    <!-- Font Awesome JS -->
+
+    <script scr="https://kit.fontawesome.com/eac8819838.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="" th:src="@{js/scripts.js}"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+    
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        
+        <nav id="sidebar">
+            
+            <div class="sidebar-header">
+                    <img src="" th:src="@{/img/logo_tecsus_horizontal.png}" alt=""/>
+                    <strong style="font-size: 20px; margin-bottom: -20px;"><p style="display: inline-block; font-weight: bold; color: #5652c7;">t</p><p style="display: inline-block; font-weight: bold; color: #74DB23">s</p></strong>
+            </div>
+
+            <ul class="list-unstyled components">
+
+                <li>
+                    <a href="#">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <i class="fas fa-file-invoice"></i>
+                        Contas
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu" style="font-size: 1em;">
+                        <li>
+                            <a href="#">Energia</a>
+                        </li>
+                        <li>
+                            <a href="#">Água</a>
+                        </li>
+                        <li>
+                            <a href="#">Gás</a>
+                        </li>
+                    </ul> 
+                    
+                </li>
+                <li>
+                    <a href="/clientes">
+                        <i class="fas fa-users"></i>
+                        Clientes
+                    </a>
+                </li>
+                <li>
+                    <a href="/concessionarias">
+                        <i class="far fa-building"></i>
+                        Concessionárias
+                    </a>
+                </li>
+                <li>
+                    <a href="/instalacoes">
+                        <i class="fas fa-home "></i>
+                        Instalação
+                    </a>
+                </li>
+                <li>
+                    <a href="/contratos">
+                        <i class="fas fa-file-invoice"></i>
+                        Contrato
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="far fa-file-alt"></i>
+                        Relatórios
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-bars" style="color: white;"></i>
+            </button>
+            <h2>Concessionária</h2>
+            <table class="table table-hover" >
+                <thead>
+                  <tr>
+                    <th scope="col">ID:</th>
+                    <th scope="col">CNPJ:</th>
+                    <th scope="col">IE:</th>
+                    <th scope="col">Inscrição Única de Registro:</th>
+                    <th scope="col">Processo:</th>
+                    <th scope="col">Nome:</th>
+                    <th scope="col">Endereço:</th>
+                    <th scope="col">Caixa Postal:</th>
+                    <th scope="col">CEP:</th>
+                    <th scope="col">Cidade:</th>
+                    <th scope="col">Estado:</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="concessionaria : ${concessionarias}">
+                        <!-- <td><a th:href="@{'/concessionarias/' + ${concessionaria.concessionaria_id}}" th:text="${concessionaria.concessionaria_cnpj}" style="text-decoration: none;"></a></td>  -->
+                        <th scope="row" th:text="${concessionaria.concessionaria_id}"></th>
+                        <td><a th:href="${(#mvc.url('CC#getConcessionariaDetails').arg(0, concessionaria.concessionaria_id)).build()}" th:text="${concessionaria.concessionaria_cnpj}" style="text-decoration: none;"></a></td> 
+
+                        <!-- <th scope="row" th:text="${concessionaria.concessionaria_cnpj}"></th> -->
+                        <th scope="row" th:text="${concessionaria.concessionaria_IE}"></th>
+                        <th scope="row" th:text="${concessionaria.concessionaria_inscricao_unica_reg}"></th>
+                        <th scope="row" th:text="${concessionaria.concessionaria_processo}"></th>
+                        <th scope="row" th:text="${concessionaria.concessionaria_nome}"></th>
+                        <th scope="row" th:text="${concessionaria.concessionaria_end}"></th>
+                        <th scope="row" th:text="${concessionaria.concessionaria_cxpst}"></th>
+                        <th scope="row" th:text="${concessionaria.concessionaria_cep}"></th>
+                        <th scope="row" th:text="${concessionaria.concessionaria_cidade}"></th>
+                        <th scope="row" th:text="${concessionaria.concessionaria_estado}"></th>
+
+                                        
+                      <td></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <a class="btn btn-primary" href="/concessionarias/novaconcessionaria" role="button">Cadastrar</a>
+
+            <div class="line"></div>
+
+            <h2>Lorem Ipsum Dolor</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <div class="line"></div>
+
+            <h2>Lorem Ipsum Dolor</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <div class="line"></div>
+
+            <h3>Lorem Ipsum Dolor</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>

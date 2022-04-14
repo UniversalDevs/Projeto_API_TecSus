@@ -29,5 +29,6 @@ public class ContratoServiceImpl implements ContratoService{
     public Contrato save(Contrato contrato) {
         return contratoRepository.save(contrato);
     }
-           
+    
+
 }

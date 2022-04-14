@@ -8,8 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -33,9 +35,21 @@ public class Contrato {
     @ManyToOne
     @JoinColumn(name = "concessionaria_id")
     private Concessionaria concessionaria;
-    
-    public Long getContrato_id(){
+
+    @OneToOne
+    private FileUpload fileUpload;
+
+
+    public Long getContrato_id() {
         return contrato_id;
+    }
+
+    public FileUpload getFileUpload() {
+        return fileUpload;
+    }
+
+    public void setFileUpload(FileUpload fileUpload) {
+        this.fileUpload = fileUpload;
     }
 
     public void setContrato_id(Long contrato_id){

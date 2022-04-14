@@ -14,23 +14,22 @@
     <link rel="stylesheet"  type="text/css" href="" th:href="@{/css/style.css}">
 
     <!-- Font Awesome JS -->
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script scr="https://kit.fontawesome.com/eac8819838.js" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="" th:src="@{js/scripts.js}"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
 <body>
-    
+<main>
     <div class="wrapper">
-        <!-- Sidebar  -->
+         <!-- Sidebar  -->
         
-        <nav id="sidebar">
+         <nav id="sidebar">
             
             <div class="sidebar-header">
                     <img src="" th:src="@{/img/logo_tecsus_horizontal.png}" alt=""/>
@@ -95,71 +94,49 @@
             </ul>
         </nav>
 
+
         <!-- Page Content  -->
         <div id="content">
 
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
-            <h2>Concessionária</h2>
-            <table class="table table-hover" >
-                <thead>
-                  <tr>
-                    <th scope="col">ID:</th>
-                    <th scope="col">CNPJ:</th>
-                    <th scope="col">IE:</th>
-                    <th scope="col">Inscrição Única de Registro:</th>
-                    <th scope="col">Processo:</th>
-                    <th scope="col">Nome:</th>
-                    <th scope="col">Endereço:</th>
-                    <th scope="col">Caixa Postal:</th>
-                    <th scope="col">CEP:</th>
-                    <th scope="col">Cidade:</th>
-                    <th scope="col">Estado:</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="concessionaria : ${concessionarias}">
-                        <!-- <td><a th:href="@{'/concessionarias/' + ${concessionaria.concessionaria_id}}" th:text="${concessionaria.concessionaria_cnpj}" style="text-decoration: none;"></a></td>  -->
-                        <th scope="row" th:text="${concessionaria.concessionaria_id}"></th>
-                        <td><a th:href="${(#mvc.url('CC#getConcessionariaDetails').arg(0, concessionaria.concessionaria_id)).build()}" th:text="${concessionaria.concessionaria_cnpj}" style="text-decoration: none;"></a></td> 
+            <hr>
+             
+             <div class="card" style="width: 50em; margin-left: auto; margin-right: auto;">
+                <div class="card-header" style="background-color: #5652c736;">
+                    <h3>
+                        Concessionária:
+                    <small class="text-muted" th:text="${concessionaria.concessionaria_id}"></small>
+                      </h3>
+                </div>
+                     <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>CNPJ: <p class="fw-normal" th:text="${concessionaria.concessionaria_cnpj}"></p></strong></li>
+                    <li class="list-group-item"><strong>IE: <p class="fw-normal" th:text="${concessionaria.concessionaria_IE}"></p></strong></li>
+                    <li class="list-group-item"><strong>Inscricao Única de Registro:<p class="fw-normal" th:text="${concessionaria.concessionaria_inscricao_unica_reg}"></p></strong></li>
+                    <li class="list-group-item"><strong>Processo: <p class="fw-normal" th:text="${concessionaria.concessionaria_processo}"></p></strong></li>
+                    <li class="list-group-item"><strong>Nome: <p class="fw-normal" th:text="${concessionaria.concessionaria_nome}"></p></strong></li>
+                    <li class="list-group-item"><strong>Endereço: <p class="fw-normal" th:text="${concessionaria.concessionaria_end}"></p></strong></li>
+                    <li class="list-group-item"><strong>Caixa Postal: <p class="fw-normal" th:text="${concessionaria.concessionaria_cxpst}"></p></strong></li> 
+                    <li class="list-group-item"><strong>CEP: <p class="fw-normal" th:text="${concessionaria.concessionaria_cep}"></p></strong></li> 
+                    <li class="list-group-item"><strong>Cidade: <p class="fw-normal" th:text="${concessionaria.concessionaria_cidade}"></p></strong></li> 
+                    <li class="list-group-item"><strong>Estado: <p class="fw-normal" th:text="${concessionaria.concessionaria_estado}"></p></strong></li> 
 
-                        <!-- <th scope="row" th:text="${concessionaria.concessionaria_cnpj}"></th> -->
-                        <th scope="row" th:text="${concessionaria.concessionaria_IE}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_inscricao_unica_reg}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_processo}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_nome}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_end}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_cxpst}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_cep}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_cidade}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_estado}"></th>
 
-                                        
-                      <td></td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <a class="btn btn-primary" href="/concessionarias/novaconcessionaria" role="button">Cadastrar</a>
-
+                
+                </ul> 
+                <p></p>
+                <a href="/clientes" class="btn btn-success btn-lg active" role="button" aria-pressed="true" style="margin-left: auto; margin-right: auto; width: 4.5em;">Voltar</a>
+                <p></p>
+                <!-- style="margin-left: auto; margin-right: auto;" -->
+            </div>
+           
+           
             <div class="line"></div>
 
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h3>Lorem Ipsum Dolor</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
     </div>
-
+</main>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
