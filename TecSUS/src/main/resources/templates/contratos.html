@@ -101,27 +101,34 @@
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
-            <h2>Contratos</h2>
+            <h2>Instalação</h2>
             <table class="table table-hover" >
                 <thead>
                   <tr>
-                    <th scope="col">ID_Contrato</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Cidade</th>
-                    <th scope="col">Estado</th>
+                    <th scope="col">ID do Contrato:</th>
+                    <th scope="col">Nome:</th>
+                    <th scope="col">Cidade:</th>
+                    <th scope="col">Estado:</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr th:each="cliente : ${clientes}">
-                    <th scope="row" th:text="${cliente.cli_id}"></th>
-                    <td><a th:href="${(#mvc.url('CC#getClienteDetails').arg(0, cliente.cli_id)).build()}" th:text="${cliente.cli_nome}" style="text-decoration: none;"></a></td>
-                    <td th:text="${cliente.cli_cidade}"></td>
-                    <td th:text="${cliente.cli_estado}"></td>
+                    <tr th:each="instalacao : ${instalacoes}">
+                    <th scope="row" th:text="${instalacao.codigo_identificador}"></th>
+                    <td><a th:href="@{'/instalacoes/' + ${instalacao.codigo_identificador}}" th:text="${instalacao.grupo_subgrupo}" style="text-decoration: none;"></a></td> 
+                    <td th:text="${instalacao.tipo_fornecimento}"></td>
+                    <td th:text="${instalacao.classe_subclasse}"></td>
+                    <td th:text="${instalacao.codigo_fiscal_operacao}"></td> 
+                    <td th:text="${instalacao.modalidade_tarifaria}"></td>
+                    <td th:text="${instalacao.roteiro_leitura}"></td>
+                    <td th:text="${instalacao.numero_medidor}"></td> 
+                    <td th:text="${instalacao.tensao_nominal}"></td>
+                                        
+                      <td></td>
                   </tr>
                 </tbody>
               </table>
 
-              <a class="btn btn-primary" href="/clientes/novocliente" role="button">Cadastrar</a>
+              <a class="btn btn-primary" href="/instalacoes/novainstalacao" role="button">Cadastrar</a>
 
             <div class="line"></div>
 

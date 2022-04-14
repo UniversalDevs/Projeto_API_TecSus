@@ -117,23 +117,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                    <!-- <tr th:each="instalacao : ${instalacoes}">
-                    <th scope="row" th:text="${instalacao.codigo_identificador}"></th>
-                    <td><a th:href="${(#mvc.url('CC#getInstalacaoDetails').arg(0, instalacao.codigo_identificador)).build()}" th:text="${instalacao.grupo_subgrupo}" style="text-decoration: none;"></a></td> 
-                    <td th:text="${instalacao.tipo_fornecimento}"></td>
-                    <td th:text="${instalacao.classe_subclasse}"></td>
-                    <td th:text="${instalacao.codigo_fiscal_operacao}"></td>
-                    <td th:text="${instalacao.modalidade_tarifaria}"></td>
-                    <td th:text="${instalacao.roteiro_leitura}"></td>
-                    <td th:text="${instalacao.numero_medidor}"></td>
-                    <td th:text="${instalacao.tensao_nominal}"></td>
-                    </tr>  -->
                     <tr th:each="instalacao : ${instalacoes}">
                     <th scope="row" th:text="${instalacao.codigo_identificador}"></th>
-                    <td><a th:href="${(#mvc.url('CC#getInstalacaoDetails').arg(0, instalacao.codigo_identificador)).build()}" th:text="${instalacao.grupo_subgrupo}" style="text-decoration: none;"></a></td> 
+                    <td><a th:href="@{'/instalacoes/' + ${instalacao.codigo_identificador}}" th:text="${instalacao.grupo_subgrupo}" style="text-decoration: none;"></a></td> 
                     <td th:text="${instalacao.tipo_fornecimento}"></td>
                     <td th:text="${instalacao.classe_subclasse}"></td>
                     <td th:text="${instalacao.codigo_fiscal_operacao}"></td> 
+                    <td th:text="${instalacao.modalidade_tarifaria}"></td>
                     <td th:text="${instalacao.roteiro_leitura}"></td>
                     <td th:text="${instalacao.numero_medidor}"></td> 
                     <td th:text="${instalacao.tensao_nominal}"></td>

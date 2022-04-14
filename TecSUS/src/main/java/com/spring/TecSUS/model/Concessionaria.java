@@ -53,15 +53,68 @@ public class Concessionaria {
     @NotBlank
     private String concessionaria_estado;
 
-
-
-    //Getters and Setters
-     
-    public Long getConcessionaria_id(){
+    public Long getConcessionaria_id() {
         return concessionaria_id;
     }
-    public void setConcessionaria_id(Long concessionaria_id){
+
+    public void setConcessionaria_id(Long concessionaria_id) {
         this.concessionaria_id = concessionaria_id;
+    }
+
+    public String getConcessionaria_cnpj() {
+        return concessionaria_cnpj;
+    }
+
+    public void setConcessionaria_cnpj(String concessionaria_cnpj) {
+        this.concessionaria_cnpj = concessionaria_cnpj;
+    }
+
+    public String getConcessionaria_IE() {
+        return concessionaria_IE;
+    }
+
+    public void setConcessionaria_IE(String concessionaria_IE) {
+        this.concessionaria_IE = concessionaria_IE;
+    }
+
+    public String getConcessionaria_inscricao_unica_reg() {
+        return concessionaria_inscricao_unica_reg;
+    }
+
+    public void setConcessionaria_inscricao_unica_reg(String concessionaria_inscricao_unica_reg) {
+        this.concessionaria_inscricao_unica_reg = concessionaria_inscricao_unica_reg;
+    }
+
+    public String getConcessionaria_processo() {
+        return concessionaria_processo;
+    }
+
+    public void setConcessionaria_processo(String concessionaria_processo) {
+        this.concessionaria_processo = concessionaria_processo;
+    }
+
+    public String getConcessionaria_nome() {
+        return concessionaria_nome;
+    }
+
+    public void setConcessionaria_nome(String concessionaria_nome) {
+        this.concessionaria_nome = concessionaria_nome;
+    }
+
+    public String getConcessionaria_end() {
+        return concessionaria_end;
+    }
+
+    public void setConcessionaria_end(String concessionaria_end) {
+        this.concessionaria_end = concessionaria_end;
+    }
+
+    public String getConcessionaria_cxpst() {
+        return concessionaria_cxpst;
+    }
+
+    public void setConcessionaria_cxpst(String concessionaria_cxpst) {
+        this.concessionaria_cxpst = concessionaria_cxpst;
     }
 
     public String getConcessionaria_cep() {
@@ -72,24 +125,7 @@ public class Concessionaria {
         this.concessionaria_cep = concessionaria_cep;
     }
 
-
-    public String getconcessionaria_nome() {
-        return concessionaria_nome;
-    }
-
-    public void setConcessionaria_nome(String concessionaria_nome) {
-        this.concessionaria_nome = concessionaria_nome;
-    }
-
-    public String getconcessionaria_endereco() {
-        return concessionaria_end;
-    }
-
-    public void setConcessionaria_endereco(String concessionaria_endereco) {
-        this.concessionaria_end = concessionaria_endereco;
-    }
-
-    public String getconcessionaria_cidade() {
+    public String getConcessionaria_cidade() {
         return concessionaria_cidade;
     }
 
@@ -97,12 +133,16 @@ public class Concessionaria {
         this.concessionaria_cidade = concessionaria_cidade;
     }
 
-    public String getconcessionaria_estado() {
+    public String getConcessionaria_estado() {
         return concessionaria_estado;
     }
 
     public void setConcessionaria_estado(String concessionaria_estado) {
         this.concessionaria_estado = concessionaria_estado;
     }
-
 }
+
+
+    //Getters and Setters
+     
+    
