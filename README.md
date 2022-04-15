@@ -9,14 +9,13 @@
 
 <p align="center">
     <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/README.md#globe_with_meridians-equipe-de-desenvolvedores"> Equipe </a>  •
-    <a href ="https://github.com/FelipeASousa/Felipe/blob/main/README.md#-dart-objetivos-do-projeto"> Objetivos do Projeto</a>  • 
-    <a href =""> Requisitos do Cliente</a>  • 
-    <a href =""> Requisitos Não Funcionais</a>  • 
-    <a href =""> Sprints</a>  • 
-    <a href =""> Ferramentas Utilizadas</a>  • 
-    <a href =""> Atividades Por Sprint </a>  • 
-    <a href =""> Mapa </a>  • 
-    <a href =""> Backlog </a>  • 
+    <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/README.md#-dart-objetivos-do-projeto"> Objetivos do Projeto</a>  • 
+    <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/README.md#-pushpin-requisitos-do-cliente"> Requisitos do Cliente</a>  • 
+    <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/README.md#-pushpin-requisitos-n%C3%A3o-funcionais"> Requisitos Não Funcionais</a>  • 
+    <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/README.md#arrows_counterclockwise-sprints"> Sprints</a>  • 
+    <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/README.md#wrench-ferramentas--tecnologias-utilizadas"> Ferramentas Utilizadas</a>  • 
+    <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/README.md#arrows_counterclockwise-atividades-por-sprint"> Atividades Por Sprint </a>  • 
+    <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/README.md#memo-product-backlog"> Backlog </a>  • 
 </p> 
 <hr>
 <h3> :dart: Objetivos do Projeto</h3>
