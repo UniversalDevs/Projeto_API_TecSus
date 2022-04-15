@@ -54,7 +54,37 @@
 <hr>
 
 <h3>:arrows_counterclockwise: Atividades Por Sprint</h3>
-<img src=""/>
+<h4>Sprint 1</h4>
+<ul>
+    <li> Cadastro Cliente </li>
+    <li> Cadastro Concessionária</li>
+    <li> Cadastro unidade</li>
+    <li> Cadastro Contrato</li>
+</ul>
+<hr>
+<h4>Sprint 2</h4>
+<ul>
+    <li>  </li>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+</ul>
+<hr>
+<h4>Sprint 3</h4>
+<ul>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+</ul>
+<hr>
+<h4>Sprint 4</h4>
+<ul>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+</ul>
 <hr>
 
 <h3>:computer: Wireframe Disponível em: <a href="https://www.figma.com/file/ycmcA62yH9gHgNh4iTWHP4/PrototipoTecSus?node-id=0%3A1">FIGMA<a/></h3>
