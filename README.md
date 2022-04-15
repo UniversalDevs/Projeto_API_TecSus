@@ -15,7 +15,7 @@
 <hr>
 
 <h3>:heavy_exclamation_mark: Informações Destaque</h3>
-<p><strong> Duração:</strong> de 28/03/2022 à 14/04/2022</p>
+<p><strong> Duração:</strong> de 25/03/2022 à 14/04/2022</p>
 <p> O projeto do site encontra se em: <a href="">Backend Main</a>
 <hr>
 
