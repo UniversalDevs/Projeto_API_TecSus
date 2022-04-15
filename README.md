@@ -62,6 +62,11 @@
 <hr>
 
 <h3>:memo: Product Backlog</h3>
+    <h5>Legenda:</h5>
+    <p>Prioridade Alta - Laranja</p>
+    <p>Prioridade Média - Amarela</p>
+    <p>Prioridade Baixa - Verde</p>
+
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/BacklogProduto.PNG"/>
 <hr>
 
