@@ -81,7 +81,7 @@
      <tr>
       <td>Ana Christina Ferreira Dias da Silva</td>
         <td>
-          <img src= "" width="50px">
+          <img src= "https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/Fotos/FotoAna.jpeg" width="50px">
         </td>
       <td>Desenvolvedor</td>
       <td><a href="https://github.com/AnaChristina"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
