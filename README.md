@@ -58,34 +58,35 @@
 <ul>
     <li> Cadastro Cliente </li>
     <li> Cadastro Concessionária</li>
-    <li> Cadastro unidade</li>
-    <li> Cadastro Contrato</li>
+    <li> Cadastro Unidade</li>
+    <li> Interligar os dados do cliente e concessionária com o contrato</li>
+    <li> Implementação do Banco de Dados</li>
+    <li>Página para armazenamento das contas </li>
 </ul>
 <hr>
 <h4>Sprint 2</h4>
 <ul>
-    <li>  </li>
-    <li> </li>
-    <li> </li>
-    <li> </li>
+    <li> Página para cadastrar conta de água </li>
+    <li> Página para cadastrar conta de energia</li>
+    <li> Página contendo as contas separadas pelo mês de referência</li>
+    <li> Página contendo o relatório com a média de consumo anual</li>
+    <li> Tela de confirmação dos dados digitados</li>
+    <li> Página de cadastro do Usuário</li>
+    <li> Tela de Login</li>    
 </ul>
 <hr>
 <h4>Sprint 3</h4>
 <ul>
-    <li> </li>
-    <li> </li>
-    <li> </li>
-    <li> </li>
+    <li> Recuperação de Senha</li>
+    <li> Página de perfil do usuário</li>
+    <li> Página de registro das atividades</li>
+    <li> Página para gerar um relatório de alerta de consumo</li>
+    <li> Criar níveis de acesso ao sistema</li>
+    <li> Criar filtros de visualização e busca</li>
+
 </ul>
 <hr>
-<h4>Sprint 4</h4>
-<ul>
-    <li> </li>
-    <li> </li>
-    <li> </li>
-    <li> </li>
-</ul>
-<hr>
+
 
 <h3>:computer: Wireframe Disponível em: <a href="https://www.figma.com/file/ycmcA62yH9gHgNh4iTWHP4/PrototipoTecSus?node-id=0%3A1">FIGMA<a/></h3>
 
