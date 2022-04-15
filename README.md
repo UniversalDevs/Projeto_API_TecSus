@@ -1,82 +1,47 @@
-<h1> TecSus </h1>
+<h1 align="center">:chart_with_upwards_trend: Sprint 1 :chart_with_upwards_trend:</h1>
+<p align="center">
+<p>:ballot_box_with_check: Cadastro De Clientes</p>
+<p>:ballot_box_with_check: Cadastro de Concessionárias</p>
+<p>:ballot_box_with_check: Cadastro de Contratos</p>
+<p>:ballot_box_with_check: Cadastro de Unidades</p>
+
+</p>
+<hr>
+<p align="center">
+  <a href =""> Informações Importantes</a>  • 
+  <a href =""> Burndown Chart</a>  • 
+  <a href =""> Demonstração das Funcionadades</a>  • 
+</p>
 <hr>
 
-<p align="center">
-    <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/README.md#globe_with_meridians-equipe-de-desenvolvedores"> Equipe </a>  •
-    <a href =""> Objetivos do Projeto</a>  • 
-    <a href ="> Requisitos do Cliente</a>  • 
-    <a href =""> Sprints</a>  • 
-    <a href =""> Ferramentas Utilizadas</a>  • 
-    <a href =""> Cronograma </a>  • 
-    <a href =""> Mapa </a>  • 
-    <a href =""> Backlog </a>  • 
-</p> 
-<h2>:globe_with_meridians: Equipe de Desenvolvedores</h2>
-  <table align="left">
-    <thead>
-      <th>Nome</th>
-      <th>Foto</th>
-      <th>Função</th>
-      <th>Github</th>
-      <th>LinkedIn</th>
-    </thead>
-    <tbody>
-     <tr>
-      <td>Ana Christina Ferreira Dias da Silva</td>
-        <td>
-          <img src= "" width="50px">
-        </td>
-      <td>Desenvolvedor</td>
-      <td><a href="https://github.com/AnaChristina"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
-      <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
-     </tr>
-     <tr>
-      <td>André Luis dos Santos Fagundes</td>
-        <td>
-          <img src= "" width="50px">
-        </td>
-        <td>Desenvolvedor</td>
-        <td><a href="https://github.com/Andre-lsf"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
-        <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
-     </tr>
-      <tr>
-      <td>Daniela dos Santos Meirelles</td>
-        <td>
-          <img src= "" width="50px">
-        </td>
-      <td>Product Owner</td>
-      <td><a href="https://github.com/DanielaMeirelles"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
-      <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
-     </tr>
-     <tr>
-      <td>Eduardo Pereira Carvalho </td>
-        <td>
-          <img src= "" width="50px">
-        </td>
-        <td>Scrum Master</td>
-        <td><a href="https://github.com/EduardoPereiraCarvalho"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
-        <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
-     </tr>
-     <tr>
-     <tr>
-      <td>Felipe Augusto dos Santos Sousa</td>
-        <td>
-          <img src= "" width="50px">
-        </td>
-        <td>Desenvolvedor</td>
-        <td><a href="https://github.com/FelipeASousa"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
-        <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
-     </tr>
-     <tr>
-      <td>Guilherme Alves Cursino</td>
-        <td>
-          <img src= "" width="50px">
-        </td>
-        <td>Desenvolvedor</td>
-        <td><a href="https://github.com/guilherme0066"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
-        <td><a href=""><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30px"/></a></td>
-     </tr>
-    </tbody>
-  </table>
-  
- 
+<h3>:heavy_exclamation_mark: Informações Destaque</h3>
+<p><strong> Duração:</strong> de 28/03/2022 à 14/04/2022</p>
+<p> O projeto do site encontra se em: <a href="">Backend Main</a>
+<hr>
+
+
+<h3>:chart_with_downwards_trend: Burndown Chart </h3>
+<p>Lista de Atividades</p>
+<img src="" width="900"/>
+<p>Gráfico Burndown</p>
+<img src="" width="500"/>
+<hr>
+
+<h3>Demonstração das Funcionalidades</h3>
+<p></p>
+<p></p>
+<hr>
+<h3> Cadastro De Clientes </h3>
+<img src=""/>
+<hr>
+<h3> Cadastro de Concessionárias </h3>
+<img src=""/>
+<hr>
+<h3> Cadastro de Contratos </h3>
+<img src=""/>
+<hr>
+<h3> Cadastro de Unidades </h3>
+<img src=""/>
+<hr>
+
+
