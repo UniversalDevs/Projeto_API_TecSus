@@ -14,20 +14,21 @@
     <link rel="stylesheet"  type="text/css" href="" th:href="@{/css/style.css}">
 
     <!-- Font Awesome JS -->
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script scr="https://kit.fontawesome.com/eac8819838.js" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="" th:src="@{js/scripts.js}"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
 <body>
-    
+<main>
     <div class="wrapper">
+        <!-- Sidebar  -->
+        
         <div class="wrapper">
             <!-- Sidebar  -->
             
@@ -102,41 +103,46 @@
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
-            <h2>Contratos</h2>
-             <table class="table table-hover" >
-                <thead>
-                  <tr>
-                    <th scope="col">ID do Contrato:</th>
-                    <th>Dados</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="contrato : ${contratos}">
-                    <th scope="row" th:text="${contrato.contrato_id}"></th>
-                    <td><a th:href="@{'/contratos/' + ${contrato.contrato_id}}" style="text-decoration: none;">Preencher Dados</a></td>              
-                  </tr>
-                </tbody>
-              </table> 
-
-              <a class="btn btn-primary" href="/contratos/novocontrato" role="button">Cadastrar</a>
-
+            <hr>
+             
+             <div class="card" style="width: 50em; margin-left: auto; margin-right: auto;">
+                <div class="card-header" style="background-color: #5652c736;">
+                    <h3>
+                        Contrato:
+                        <small class="text-muted" th:text="${contrato.contrato_id}"></small>
+                      </h3>
+                </div>
+                <p></p>
+                <div style="width: 30em; margin-left: 9em;">
+                <form method="post">
+                    <div class="form-group"><input type="text" name="cli_cpf" placeholder="CPF *"/></div>
+                    <div class="form-group"><input type="text" name="cli_nome" placeholder="Nome do Cliente *"/></div>
+                    <div class="form-group"><input type="text" name="concessionaria_cnpj" placeholder="CNPJ *"/></div>
+                    <div class="form-group"><input type="text" name="concessionaria_nome" placeholder="Nome da Concessionária *"/></div>
+                    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Salvar</button>
+                    <a href="/contratos" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
+                </form>
+                <p></p>
+            </div>
+                <!-- <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Grupo/Subgrupo: <p class="fw-normal" th:text="${instalacao.grupo_subgrupo}"></p></strong></li>
+                  <li class="list-group-item"><strong>Tipo de Fornecimento: <p class="fw-normal" th:text="${instalacao.tipo_fornecimento}"></p></strong></li>
+                  <li class="list-group-item"><strong>Classe/Subclasse: <p class="fw-normal" th:text="${instalacao.classe_subclasse}"></p></strong></li>
+                  <li class="list-group-item"><strong>Código Fiscal da Operação: <p class="fw-normal" th:text="${instalacao.codigo_fiscal_operacao}"></p></strong></li>
+                  <li class="list-group-item"><strong>Modalidade Tarifária:<p class="fw-normal" th:text="${instalacao.modalidade_tarifaria}"></p></strong></li>
+                  <li class="list-group-item"><strong>Roteiro de Leitura: <p class="fw-normal" th:text="${instalacao.roteiro_leitura}"></p></strong></li>
+                  <li class="list-group-item"><strong>Número do Medidor: <p class="fw-normal" th:text="${instalacao.numero_medidor}"></p></strong></li>
+                  <li class="list-group-item"><strong>Tensão Mominal: <p class="fw-normal" th:text="${instalacao.tensao_nominal}"></p></strong></li>
+                </ul>  -->
+                <!-- style="margin-left: auto; margin-right: auto;" -->
+            </div>
+           
+           
             <div class="line"></div>
 
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h3>Lorem Ipsum Dolor</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
     </div>
-
+</main>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->

@@ -5,7 +5,11 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import com.spring.TecSUS.model.Cliente;
+import com.spring.TecSUS.model.Concessionaria;
 import com.spring.TecSUS.model.Contrato;
+import com.spring.TecSUS.repository.ClienteRepository;
+import com.spring.TecSUS.repository.ContratoRepository;
 import com.spring.TecSUS.service.ContratoService;
 
 
@@ -20,11 +24,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import ch.qos.logback.core.net.server.Client;
+
 @Controller
 public class ContratoController {
     
     @Autowired
     ContratoService contratoService;
+
+    @Autowired
+    private ContratoRepository contratoRepository;
+
+    @Autowired
+    private ClienteRepository clienteRepository;
 
     @RequestMapping(value = "/contratos", method = RequestMethod.GET)
     public ModelAndView getContratos(){
@@ -57,4 +69,13 @@ public class ContratoController {
         return "redirect:/contratos";
 
     }
+
+    @RequestMapping(value = "/contratos/{contrato_id}", method = RequestMethod.POST)
+    public String getContratoDetailsPost(@PathVariable("contrato_id") long contrato_id, Cliente cliente, Concessionaria concessionaria) {
+        Contrato contrato = contratoService.findById(contrato_id);
+        contrato.setCliente(cliente);
+        contrato.setConcessionaria(concessionaria);
+        return "redirect:/contratos";
+    }
+
 }
