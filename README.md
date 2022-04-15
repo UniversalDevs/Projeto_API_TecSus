@@ -15,6 +15,7 @@
     <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/README.md#arrows_counterclockwise-sprints"> Sprints</a>  • 
     <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/README.md#wrench-ferramentas--tecnologias-utilizadas"> Ferramentas Utilizadas</a>  • 
     <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/README.md#arrows_counterclockwise-atividades-por-sprint"> Atividades Por Sprint </a>  • 
+    <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/README.md#computer-wireframe-dispon%C3%ADvel-em-figma"> Wireframe </a>  •
     <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/README.md#memo-product-backlog"> Backlog </a>  • 
 </p> 
 <hr>
