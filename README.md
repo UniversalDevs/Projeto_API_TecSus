@@ -35,16 +35,16 @@
 <p></p>
 <hr>
 <h3> Cadastro De Clientes </h3>
-<img src=""/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/CadastroCliente_1.gif"/>
 <hr>
 <h3> Cadastro de Concessionárias </h3>
-<img src=""/>
+<img src=https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/CadastroConce._1.gif""/>
 <hr>
 <h3> Cadastro de Contratos </h3>
 <img src=""/>
 <hr>
 <h3> Cadastro de Unidades </h3>
-<img src=""/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/CadastroInstalacao_1.gif"/>
 <hr>
 
 
