@@ -50,7 +50,7 @@
 <hr>
 
 <h3>:wrench: Ferramentas & Tecnologias utilizadas</h3>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/TecnologiasUtilizadas.png"/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/TecnologiasUtilizadas.png" width="200px"/>
 <hr>
 
 <h3>:arrows_counterclockwise: Atividades Por Sprint</h3>
