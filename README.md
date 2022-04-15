@@ -38,7 +38,7 @@
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/CadastroCliente_1.gif"/>
 <hr>
 <h3> Cadastro de Concessionárias </h3>
-<img src=https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/CadastroConce._1.gif""/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/CadastroConce._1.gif"/>
 <hr>
 <h3> Cadastro de Contratos </h3>
 <img src=""/>
