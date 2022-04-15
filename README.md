@@ -90,7 +90,7 @@
      <tr>
       <td>André Luis dos Santos Fagundes</td>
         <td>
-          <img src= "https://www.linkedin.com/in/andre-fagundes-63447818b/" width="50px">
+          <img src= "https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/Fotos/FotoAndre.jpeg" width="50px">
         </td>
         <td>Desenvolvedor</td>
         <td><a href="https://github.com/Andre-lsf"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
@@ -99,7 +99,7 @@
       <tr>
       <td>Daniela dos Santos Meirelles</td>
         <td>
-          <img src= "" width="50px">
+          <img src= "https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/Fotos/FotoDaniela.jpeg" width="50px">
         </td>
       <td>Product Owner</td>
       <td><a href="https://github.com/DanielaMeirelles"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
@@ -108,7 +108,7 @@
      <tr>
       <td>Eduardo Pereira Carvalho </td>
         <td>
-          <img src= "" width="50px">
+          <img src= "https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/Fotos/FotoEdu.jpeg" width="50px">
         </td>
         <td>Scrum Master</td>
         <td><a href="https://github.com/EduardoPereiraCarvalho"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
@@ -118,7 +118,7 @@
      <tr>
       <td>Felipe Augusto dos Santos Sousa</td>
         <td>
-          <img src= "" width="50px">
+          <img src= "https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/Fotos/FotoFelipe.jpeg" width="50px">
         </td>
         <td>Desenvolvedor</td>
         <td><a href="https://github.com/FelipeASousa"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
@@ -127,7 +127,7 @@
      <tr>
       <td>Guilherme Alves Cursino</td>
         <td>
-          <img src= "https://www.linkedin.com/mwlite/in/guilherme-cursino-679410213" width="50px">
+          <img src= "https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/Fotos/FotoGui.jpeg" width="50px">
         </td>
         <td>Desenvolvedor</td>
         <td><a href="https://github.com/guilherme0066"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a></td>
