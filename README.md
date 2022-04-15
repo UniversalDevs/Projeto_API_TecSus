@@ -57,7 +57,7 @@
 <hr>
 
 <h3>:computer: Wireframe</h3>
-<img src=""/>
+<a href="https://www.figma.com/file/ycmcA62yH9gHgNh4iTWHP4/PrototipoTecSus?node-id=0%3A1">FIGMA<a/>
 <hr>
 
 <h3>:memo: Product Backlog</h3>
