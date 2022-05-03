@@ -61,6 +61,7 @@ public class ContratoController {
 
     @RequestMapping(value = "/contratos/novocontrato", method = RequestMethod.POST)
     public String saveContrato(@Valid Contrato contrato, BindingResult result, RedirectAttributes redirect){
+        List<Cliente> listaClientes = clienteRepository.findAll();
         if(result.hasErrors()){
             redirect.addFlashAttribute("mensagem","Verifique os campos obrigatórios");
             return "redirect:/contratos/novocontrato";
@@ -70,12 +71,11 @@ public class ContratoController {
 
     }
 
-    @RequestMapping(value = "/contratos/{contrato_id}", method = RequestMethod.POST)
-    public String getContratoDetailsPost(@PathVariable("contrato_id") long contrato_id, Cliente cliente, Concessionaria concessionaria) {
-        Contrato contrato = contratoService.findById(contrato_id);
-        contrato.setCliente(cliente);
-        contrato.setConcessionaria(concessionaria);
-        return "redirect:/contratos";
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ModelAndView index() {
+        ModelAndView mav = new ModelAndView("index");
+        mav.addObject("contratos", contratoService.findAll());
+        return mav;
     }
 
 }

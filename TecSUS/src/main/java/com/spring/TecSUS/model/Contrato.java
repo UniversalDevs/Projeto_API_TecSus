@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
 
 import org.springframework.jmx.export.annotation.ManagedOperation;
+import org.springframework.web.servlet.FlashMapManager;
 
 @Entity
 @Table(name="TB_CONTRATO")
@@ -28,32 +29,46 @@ public class Contrato {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long contrato_id;
 
+    @NotBlank
+    private String tipo_servico;
+
     @ManyToOne
-    @JoinColumn(name =  "cli_id")
+    @JoinColumn(name =  "cli_id", nullable = false)
     private Cliente cliente;
 
-    @ManyToOne
-    @JoinColumn(name = "concessionaria_id")
-    private Concessionaria concessionaria;
+    // @OneToOne
+    // @JoinColumn(name = "concessionaria_id")
+    // private Concessionaria concessionaria;
 
-    @OneToOne
-    private FileUpload fileUpload;
+    @NotBlank
+    private String endereco;
 
+    @NotBlank
+    private String cep;
+
+    @NotBlank
+    private String bairro;
+
+    @NotBlank
+    private String cidade;
+
+    @NotBlank
+    private String estado;
 
     public Long getContrato_id() {
         return contrato_id;
     }
 
-    public FileUpload getFileUpload() {
-        return fileUpload;
-    }
-
-    public void setFileUpload(FileUpload fileUpload) {
-        this.fileUpload = fileUpload;
-    }
-
-    public void setContrato_id(Long contrato_id){
+    public void setContrato_id(Long contrato_id) {
         this.contrato_id = contrato_id;
+    }
+
+    public String getTipo_servico() {
+        return tipo_servico;
+    }
+
+    public void setTipo_servico(String tipo_servico) {
+        this.tipo_servico = tipo_servico;
     }
 
     public Cliente getCliente() {
@@ -64,12 +79,45 @@ public class Contrato {
         this.cliente = cliente;
     }
 
-    public Concessionaria getConcessionaria() {
-        return concessionaria;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setConcessionaria(Concessionaria concessionaria) {
-        this.concessionaria = concessionaria;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+        
 
 }

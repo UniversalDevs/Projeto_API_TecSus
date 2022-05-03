@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Instalacao implements Serializable{
@@ -25,21 +26,21 @@ public class Instalacao implements Serializable{
     }
 
     // Dados Tabela Instalação
-    
+    @NotBlank
     private String grupo_subgrupo;
-
+    @NotBlank
     private String tipo_fornecimento;
-
+    @NotBlank
     private String classe_subclasse;
-
+    @NotBlank
     private String codigo_fiscal_operacao;
-
-    private String modalidade_tarifaria;
-
+    @NotBlank
+    private String modalidade_tarifaria;    
+    @NotBlank
     private String roteiro_leitura;
-
+    @NotBlank
     private String numero_medidor;
-
+    @NotBlank
     private String tensao_nominal;
 
 

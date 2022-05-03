@@ -24,6 +24,7 @@ public class ClienteController {
     @Autowired
     ClienteService clienteService;
 
+    //Lista todos os clientes
     @RequestMapping(value = "/clientes", method = RequestMethod.GET)
     public ModelAndView getClientes() {
         ModelAndView mv = new ModelAndView("clientes");
@@ -32,6 +33,7 @@ public class ClienteController {
         return mv;
     }
 
+    //Lista os dados do cliente
     @RequestMapping(value = "/clientes/{cli_id}", method = RequestMethod.GET)
     public ModelAndView getClienteDetails(@PathVariable("cli_id") long cli_id) {
         ModelAndView mv = new ModelAndView("clienteDetails");
@@ -44,6 +46,8 @@ public class ClienteController {
     public String getClienteForm(){
         return "clienteForm";
     }
+
+    //Salva um cliente
     @RequestMapping(value = "/clientes/novocliente", method = RequestMethod.POST)
     public String saveCliente(@Valid Cliente cliente, BindingResult result, RedirectAttributes redirect){
         if(result.hasErrors()){
