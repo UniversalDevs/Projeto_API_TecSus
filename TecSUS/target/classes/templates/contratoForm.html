@@ -115,15 +115,20 @@
                     <div class="form-group">
                     <small class="form-text text-muted">(*) Campos obrigatórios</small>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="tipo_servico" placeholder="Tipo de Serviço *">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Tipo de Serviço</option>
+                            <option value="1">Água</option>
+                            <option value="2">Energia</option>
+                            <option value="3">Gás</option>
+                          </select>
                     </div> 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <select th:field="*{cliente}" class="form-control" required>
                             <th:block th:each="cli : ${listaClientes}">
                                 <option th:text="${cli.cli_nome}" th:value="${cli.cli_id}"></option>
                             </th:block>
                         </select>
-                    </div>       
+                    </div>        -->
 
 
                     <div class="form-group">

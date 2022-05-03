@@ -6,6 +6,8 @@ import com.spring.TecSUS.model.Contrato;
 
 import org.springframework.stereotype.Service;
 
+import net.bytebuddy.TypeCache.Sort;
+
 
 @Service
 public interface ContratoService {
