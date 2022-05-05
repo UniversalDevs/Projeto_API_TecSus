@@ -114,6 +114,20 @@
                 <form method="post">
                     <div class="form-group">
                     <small class="form-text text-muted">(*) Campos obrigatórios</small>
+
+                    <!-- <div class="form-group">
+                        <select th:field="*{cliente}" class="form-control" required>
+                            <th:block th:each="cli : ${listaClientes}">
+                                <option th:text="${cli.cli_nome}" th:value="${cli.cli_id}"></option>
+                            </th:block>
+                        </select>
+                    </div>        -->
+                    <div class="form-group">
+                        <label class="col-form-label col-sm-4">Nome do Cliente</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" required id="cliente" name="cliente"></select>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Tipo de Serviço</option>
@@ -122,15 +136,6 @@
                             <option value="3">Gás</option>
                           </select>
                     </div> 
-                    <!-- <div class="form-group">
-                        <select th:field="*{cliente}" class="form-control" required>
-                            <th:block th:each="cli : ${listaClientes}">
-                                <option th:text="${cli.cli_nome}" th:value="${cli.cli_id}"></option>
-                            </th:block>
-                        </select>
-                    </div>        -->
-
-
                     <div class="form-group">
                         <input type="text" class="form-control" name="cep" placeholder="CEP *">
                     </div> 
@@ -168,3 +173,5 @@
     </script>
 </body>
 </html>
+<!-- https://www.youtube.com/watch?v=ctwRpskAeIU&t=1434s -->
+<!-- 01:15:49 -->

@@ -121,19 +121,19 @@
                 <tbody>
                     <tr th:each="concessionaria : ${concessionarias}">
                         <!-- <td><a th:href="@{'/concessionarias/' + ${concessionaria.concessionaria_id}}" th:text="${concessionaria.concessionaria_cnpj}" style="text-decoration: none;"></a></td>  -->
-                        <th scope="row" th:text="${concessionaria.concessionaria_id}"></th>
-                        <td><a th:href="${(#mvc.url('CC#getConcessionariaDetails').arg(0, concessionaria.concessionaria_id)).build()}" th:text="${concessionaria.concessionaria_cnpj}" style="text-decoration: none;"></a></td> 
+                        <th scope="row" th:text="${concessionaria.conc_id}"></th>
+                        <td><a th:href="${(#mvc.url('CC#detalhesConcessionaria').arg(0, concessionaria.conc_id)).build()}" th:text="${concessionaria.conc_cnpj}" style="text-decoration: none;"></a></td> 
 
                         <!-- <th scope="row" th:text="${concessionaria.concessionaria_cnpj}"></th> -->
-                        <th scope="row" th:text="${concessionaria.concessionaria_IE}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_inscricao_unica_reg}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_processo}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_nome}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_end}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_cxpst}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_cep}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_cidade}"></th>
-                        <th scope="row" th:text="${concessionaria.concessionaria_estado}"></th>
+                        <th scope="row" th:text="${concessionaria.conc_IE}"></th>
+                        <th scope="row" th:text="${concessionaria.conc_inscricao_unica_reg}"></th>
+                        <th scope="row" th:text="${concessionaria.conc_processo}"></th>
+                        <th scope="row" th:text="${concessionaria.conc_nome}"></th>
+                        <th scope="row" th:text="${concessionaria.conc_end}"></th>
+                        <th scope="row" th:text="${concessionaria.conc_cxpst}"></th>
+                        <th scope="row" th:text="${concessionaria.conc_cep}"></th>
+                        <th scope="row" th:text="${concessionaria.conc_cidade}"></th>
+                        <th scope="row" th:text="${concessionaria.conc_estado}"></th>
 
                                         
                       <td></td>
@@ -141,7 +141,7 @@
                 </tbody>
               </table>
 
-              <a class="btn btn-primary" href="/concessionarias/novaconcessionaria" role="button">Cadastrar</a>
+              <a class="btn btn-primary" href="/concessionarias/novo" role="button">Cadastrar</a>
 
             <div class="line"></div>
 

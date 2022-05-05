@@ -101,31 +101,6 @@
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
-            <h2>Cliente</h2>
-            <table class="table table-hover" >
-                <thead>
-                  <tr>
-                    <th scope="col">ID:</th>
-                    <th scope="col">Nome:</th>
-                    <th scope="col">Data de Nascimento:</th>
-                    <th scope="col">RG:</th>
-                    <th scope="col">CPF:</th>
-                  </tr>
-                </thead>
-                <tbody>
-                     <tr th:each="cliente : ${clientes}">
-                    <th scope="row" th:text="${cliente.cli_id}"></th>
-                    <td><a th:href="${(#mvc.url('CC#detalhesCliente').arg(0, cliente.cli_id)).build()}" th:text="${cliente.cli_nome}" style="text-decoration: none;"></a></td> 
-                    <td th:text="${cliente.data_nascimento}"></td>
-                    <td th:text="${cliente.cli_rg}"></td>
-                    <td th:text="${cliente.cli_cpf}"></td>
-                    </tr>                   
-                      <td></td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <a class="btn btn-primary" href="/clientes/novo" role="button">Cadastrar</a>
 
             <div class="line"></div>
 

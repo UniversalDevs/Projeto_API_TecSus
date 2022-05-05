@@ -101,7 +101,7 @@
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
-            <h2>Instalação</h2>
+            <h2>Cliente</h2>
             <table class="table table-hover" >
                 <thead>
                   <tr>
@@ -115,8 +115,8 @@
                 <tbody>
                      <tr th:each="cliente : ${clientes}">
                     <th scope="row" th:text="${cliente.cli_id}"></th>
-                    <td><a th:href="${(#mvc.url('CC#getClienteDetails').arg(0, cliente.cli_id)).build()}" th:text="${cliente.cli_nome}" style="text-decoration: none;"></a></td> 
-                    <td th:text="${cliente.cli_dataNasc}"></td>
+                    <td><a th:href="${(#mvc.url('CC#detalhesCliente').arg(0, cliente.cli_id)).build()}" th:text="${cliente.cli_nome}" style="text-decoration: none;"></a></td> 
+                    <td th:text="${cliente.data_nascimento}"></td>
                     <td th:text="${cliente.cli_rg}"></td>
                     <td th:text="${cliente.cli_cpf}"></td>
                     </tr>                   
@@ -125,7 +125,7 @@
                 </tbody>
               </table>
 
-              <a class="btn btn-primary" href="/clientes/novocliente" role="button">Cadastrar</a>
+              <a class="btn btn-primary" href="/clientes/novo" role="button">Cadastrar</a>
 
             <div class="line"></div>
 
