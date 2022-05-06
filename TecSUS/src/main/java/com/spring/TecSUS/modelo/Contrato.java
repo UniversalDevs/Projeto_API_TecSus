@@ -26,6 +26,7 @@ public class Contrato {
     @JoinColumn(name =  "conc_id", nullable = false)
     private Concessionaria concessionaria;
 
+
     private String endereco;
 
     private String cep;

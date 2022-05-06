@@ -111,7 +111,39 @@
                     <h5 >Tipo de Serviço <span class="badge badge-secondary" th:text="${contrato.tipo_servico}" style="background-color:#5652c7;"></span></h5>
                 </div>
                 <p></p>
-
+                <div style="width: 30em; margin-left: 9em;">
+                  <h3> Adicionar <span class="badge bg-secondary">Instalação</span></h3>
+                  <form method="post">
+                       <div class="form-group">
+                       <input type="text" class="form-control" name="grupo_subgrupo" placeholder="Grupo/Subgrupo *">
+                      </div> 
+                      <div class="form-group">
+                          <input type="text" class="form-control" name="tipo_fornecimento" placeholder="Tipo de Fornecimento *">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" name="classe_subclasse" placeholder="Classe/Subclasse *">
+                      </div>
+                      <div class="form-group">
+                          <input type="number" class="form-control" name="codigo_fiscal_operacao" placeholder="Código Fiscal da Operação *">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" name="modalidade_tarifaria" placeholder="Modalidade Tarifária *">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" name="roteiro_leitura" placeholder="Roteiro de Leitura *">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" name="numero_medidor" placeholder="Número do Medidor *">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" name="tensao_nominal" placeholder="Tensão Nominal *">
+                      </div>
+                      <small class="form-text text-muted">(*) Campos obrigatórios</small>
+          
+                      <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Adicionar</button>
+                      <!--<button type="submit" class="btn" style="margin-top: 10px;">Cancelar</button>-->
+                  </form>
+              </div>
                 <p style="text-align: center;">
                     
                     <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Dados do Cliente</a>
