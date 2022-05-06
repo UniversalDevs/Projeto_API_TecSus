@@ -114,6 +114,9 @@
                 <div style="width: 30em; margin-left: 9em;">
                   <h3> Adicionar <span class="badge bg-secondary">Instalação</span></h3>
                   <form method="post">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="contrato_id" th:value="${contrato_id}" readonly>
+                     </div>
                        <div class="form-group">
                        <input type="text" class="form-control" name="grupo_subgrupo" placeholder="Grupo/Subgrupo *">
                       </div> 

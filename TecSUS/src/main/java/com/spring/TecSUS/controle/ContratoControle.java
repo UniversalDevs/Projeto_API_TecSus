@@ -5,9 +5,11 @@ import java.util.List;
 import com.spring.TecSUS.modelo.Cliente;
 import com.spring.TecSUS.modelo.Concessionaria;
 import com.spring.TecSUS.modelo.Contrato;
+import com.spring.TecSUS.modelo.Instalacao;
 import com.spring.TecSUS.repositorio.ClienteRepositorio;
 import com.spring.TecSUS.repositorio.ConcessionariaRepositorio;
 import com.spring.TecSUS.repositorio.ContratoRepositorio;
+import com.spring.TecSUS.repositorio.InstalacaoRepositorio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,6 +35,8 @@ public class ContratoControle {
     private ClienteRepositorio acaoCliente;
     @Autowired
     private ConcessionariaRepositorio acaoConcessonaria;
+    @Autowired
+    private InstalacaoRepositorio acaoInstalacao;
 
     //Cadastro de Contratos
 
@@ -77,6 +81,7 @@ public class ContratoControle {
         return mv;
     }
 
+
         //Editar contrato
         @PutMapping("/contrato/editar")
         public Contrato editarContrato(@RequestBody Contrato obj){
@@ -107,6 +112,14 @@ public class ContratoControle {
         public String saveContrato(Contrato contrato) {
             acao.save(contrato);
             return "redirect:/contratos";
+        }
+
+        @RequestMapping(value =  "/contratos/{contrato_id}", method =  RequestMethod.POST)
+        public String detalheContrato(@PathVariable long contrato_id, Instalacao instalacao){
+            Contrato contrato =  acao.findById(contrato_id);
+            instalacao.setContrato(contrato);
+            acaoInstalacao.save(instalacao);
+            return "redirect:/contratos/{contrato_id}";
         }
     
 }
