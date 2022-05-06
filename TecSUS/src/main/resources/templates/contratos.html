@@ -107,13 +107,17 @@
                 <thead>
                   <tr>
                     <th scope="col">ID do Contrato:</th>
-                    <th>Dados</th>
+                    <th>Cliente</th>
+                    <th>Tipo de Serviço</th>
+                    <th>Concessionária</th>
                   </tr>
                 </thead>
                 <tbody>
                     <tr th:each="contrato : ${contratos}">
-                    <th scope="row" th:text="${contrato.contrato_id}"></th>
-                    <td><a th:href="@{'/contratos/' + ${contrato.contrato_id}}" style="text-decoration: none;">Preencher Dados</a></td>              
+                    <th scope="row"><a th:href="${(#mvc.url('CC#detalhesContrato').arg(0, contrato.contrato_id)).build()}" th:text="${contrato.contrato_id}" style="text-decoration: none;"></a></th>
+                    <td th:text="${contrato.cliente.cli_nome}"></td>   
+                    <td th:text="${contrato.tipo_servico}"></td>                         
+                    <td th:text="${contrato.concessionaria.conc_nome}"></td>              
                   </tr>
                 </tbody>
               </table> 

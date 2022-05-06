@@ -1,14 +1,19 @@
 package com.spring.TecSUS.modelo;
 
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name="clientes")
@@ -25,21 +30,9 @@ public class Cliente {
     private String cli_cpf;
 
     private String data_nascimento;
-    @OneToMany(mappedBy = "cliente")
-    private Set<Contrato> contratos;
 
-    
-
-    //Getters and Setters
-
-    public Set<Contrato> getContratos() {
-        return contratos;
-    }
-
-
-    public void setContratos(Set<Contrato> contratos) {
-        this.contratos = contratos;
-    }
+    // @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+    // private List<Contrato> contratos;
 
 
     public Long getCli_id() {
@@ -82,6 +75,14 @@ public class Cliente {
         this.data_nascimento = data_nascimento;
     }
 
+    // public List<Contrato> getContratos() {
+    //     return contratos;
+    // }
+
+    // public void setContratos(List<Contrato> contratos) {
+    //     this.contratos = contratos;
+    // }
+    
     
 }
 

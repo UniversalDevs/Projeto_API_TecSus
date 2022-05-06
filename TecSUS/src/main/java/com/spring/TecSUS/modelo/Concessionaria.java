@@ -1,7 +1,9 @@
 package com.spring.TecSUS.modelo;
 
+import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -39,8 +41,8 @@ public class Concessionaria {
 
     private String conc_estado;  
 
-    @OneToMany(mappedBy = "concessionaria")
-    private Set<Contrato> contratos;
+    // @OneToMany(mappedBy = "concessionaria", cascade = CascadeType.ALL)
+    // private List<Contrato> contratos;
 
     public Long getConc_id() {
         return conc_id;
@@ -130,14 +132,12 @@ public class Concessionaria {
         this.conc_estado = conc_estado;
     }
 
-    public Set<Contrato> getContratos() {
-        return contratos;
-    }
+    // public List<Contrato> getContratos() {
+    //     return contratos;
+    // }
 
-    public void setContratos(Set<Contrato> contratos) {
-        this.contratos = contratos;
-    }
-
-    
+    // public void setContratos(List<Contrato> contratos) {
+    //     this.contratos = contratos;
+    // }
 
 }

@@ -111,7 +111,7 @@
             <h2>Cadastro <span class="badge badge-secondary" style="background-color: #5652c7;">Contrato</span></h2>
 
              <div style="width: 30em; margin-left: 9em;">
-                <form method="post">
+                <form th:action="@{/contratos/save}" th:object="${contrato}" method="post">
                     <div class="form-group">
                     <small class="form-text text-muted">(*) Campos obrigatórios</small>
 
@@ -122,38 +122,54 @@
                             </th:block>
                         </select>
                     </div>        -->
-                    <div class="form-group">
+                     <div class="form-group">
                         <label class="col-form-label col-sm-4">Nome do Cliente</label>
                         <div class="col-sm-8">
-                            <select class="form-control" required id="cliente" name="cliente"></select>
+                            <select class="form-control" th:field="*{cliente}" required>
+                                <th:block th:each="cliente : ${listClientes}">
+                                    <option th:text="${cliente.cli_nome}" th:value="${cliente.cli_id}"/>
+                                </th:block>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <select class="form-select" aria-label="Default select example">
+                        <label class="col-form-label col-sm-4">Concessionaria</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" th:field="*{concessionaria}" required>
+                                <th:block th:each="concessionaria : ${listConcessionarias}">
+                                    <option th:text="${concessionaria.conc_nome}" th:value="${concessionaria.conc_id}"/>
+                                </th:block>
+                            </select>
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <select class="form-select" aria-label="Default select example" name="tipo_servico">
                             <option selected>Tipo de Serviço</option>
-                            <option value="1">Água</option>
-                            <option value="2">Energia</option>
-                            <option value="3">Gás</option>
+                            <option value="Água">Água</option>
+                            <option value="Energia">Energia</option>
+                            <option value="Gás">Gás</option>
                           </select>
                     </div> 
                     <div class="form-group">
-                        <input type="text" class="form-control" name="cep" placeholder="CEP *">
+                        <input type="text" class="form-control" th:field="*{cep}" placeholder="CEP *">
                     </div> 
                     <div class="form-group">
-                        <input type="text" class="form-control" name="endereco" placeholder="Endereço *">
+                        <input type="text" class="form-control" th:field="*{endereco}" placeholder="Endereço *">
                     </div> 
                     <div class="form-group">
-                        <input type="text" class="form-control" name="bairro" placeholder="Bairro *">
+                        <input type="text" class="form-control" th:field="*{bairro}" placeholder="Bairro *">
                     </div> 
                     <div class="form-group">
-                        <input type="text" class="form-control" name="cidade" placeholder="Cidade *">
+                        <input type="text" class="form-control" th:field="*{cidade}" placeholder="Cidade *">
                     </div> 
                     <div class="form-group">
-                        <input type="text" class="form-control" name="estado" placeholder="Estado *">
+                        <input type="text" class="form-control" th:field="*{estado}" placeholder="Estado *">
                     </div> 
                     <button type="submit" class="btn btn-primary" style="margin-top: 10px;"><a href="/contratoDetails" style="color: white; text-decoration: none;"></a>Salvar</button>
                     <a href="/contratos" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
                 </form>
+
+
             </div>
     </div>
     

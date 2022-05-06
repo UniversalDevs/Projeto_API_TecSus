@@ -3,12 +3,15 @@ package com.spring.TecSUS.controle;
 import java.util.List;
 
 import com.spring.TecSUS.modelo.Cliente;
+import com.spring.TecSUS.modelo.Concessionaria;
 import com.spring.TecSUS.modelo.Contrato;
 import com.spring.TecSUS.repositorio.ClienteRepositorio;
+import com.spring.TecSUS.repositorio.ConcessionariaRepositorio;
 import com.spring.TecSUS.repositorio.ContratoRepositorio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,22 +29,33 @@ public class ContratoControle {
     
     @Autowired
     private ContratoRepositorio acao;
+    @Autowired
     private ClienteRepositorio acaoCliente;
+    @Autowired
+    private ConcessionariaRepositorio acaoConcessonaria;
 
     //Cadastro de Contratos
-    @PostMapping("/contratos/novo")
-    public String cadastrarContrato(@Validated Contrato contrato, BindingResult result, RedirectAttributes redirect){
-        if(result.hasErrors()){
-            redirect.addFlashAttribute("mensagem", "Verifique os campos obrigatórios");
-            return "redirect:/contrato/novo";
-        }
-        
-        acao.save(contrato);
-        return "redirect:/contratos";
-    }
 
-    @RequestMapping(value = "/contratos/novo", method = RequestMethod.GET)
-    public String getContratoForm(){
+ 
+
+    // @PostMapping("/contratos/novo")
+    // public String cadastrarContrato(@Validated Contrato contrato, BindingResult result, RedirectAttributes redirect){
+    //     if(result.hasErrors()){
+    //         redirect.addFlashAttribute("mensagem", "Verifique os campos obrigatórios");
+    //         return "redirect:/contrato/novo";
+    //     }
+        
+    //     acao.save(contrato);
+    //     return "redirect:/contratos";
+    // }
+
+    @GetMapping("/contratos/novo")
+    public String getContratoForm(Model model){
+        List<Concessionaria> listConcessionarias = acaoConcessonaria.findAll();
+        List<Cliente> listClientes = acaoCliente.findAll();
+        model.addAttribute("contrato", new Contrato());
+        model.addAttribute("listConcessionarias", listConcessionarias);
+        model.addAttribute("listClientes", listClientes);
         return "contratoForm";
     }
 
@@ -89,5 +103,10 @@ public class ContratoControle {
         //     mv.addObject("clientes",clientes);
         //     return mv;
         // }
+        @PostMapping("/contratos/save")
+        public String saveContrato(Contrato contrato) {
+            acao.save(contrato);
+            return "redirect:/contratos";
+        }
     
 }
