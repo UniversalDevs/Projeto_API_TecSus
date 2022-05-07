@@ -115,7 +115,9 @@ public class ContratoControle {
         }
 
         @RequestMapping(value =  "/contratos/{contrato_id}", method =  RequestMethod.POST)
-        public String detalheContrato(@PathVariable long contrato_id, Instalacao instalacao){
+        public String detalheContrato(@PathVariable long contrato_id, Instalacao instalacao, Model model){
+            List<Instalacao> listInstalacoes  = acaoInstalacao.findAll();
+            model.addAttribute("listInstalacoes", listInstalacoes);
             Contrato contrato =  acao.findById(contrato_id);
             instalacao.setContrato(contrato);
             acaoInstalacao.save(instalacao);

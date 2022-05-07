@@ -30,63 +30,63 @@
     <div class="wrapper">
         <!-- Sidebar  -->
         
-        <nav id="sidebar">
+        <nav id="sidebar" style="background-color: rgb(185, 2, 2);">
             
             <div class="sidebar-header">
                     <img src="" th:src="@{/img/logo_tecsus_horizontal.png}" alt=""/>
                     <strong style="font-size: 20px; margin-bottom: -20px;"><p style="display: inline-block; font-weight: bold; color: #5652c7;">t</p><p style="display: inline-block; font-weight: bold; color: #74DB23">s</p></strong>
             </div>
 
-            <ul class="list-unstyled components">
+            <ul class="list-unstyled components" >
 
                 <li>
-                    <a href="#">
+                    <a href="#" style="background-color: rgb(185, 2, 2);">
                         <i class="fas fa-home"></i>
                         Home
                     </a>
-                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" style="background-color: rgb(185, 2, 2);">
                             <i class="fas fa-file-invoice"></i>
                         Contas
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu" style="font-size: 1em;">
                         <li>
-                            <a href="#">Energia</a>
+                            <a href="#" style="background-color: rgb(185, 2, 2);">Energia</a>
                         </li>
                         <li>
-                            <a href="#">Água</a>
+                            <a href="#" style="background-color: rgb(185, 2, 2);">Água</a>
                         </li>
                         <li>
-                            <a href="#">Gás</a>
+                            <a href="#" style="background-color: rgb(185, 2, 2);">Gás</a>
                         </li>
                     </ul> 
                     
                 </li>
                 <li>
-                    <a href="/clientes">
+                    <a href="/clientes" style="background-color: rgb(185, 2, 2);">
                         <i class="fas fa-users"></i>
                         Clientes
                     </a>
                 </li>
                 <li>
-                    <a href="/concessionarias">
+                    <a href="/concessionarias" style="background-color: rgb(185, 2, 2);">
                         <i class="far fa-building"></i>
                         Concessionárias
                     </a>
                 </li>
                 <li>
-                    <a href="/instalacoes">
+                    <a href="/instalacoes" style="background-color: rgb(185, 2, 2);">
                         <i class="fas fa-home "></i>
                         Instalação
                     </a>
                 </li>
                 <li>
-                    <a href="/contratos">
+                    <a href="/contratos" style="background-color: rgb(185, 2, 2);">
                         <i class="fas fa-file-invoice"></i>
                         Contrato
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" style="background-color: rgb(185, 2, 2);">
                         <i class="far fa-file-alt"></i>
                         Relatórios
                     </a>
@@ -95,61 +95,22 @@
             </ul>
         </nav>
 
+
         <!-- Page Content  -->
         <div id="content">
 
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
-            <h2>Instalação</h2>
-            <table class="table table-hover" >
-                <thead>
-                  <tr>
-                    <th scope="col">Código Identificador:</th>
-                    <th scope="col">Grupo/Subgrupo:</th>
-                    <th scope="col">Tipo de Fornecimento:</th>
-                    <th scope="col">Classe/Subclasse</th>
-                    <th scope="col">Código Fiscal da Operação:</th>
-                    <th scope="col">Modalidade Tarifária:</th>
-                    <th scope="col">Roteiro de Leitura:</th>
-                    <th scope="col">Número do Medidor:</th>
-                    <th scope="col">Tensão Nominal:</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="instalacao : ${instalacoes}">
-                    <th scope="row" th:text="${instalacao.codigo_identificador}"></th>
-                    <td><a th:href="@{'/instalacoes/' + ${instalacao.codigo_identificador}}" th:text="${instalacao.grupo_subgrupo}" style="text-decoration: none;"></a></td> 
-                    <td th:text="${instalacao.tipo_fornecimento}"></td>
-                    <td th:text="${instalacao.classe_subclasse}"></td>
-                    <td th:text="${instalacao.codigo_fiscal_operacao}"></td> 
-                    <td th:text="${instalacao.modalidade_tarifaria}"></td>
-                    <td th:text="${instalacao.roteiro_leitura}"></td>
-                    <td th:text="${instalacao.numero_medidor}"></td> 
-                    <td th:text="${instalacao.tensao_nominal}"></td>
-                                        
-                      <td></td>
-                  </tr>
-                </tbody>
-              </table>
+            <hr>
+            <h2>Cadastro <span class="badge badge-secondary" style="background-color: #fd0000;">Conta de Energia</span></h2>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Concessionaria *" style="border: 2px solid red;">
 
-            <div class="line"></div>
+            </div>
 
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h3>Lorem Ipsum Dolor</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
     </div>
-
+    
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
@@ -166,3 +127,5 @@
     </script>
 </body>
 </html>
+<!-- https://www.youtube.com/watch?v=ctwRpskAeIU&t=1434s -->
+<!-- 01:15:49 -->
