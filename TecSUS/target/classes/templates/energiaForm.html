@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet"  type="text/css" href="" th:href="@{/css/style.css}">
+    <link rel="stylesheet"  type="text/css" href="" th:href="@{/css/energia_style.css}">
 
     <!-- Font Awesome JS -->
 
@@ -30,63 +30,64 @@
     <div class="wrapper">
         <!-- Sidebar  -->
         
-        <nav id="sidebar" style="background-color: rgb(185, 2, 2);">
+        <nav id="sidebar" style=" ">
             
             <div class="sidebar-header">
                     <img src="" th:src="@{/img/logo_tecsus_horizontal.png}" alt=""/>
                     <strong style="font-size: 20px; margin-bottom: -20px;"><p style="display: inline-block; font-weight: bold; color: #5652c7;">t</p><p style="display: inline-block; font-weight: bold; color: #74DB23">s</p></strong>
+
             </div>
 
             <ul class="list-unstyled components" >
 
                 <li>
-                    <a href="#" style="background-color: rgb(185, 2, 2);">
+                    <a href="#" style=" ">
                         <i class="fas fa-home"></i>
                         Home
                     </a>
-                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" style="background-color: rgb(185, 2, 2);">
+                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"  >
                             <i class="fas fa-file-invoice"></i>
                         Contas
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu" style="font-size: 1em;">
                         <li>
-                            <a href="#" style="background-color: rgb(185, 2, 2);">Energia</a>
+                            <a href="#" >Energia</a>
                         </li>
                         <li>
-                            <a href="#" style="background-color: rgb(185, 2, 2);">Água</a>
+                            <a href="#" style=" ">Água</a>
                         </li>
                         <li>
-                            <a href="#" style="background-color: rgb(185, 2, 2);">Gás</a>
+                            <a href="#" style=" ">Gás</a>
                         </li>
                     </ul> 
                     
                 </li>
                 <li>
-                    <a href="/clientes" style="background-color: rgb(185, 2, 2);">
+                    <a href="/clientes" style=" ">
                         <i class="fas fa-users"></i>
                         Clientes
                     </a>
                 </li>
                 <li>
-                    <a href="/concessionarias" style="background-color: rgb(185, 2, 2);">
+                    <a href="/concessionarias"  >
                         <i class="far fa-building"></i>
                         Concessionárias
                     </a>
                 </li>
                 <li>
-                    <a href="/instalacoes" style="background-color: rgb(185, 2, 2);">
+                    <a href="/instalacoes" style=" ">
                         <i class="fas fa-home "></i>
                         Instalação
                     </a>
                 </li>
                 <li>
-                    <a href="/contratos" style="background-color: rgb(185, 2, 2);">
+                    <a href="/contratos"  >
                         <i class="fas fa-file-invoice"></i>
                         Contrato
                     </a>
                 </li>
                 <li>
-                    <a href="#" style="background-color: rgb(185, 2, 2);">
+                    <a href="#" style=" ">
                         <i class="far fa-file-alt"></i>
                         Relatórios
                     </a>
@@ -102,11 +103,21 @@
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
+            <h2>Cadastro <span class="badge badge-secondary" style="background-color: #fd0000; ">Conta de Energia</span></h2>
             <hr>
-            <h2>Cadastro <span class="badge badge-secondary" style="background-color: #fd0000;">Conta de Energia</span></h2>
+            
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Concessionaria *" style="border: 2px solid red;">
-
+                <div class="linha1">
+                    <p><span>Concessionária <input type="text" class="form-control" ></span> <span style="float:right; margin-right: 15em;">CNPJ <input type="text" class="form-control" ></span></p>
+                    <p><span>Endereço <input type="text" class="form-control" ></span> <span style="float:right; margin-right: 15em;">I.E. <input type="text" class="form-control" ></span></p>
+                    <p><span>Caixa Postal <input type="text" class="form-control" ></span> <span style="float:right; margin-right: 15em;">Insc. Única Reg. Esp. <input type="text" class="form-control" ></span></p>
+                    <p><span>CEP <input type="text" class="form-control" ></span> <span style="float:right; margin-right: 15em;">Bandeira <input type="text" class="form-control" ></span></p>
+                </div>
+                <p style="margin-top: 5em; color: black; font-weight: bold; border-bottom: 3px solid #fd0000;">Cliente/Local de Consumo</p>
+                <div class="linha1">
+                    <p><span>Cliente <input type="text" class="form-control" ></span> <span style="float:right; margin-right: 15em;">CNPJ/CPF <input type="text" class="form-control" ></span></p>                    
+                    <p><span>Endereço <input type="text" class="form-control" ></span> <span style="float:right; margin-right: 30em;">Número <input type="text" class="form-control" style="width:4em;"></span><span >Complemento <input type="text" class="form-control" ></span></p>                    
+                </div>
             </div>
 
     </div>
