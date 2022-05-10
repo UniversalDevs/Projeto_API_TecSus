@@ -1,5 +1,6 @@
 package com.spring.TecSUS.modelo;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
@@ -13,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="concessionarias")
-public class Concessionaria {
+public class Concessionaria implements Serializable{
     
 
     //verificar se campo ID é necessário, já que o CNPJ já é um dado único. 

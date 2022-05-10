@@ -1,6 +1,8 @@
 package com.spring.TecSUS.modelo;
 
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="contratos")
-public class Contrato {
+public class Contrato implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long contrato_id;

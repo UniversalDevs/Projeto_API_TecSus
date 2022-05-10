@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet"  type="text/css" href="" th:href="@{/css/energia_style.css}">
+    <link rel="stylesheet"  type="text/css" href="" th:href="@{/css/style.css}">
 
     <!-- Font Awesome JS -->
 
@@ -101,26 +101,7 @@
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
-            <h2>Contas de Energia</h2>
-            <table class="table table-hover" >
-                <thead>
-                  <tr>
-                    <th scope="col">ID:</th>
-                    <th scope="col">Nome:</th>
-                    <th scope="col">Tipo de Serviço:</th>
-                    <th scope="col">Concessionária</th>
-                  </tr>
-                </thead>
-                <tbody >
-                    <tr th:each="cliente : ${clientes}">
-                        <td th:text="${cliente[0]}"></td>
-                        <td th:text="${cliente[1]}"></td>
-                        <td th:text="${cliente[2]}"></td>
-                        <td th:text="${cliente[3]}"></td>
-                    </tr> 
-                </tbody>
-              </table>
-
+            <h2>Clientes</h2>
             <div class="line"></div>
 
             <h2>Lorem Ipsum Dolor</h2>
@@ -153,4 +134,4 @@
         });
     </script>
 </body>
-</html> 
+</html>

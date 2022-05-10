@@ -1,5 +1,7 @@
 package com.spring.TecSUS.modelo;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +14,7 @@ import org.hibernate.resource.beans.internal.FallbackBeanInstanceProducer;
 
 @Entity
 @Table(name = "energias")
-public class Energia {
+public class Energia implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

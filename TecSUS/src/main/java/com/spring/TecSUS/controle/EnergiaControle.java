@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class EnergiaControle {
@@ -31,6 +32,14 @@ public class EnergiaControle {
     private InstalacaoRepositorio acaoInstalacao;
     @Autowired
     private ContratoRepositorio acaoContrato;
+
+    @GetMapping("/energias")
+    public ModelAndView listarClientesAndView(){
+        ModelAndView mv = new ModelAndView("energias");
+        mv.addObject("clientes", acao.findClientes());
+        return mv;
+    }
+
 
     @GetMapping("/energias/novo")
     public String getEnergiaForm(Model model){
