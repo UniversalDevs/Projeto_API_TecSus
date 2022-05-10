@@ -99,25 +99,22 @@
 
         <!-- Page Content  -->
         <div id="content">
-
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
-            <h2>Cadastro <span class="badge badge-secondary" style="background-color: #fd0000; ">Conta de Energia</span></h2>
-            <hr>
-            
+
             <div class="form-group">
                 <div class="linha1">
                     <p><span>Concessionária <input type="text" class="form-control" ></span> <span style="float:right; margin-right: 15em;">CNPJ <input type="text" class="form-control" ></span></p>
                     <p><span>Endereço <input type="text" class="form-control" ></span> <span style="float:right; margin-right: 15em;">I.E. <input type="text" class="form-control" ></span></p>
                     <p><span>Caixa Postal <input type="text" class="form-control" ></span> <span style="float:right; margin-right: 15em;">Insc. Única Reg. Esp. <input type="text" class="form-control" ></span></p>
-                    <p><span>CEP <input type="text" class="form-control" ></span> <span style="float:right; margin-right: 15em;">Bandeira <input type="text" class="form-control" ></span></p>
+                    <p><span>CEP <input type="text" class="form-control" ></span></p>
                 </div>
                 <p style="margin-top: 5em; color: black; font-weight: bold; border-bottom: 3px solid #fd0000;">Cliente/Local de Consumo</p>
                 <div class="linha1">
                     <p><span>Cliente <input type="text" class="form-control" ></span> <span style="float:right; margin-right: 15em;">CNPJ/CPF <input type="text" class="form-control" ></span></p>                    
                     <p><span style="float: left;">Endereço <input type="text" class="form-control" ></span> 
-                        <span style="float:left; margin-left: 13em;">Nº <input type="text" class="form-control" style="width:4em; margin-right: 1em;"></span>
+                        <span style="float:left; margin-left: 20em;">Nº <input type="text" class="form-control" style="width:4em; margin-right: 1em;"></span>
                         <span>Complemento <input type="text" class="form-control" style="width:20em;"></span>
                     </p>   
                     <p>
@@ -125,7 +122,153 @@
                         <span>Bairro <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
                         <span>Cidade <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
                         <span>Estado <input type="text" class="form-control" style="width:5em; margin-right: 1em;"></span>
-                    </p>               
+                    </p>
+                    <p>
+                        <span>Grupo/Subgrupo <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
+                        <span>Classe/Subclasse <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
+                    </p>
+                    <p>
+                        <span>Cod. Identificador <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
+                        <span>Cod. Fiscal de Operação <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
+                    </p> 
+                    <p>
+                        <span>Tensão Nominal <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
+                        <span>Roteiro de Leitura <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
+                    </p>
+                    <p>
+                        <span>Nº Medidor <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
+                    </p>    
+                    <p style="margin-top: 5em; color: black; font-weight: bold; border-bottom: 3px solid #fd0000;">Dados da Conta</p>             
+                    <p></p>
+                    <p>
+                        <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                          Visualizar Conta
+                        </button>
+                    </p>
+                      <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            <embed th:src="@{/docs/pdf_exemplo.pdf}" type="application/pdf" width="700px" height="630px">
+                        </div>
+                      </div>
+                      <p style="float: right;"><span style="float:right; margin-right: 15em;">Conta Do Mês <input type="text" class="form-control" style="border: 1px solid gray;"></span></p>
+
+                      <div class="linha1">
+                          
+                        <p style="color: red;">
+                            <span >Valor Total A Pagar <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
+                            <span>Número da Instalação <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
+                        </p>
+                        <p style="color: red;">
+                            <span>Consumo Mês/ kWh <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
+                            <span>Data de Vencimento  <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
+                        </p>
+                        <p style="float:center;">
+                            <a class="btn btn-secondary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Período de Faturamento</a>
+                            <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Bandeiras Tarifárias</button>
+                        </p>
+                          <div class="row">
+                            <div class="col">
+                              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                <div class="card card-body">
+                                    <p>
+                                        <span>Data de Emissão <input type="text" class="form-control" style="width:10em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>                                
+                                        <span>Leitura Anterior <input type="text" class="form-control" style="width:10em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
+                                    </p>
+                                    <p>
+                                        <span>Leitura Atual <input type="text" class="form-control" style="width:10em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
+                                        <span>Próxima Leitura <input type="text" class="form-control" style="width:10em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
+                                        <span>Nº Dias De Faturamento <input type="text" class="form-control" style="width:10em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
+                                    </p>                                
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                <div class="card card-body">
+                                    <p>
+                                        <span>Bandeira Tarifária Vigente <input type="text" class="form-control" style="width:15em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
+                                    </p>
+                                    <p>
+                                        <span>Data Início <input type="text" class="form-control" style="width:15em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
+                                    </p>
+                                    <p>    
+                                        <span>Data Término <input type="text" class="form-control" style="width:15em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
+                                    </p>                                
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                           <p style="color:black;background-color:rgb(163, 163, 163); text-align: center; width: 50em;">Descrição de Consumo</p>
+                           <p>
+                            <span>Leitura Anterior <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
+                            <span>Leitura Atual <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
+                            <span>Const.Mult. <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
+                            <span>Qtde. kWh mês <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
+                           </p>
+                           <p style="color:black;background-color:rgb(163, 163, 163); text-align: center; width: 50em;">Detalhes de Faturamento</p>
+                           <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Descrição do Produto</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Tarifa Aplicada</th>
+                                <th scope="col">Valor Fonec</th>
+                                <th scope="col">Tarifa c/ Impostos</th>
+                                <th scope="col">B. CALC. ICMS</th>
+                                <th scope="col">B. CALC. PIS/COFINS</th>
+
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">TUSD - Consumo</th>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <table class="table">
+                              <tbody>
+                                <th scope="row">Itens Financeiros</th>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;" placeholder="Valor"></td>
+                              </tbody>
+                          </table>
+
+                          <table class="table table-hover">
+                            <thead style="background-color: rgb(255, 0, 0); color: white;">
+                              <tr>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Base de Cálculo</th>
+                                <th scope="col">Aliquota(%)</th>
+                                <th scope="col">Valor(R$)</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">PIS</th>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">COFINS</th>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">ICMS</th>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      </div>
                 </div>
             </div>
 

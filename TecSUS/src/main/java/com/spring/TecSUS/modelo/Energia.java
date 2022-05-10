@@ -49,10 +49,14 @@ public class Energia {
     //Tributos
     private Float pis_bcalc;
     private Float cofins_bcalc;
+    private Float icms_bcalc;
     private Float pis_aliqota;
     private Float cofins_aliqota;
+    private Float icms_aliqota;
     private Float pis_valor;
     private Float cofins_valor;
+    private Float icms_valor;
+    
 
     @ManyToOne
     @JoinColumn(name="contrato_id", nullable = false)
@@ -340,6 +344,30 @@ public class Energia {
 
     public void setInstalacao(Instalacao instalacao) {
         this.instalacao = instalacao;
+    }
+
+    public Float getIcms_bcalc() {
+        return icms_bcalc;
+    }
+
+    public void setIcms_bcalc(Float icms_bcalc) {
+        this.icms_bcalc = icms_bcalc;
+    }
+
+    public Float getIcms_aliqota() {
+        return icms_aliqota;
+    }
+
+    public void setIcms_aliqota(Float icms_aliqota) {
+        this.icms_aliqota = icms_aliqota;
+    }
+
+    public Float getIcms_valor() {
+        return icms_valor;
+    }
+
+    public void setIcms_valor(Float icms_valor) {
+        this.icms_valor = icms_valor;
     }
 
     
