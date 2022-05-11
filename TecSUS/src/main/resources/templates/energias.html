@@ -102,22 +102,26 @@
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
             <h2>Contas de Energia</h2>
-            <table class="table table-hover" >
-                <thead>
+            <h4>Mêses</h4>
+            <table class="table table-gray" style="font-weight: bold;background-color: rgb(255, 255, 255); color:rgb(255, 0, 0);">
+
+                <tbody>
                   <tr>
-                    <th scope="col">ID:</th>
-                    <th scope="col">Nome:</th>
-                    <th scope="col">Tipo de Serviço:</th>
-                    <th scope="col">Concessionária</th>
+                    <td><button type="button" class="btn btn-danger">Janeiro<br><i class="far fa-lightbulb"></i></button></td>
+                    <td><button type="button" class="btn btn-danger">Fevereiro<br><i class="far fa-lightbulb"></i></button></td>
+                    <td><button type="button" class="btn btn-danger">Março<br><i class="far fa-lightbulb"></i></button></td>
+                    <td><button type="button" class="btn btn-danger">Abril<br><i class="far fa-lightbulb"></i></button></td>
+                    <td><button type="button" class="btn btn-danger">Maio<br><i class="far fa-lightbulb"></i></button></td>
+                    <td><button type="button" class="btn btn-danger">Junho<br><i class="far fa-lightbulb"></i></button></td>
+                    </tr>
+                  <tr>
+                    <td><button type="button" class="btn btn-danger">Julho<br><i class="far fa-lightbulb"></i></button></td>
+                    <td><button type="button" class="btn btn-danger">Agosto<br><i class="far fa-lightbulb"></i></button></td>
+                    <td><button type="button" class="btn btn-danger">Setembro<br><i class="far fa-lightbulb"></i></button></td>
+                    <td><button type="button" class="btn btn-danger">Outubro<br><i class="far fa-lightbulb"></i></button></td>
+                    <td><button type="button" class="btn btn-danger">Novembro<br><i class="far fa-lightbulb"></i></button></td>
+                    <td><button type="button" class="btn btn-danger">Dezembro<br><i class="far fa-lightbulb"></i></button></td>                    
                   </tr>
-                </thead>
-                <tbody >
-                    <tr th:each="cliente : ${clientes}">
-                        <td th:text="${cliente[0]}"></td>
-                        <td th:text="${cliente[1]}"></td>
-                        <td th:text="${cliente[2]}"></td>
-                        <td th:text="${cliente[3]}"></td>
-                    </tr> 
                 </tbody>
               </table>
 

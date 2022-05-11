@@ -1,3 +1,5 @@
+
+  
 package com.spring.TecSUS;
 
 import java.io.File;
@@ -23,7 +25,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 
-import ch.qos.logback.core.util.FileSize;
 
 
 @DataJpaTest
@@ -39,21 +40,22 @@ class TecSusApplicationTests {
 	@Test
 	@Rollback(false)
 	void testInsertConta() throws IOException {
-		File file = new File("C:\\Users\\Felipe\\Documents\\Curriculo.pdf");
+		File file = new File("C:\\Users\\eduar\\Downloads\\09_PACER.pdf");
+
 		Conta conta = new Conta();
 		conta.setName(file.getName());
-
-		byte[] bytes = Files.readAllBytes(file.toPath()); 
+		byte[] bytes = Files.readAllBytes(file.toPath());
 		conta.setContent(bytes);
-		long contaSize = bytes.length; 
-		conta.setSize(contaSize);
+		long fileSize = bytes.length;
+		conta.setSize(fileSize);
 		conta.setUploadTime(Date.valueOf(LocalDate.now(ZoneId.of("UTC"))));
 
 		Conta savedConta = repo.save(conta);
 
-		Conta existConta = entityManager.find(Conta.class, savedConta.getConta_id());
 
-		assertThat(existConta.getSize()).isEqualTo(contaSize);
+		Conta existConta = entityManager.find(Conta.class,savedConta.getConta_id());
+
+		assertThat(existConta.getSize()).isEqualTo(fileSize);
 	}
 
 }

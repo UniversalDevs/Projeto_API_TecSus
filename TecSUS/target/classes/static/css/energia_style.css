@@ -287,3 +287,27 @@ a.article:hover {
     color: rgb(65, 63, 63);
     font-weight: bold;
 }
+
+.btn.btn-danger{
+    width: 6em;
+    height: 8em;
+    background-color: #fd0000;
+    font-weight: bold;
+}
+
+.btn.btn-danger:hover{
+    width: 6em;
+    height: 8em;
+    background-color: #a30000;
+    color: #ffffff;
+}
+.far.fa-lightbulb{
+    padding-top:15px;
+    font-size: 2em;
+}
+
+.far.fa-lightbulb:hover{
+    color: rgb(230, 255, 8);
+    box-shadow:0 0 1em gold;
+     background-color: rgba(255, 255, 0, 0.233); 
+}

@@ -6,7 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.querydsl.sql.Column;
@@ -29,6 +31,20 @@ public class Conta {
 
     @Lob
     private byte[] content;
+
+    @ManyToOne
+    @JoinColumn(name =  "codigo_identificador", nullable = false)
+    private Instalacao instalacao;
+
+    
+
+    public Instalacao getInstalacao() {
+        return instalacao;
+    }
+
+    public void setInstalacao(Instalacao instalacao) {
+        this.instalacao = instalacao;
+    }
 
     public Long getConta_id() {
         return conta_id;
