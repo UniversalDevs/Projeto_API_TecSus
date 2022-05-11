@@ -108,18 +108,19 @@
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
             <hr>
-
-            <form th:action="@{/energias/contas/novo}" method="post" enctype="multipart/form-data"
-            style="max-width: 600px;">
-                <div class="border rounded m-3">
-                    <h4>Envie sua conta:</h4>
+            <div class="text-success">
+            </div>
+            <form method="post" th:action="@{/upload}" enctype="multipart/form-data">
+                <div class="form-group col-6">
+                    <h5>Adicionar Conta</h5>
                     <p>
-                        <input type="file" name="conta" required/>
+                        <input type="file" class="form-control" name="document" required />
                     </p>
                     <p>
-                        <input type="submit" value="Upload" class="btn btn-primary">
+                        <input type="submit" value="Enviar" class="btn btn-success"/>
                     </p>
                 </div>
+                
             </form>
         </div>
     </div>

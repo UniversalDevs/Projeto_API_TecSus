@@ -27,6 +27,7 @@ public class Conta {
 
     private Date uploadTime;
 
+    @Lob
     private byte[] content;
 
     public Long getConta_id() {
@@ -69,8 +70,6 @@ public class Conta {
         this.content = content;
     }
 
-    
-    
     
     
 }
