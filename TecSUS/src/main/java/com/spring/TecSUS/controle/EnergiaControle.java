@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -37,6 +38,8 @@ public class EnergiaControle {
     public ModelAndView listarClientesAndView(){
         ModelAndView mv = new ModelAndView("energias");
         mv.addObject("clientes", acao.findClientes());
+        List<Concessionaria> concessionaria = acaoConcessonaria.findAll();
+        mv.addObject("concessionarias", concessionaria);
         return mv;
     }
 
@@ -53,5 +56,15 @@ public class EnergiaControle {
         model.addAttribute("listInstalacoes", listInstalacoes);
         model.addAttribute("listContratos", listContratos);
         return "energiaForm";
+    }
+
+    //Descricao Clientes
+    @GetMapping("/energias/concessionarias/{conc_id}")
+    public ModelAndView detalhesClienteEnergia(@PathVariable long conc_id){
+        ModelAndView mv = new ModelAndView("energiaCliente");
+        Concessionaria concessionaria = acaoConcessonaria.findById(conc_id);
+        List<Contrato> contratos = acaoContrato.findByConcessionaria(concessionaria);
+        mv.addObject("contratos", contratos);
+        return mv;
     }
 }

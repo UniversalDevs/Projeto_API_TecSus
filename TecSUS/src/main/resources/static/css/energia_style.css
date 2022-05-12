@@ -288,19 +288,7 @@ a.article:hover {
     font-weight: bold;
 }
 
-.btn.btn-danger{
-    width: 6em;
-    height: 8em;
-    background-color: #fd0000;
-    font-weight: bold;
-}
 
-.btn.btn-danger:hover{
-    width: 6em;
-    height: 8em;
-    background-color: #a30000;
-    color: #ffffff;
-}
 .far.fa-lightbulb{
     padding-top:15px;
     font-size: 2em;

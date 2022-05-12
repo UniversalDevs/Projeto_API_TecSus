@@ -101,30 +101,37 @@
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
-            <h2>Contas de Energia</h2>
-            <h4>Mêses</h4>
-            <table class="table table-gray" style="font-weight: bold;background-color: rgb(255, 255, 255); color:rgb(255, 0, 0);">
-
+            <p></p>
+            <h2>Concessionárias</h2>
+              <!-- <table class="table table-hover" >
+                <thead>
+                  <tr>
+                    <th scope="col">ID Cliente:</th>
+                    <th scope="col">Cliente:</th>
+                    <th scope="col">Concessionária:</th>
+                    <th scope="col">Serviço:</th>
+                  </tr>
+                </thead>
                 <tbody>
+                    <tr th:each="cliente : ${clientes}">
+                        <td th:text="${cliente[0]}"></td>
+                        <td><a th:href="@{'/energias/cliente/' + ${cliente[0]}}" th:text="${cliente[1]}"></a></td>
+                        <td th:text="${cliente[3]}"></td>
+                        <td th:text="${cliente[4]}"></td>
+                  </tr>
+                </tbody>
+              </table> -->
+
+              <table class="table table-hover table-dark" style="width:20em;">
+
+                <tbody th:each="conc : ${concessionarias}">
                   <tr>
-                    <td><button type="button" class="btn btn-danger">Janeiro<br><i class="far fa-lightbulb"></i></button></td>
-                    <td><button type="button" class="btn btn-danger">Fevereiro<br><i class="far fa-lightbulb"></i></button></td>
-                    <td><button type="button" class="btn btn-danger">Março<br><i class="far fa-lightbulb"></i></button></td>
-                    <td><button type="button" class="btn btn-danger">Abril<br><i class="far fa-lightbulb"></i></button></td>
-                    <td><button type="button" class="btn btn-danger">Maio<br><i class="far fa-lightbulb"></i></button></td>
-                    <td><button type="button" class="btn btn-danger">Junho<br><i class="far fa-lightbulb"></i></button></td>
-                    </tr>
-                  <tr>
-                    <td><button type="button" class="btn btn-danger">Julho<br><i class="far fa-lightbulb"></i></button></td>
-                    <td><button type="button" class="btn btn-danger">Agosto<br><i class="far fa-lightbulb"></i></button></td>
-                    <td><button type="button" class="btn btn-danger">Setembro<br><i class="far fa-lightbulb"></i></button></td>
-                    <td><button type="button" class="btn btn-danger">Outubro<br><i class="far fa-lightbulb"></i></button></td>
-                    <td><button type="button" class="btn btn-danger">Novembro<br><i class="far fa-lightbulb"></i></button></td>
-                    <td><button type="button" class="btn btn-danger">Dezembro<br><i class="far fa-lightbulb"></i></button></td>                    
+                    <td><a th:href="@{'/energias/concessionarias/' + ${conc.conc_id}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true" th:text="${conc.conc_nome}"></a>
+                        <span class="badge badge-primary badge-pill" th:text="${conc.conc_id}"></span>
+                    </td>
                   </tr>
                 </tbody>
               </table>
-
             <div class="line"></div>
 
             <h2>Lorem Ipsum Dolor</h2>
