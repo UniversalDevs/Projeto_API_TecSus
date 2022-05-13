@@ -103,19 +103,8 @@
             </button>
             <hr>
              
-            <!-- <ol class="list-group" th:each="contrato : ${contratos}">
-
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">Contrato</div>
-                            <a href=""><h5 th:text="${contrato.concessionaria.conc_nome}"></h5></a>
-                        </div>
-                    <span class="badge bg-primary rounded-pill" th:text="${contrato.contrato_id}"></span>
-                </li>
-            </ol>
-            <p></p>
              <div class="card" style="width: 50em; margin-left: auto; margin-right: auto;">
-                <div class="card-header" style="background-color: #ca292967;">
+                <div class="card-header" style="background-color: #d6282881;">
                     <h3>
                         Cliente:
                         <small class="text-muted" th:text="${cliente.cli_id}"></small>
@@ -127,31 +116,19 @@
                   <li class="list-group-item"><strong>RG: <p class="fw-normal" th:text="${cliente.cli_rg}"></p></strong></li>
                   <li class="list-group-item"><strong>CPF:<p class="fw-normal" th:text="${cliente.cli_cpf}"></p></strong></li>
                 </ul> 
+                <h5 style="margin-left: 1em;"> Instalações</h5>
+                <ul class="list-group" th:each="instalacao : ${instalacoes}">
+                    <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                        <a class="btn btn-danger" th:href="@{'/energias/concessionarias/cliente/conta/' + ${instalacao.codigo_identificador}}" role="button" th:text="${instalacao.numero_medidor}">Link</a>
+                        <span class="badge badge-primary badge-pill" th:text="${instalacao.codigo_identificador}"></span>
+                    </li>
+                  </ul>
+                  
                 <p></p>
                 <a href="/energias" class="btn btn-success btn-lg active" role="button" aria-pressed="true" style="margin-left: auto; margin-right: auto; width: 4.5em;">Voltar</a>
                 <p></p>
-            </div> -->
-
-            <table class="table table-hover" >
-                <thead>
-                  <tr>
-                    <th scope="col">ID:</th>
-                    <th scope="col">Nome:</th>
-                    <th scope="col">Cidade:</th>
-                    <th scope="col">Estado:</th>
-                  </tr>
-                </thead>
-                <tbody>
-                     <tr th:each="contrato : ${contratos}">
-                    <th scope="row" th:text="${contrato.cliente.cli_id}"></th>
-                    <td scope="row" th:text="${contrato.cliente.cli_nome}"></td> 
-                    <td scope="row" th:text="${contrato.cidade}"></td> 
-                    <td scope="row" th:text="${contrato.estado}"></td> 
-                    </tr>                   
-                      <td></td>
-                  </tr>
-                </tbody>
-              </table>
+                <!-- style="margin-left: auto; margin-right: auto;" -->
+            </div>
            
            
             <div class="line"></div>

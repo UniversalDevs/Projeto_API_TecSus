@@ -236,6 +236,12 @@
                       <h3> Adicionar <span class="badge bg-secondary">Instalação</span></h3>
                       <form method="post" style="width: 40em; margin-left: 10px;">
                         <div class="form-group">
+                          <input type="text" class="form-control" name="cli_id" th:value="${contrato.concessionaria.conc_id}" readonly>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="cli_id" th:value="${contrato.cliente.cli_id}" readonly>
+                        </div>
+                        <div class="form-group">
                           <input type="text" class="form-control" name="contrato_id" th:value="${contrato_id}" readonly>
                          </div>
                            <div class="form-group">

@@ -105,38 +105,45 @@
 
             <div class="form-group">
                 <div class="linha1">
-                    <p><span>Concessionária <input type="text" class="form-control" ></span> <span style="float:right; margin-right: 15em;">CNPJ <input type="text" class="form-control" ></span></p>
-                    <p><span>Endereço <input type="text" class="form-control" ></span> <span style="float:right; margin-right: 15em;">I.E. <input type="text" class="form-control" ></span></p>
-                    <p><span>Caixa Postal <input type="text" class="form-control" ></span> <span style="float:right; margin-right: 15em;">Insc. Única Reg. Esp. <input type="text" class="form-control" ></span></p>
-                    <p><span>CEP <input type="text" class="form-control" ></span></p>
+                    <p><span>Concessionária <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_nome}" readonly></span> <span style="float:right; margin-right: 15em;">CNPJ <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cnpj}" readonly></span></p>
+                    <p><span>Endereço <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_end}" readonly></span> <span style="float:right; margin-right: 15em;">I.E. <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_IE}" readonly></span></p>
+                    <p><span>Caixa Postal <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cxpst}" readonly></span> <span style="float:right; margin-right: 15em;">Insc. Única Reg. Esp. <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_inscricao_unica_reg}" readonly></span></p>
+                    <p><span>CEP <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
                 </div>
                 <p style="margin-top: 5em; color: black; font-weight: bold; border-bottom: 3px solid #fd0000;">Cliente/Local de Consumo</p>
                 <div class="linha1">
-                    <p><span>Cliente <input type="text" class="form-control" ></span> <span style="float:right; margin-right: 15em;">CNPJ/CPF <input type="text" class="form-control" ></span></p>                    
-                    <p><span style="float: left;">Endereço <input type="text" class="form-control" ></span> 
-                        <span style="float:left; margin-left: 20em;">Nº <input type="text" class="form-control" style="width:4em; margin-right: 1em;"></span>
-                        <span>Complemento <input type="text" class="form-control" style="width:20em;"></span>
+                    <p>
+                        <span>Cliente 
+                            <input type="text" class="form-control" th:value="${contrato.cliente.cli_nome}" readonly/>
+                        </span> 
+                        <span style="float:right; margin-right: 15em;">CNPJ/CPF 
+                            <input type="text" class="form-control" th:value="${contrato.cliente.cli_cpf}" readonly/>
+                        </span></p>                    
+                    <p>
+                        <span style="float: left;">Endereço 
+                            <input type="text" style="width: 30em; margin-right:1em;" class="form-control" th:value="${contrato.endereco}" readonly/>
+                        </span> 
                     </p>   
                     <p>
-                        <span>CEP <input type="text" class="form-control" style="width:10em; margin-right: 1em;"></span>
-                        <span>Bairro <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
-                        <span>Cidade <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
-                        <span>Estado <input type="text" class="form-control" style="width:5em; margin-right: 1em;"></span>
+                        <span>CEP <input type="text" class="form-control" style="width:10em; margin-right: 1em;" th:value="${contrato.cep}" readonly/></span>
+                        <span>Bairro <input type="text" class="form-control" style="width:15em; margin-right: 1em;"  th:value="${contrato.bairro}" readonly/></span>
+                        <span>Cidade <input type="text" class="form-control" style="width:20em; margin-right: 1em;"  th:value="${contrato.cidade}" readonly/></span>
+                        <span>Estado <input type="text" class="form-control" style="width:5em; margin-right: 1em;"  th:value="${contrato.estado}" readonly/></span>
                     </p>
                     <p>
-                        <span>Grupo/Subgrupo <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
-                        <span>Classe/Subclasse <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
+                        <span>Grupo/Subgrupo <input type="text" class="form-control" style="width:20em; margin-right: 1em;" th:value="${instalacao.grupo_subgrupo}" readonly/></span>
+                        <span>Classe/Subclasse <input type="text" class="form-control" style="width:20em; margin-right: 1em;" th:value="${instalacao.classe_subclasse}" readonly/></span>
                     </p>
                     <p>
-                        <span>Cod. Identificador <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
-                        <span>Cod. Fiscal de Operação <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
+                        <span>Cod. Identificador <input type="text" class="form-control" style="width:20em; margin-right: 1em;" th:value="${instalacao.codigo_identificador}" readonly/></span>
+                        <span>Cod. Fiscal de Operação <input type="text" class="form-control" style="width:20em; margin-right: 1em;" th:value="${instalacao.codigo_fiscal_operacao}" readonly/></span>
                     </p> 
                     <p>
-                        <span>Tensão Nominal <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
-                        <span>Roteiro de Leitura <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
+                        <span>Tensão Nominal <input type="text" class="form-control" style="width:20em; margin-right: 1em;" th:value="${instalacao.tensao_nominal}" readonly/></span>
+                        <span>Roteiro de Leitura <input type="text" class="form-control" style="width:20em; margin-right: 1em;" th:value="${instalacao.roteiro_leitura}" readonly/></span>
                     </p>
                     <p>
-                        <span>Nº Medidor <input type="text" class="form-control" style="width:20em; margin-right: 1em;"></span>
+                        <span>Nº Medidor <input type="text" class="form-control" style="width:20em; margin-right: 1em;" th:value="${instalacao.numero_medidor}" readonly/></span>
                     </p>    
                     <p style="margin-top: 5em; color: black; font-weight: bold; border-bottom: 3px solid #fd0000;">Dados da Conta</p>             
                     <p></p>
@@ -147,7 +154,7 @@
                     </p>
                       <div class="collapse" id="collapseExample">
                         <div class="card card-body">
-                            <embed th:src="@{/docs/pdf_exemplo.pdf}" type="application/pdf" width="700px" height="630px">
+                            <embed th:src="@{conta.name}" type="application/pdf" width="700px" height="630px">
                         </div>
                       </div>
                       <p style="float: right;"><span style="float:right; margin-right: 15em;">Conta Do Mês <input type="text" class="form-control" style="border: 1px solid gray;"></span></p>

@@ -98,34 +98,30 @@
 
         <!-- Page Content  -->
         <div id="content">
-            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                <div class="card-header" th:if="${mensagem}"></div>
-                <div class="card-body">
-                  <p class="card-text" th:text="${mensagem}"></p>
-                </div>
-              </div>
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
             <hr>
             <div class="text-success">
             </div>
-            <form method="post" th:action="@{/upload}" enctype="multipart/form-data">
-                <div class="form-group col-6">
-                    <h5>Adicionar Conta</h5>
-                    <p>
-                        <input type="file" class="form-control" name="document" required />
-                    </p>
-                    <p>
-                        <input type="submit" value="Enviar" class="btn btn-success"/>
-                    </p>
-                    <p>
-                        <select class="form-control" name="" id="" required>
-                            
-                        </select>
-                    </p>
+            <form method="post" th:action="@{'/energias/concessionarias/cliente/conta/upload/' + ${dados.contrato.contrato_id} + '/' + ${dados.codigo_identificador}}" enctype="multipart/form-data">
+                <div class="form-group">
+                    <h5>Cliente</h5>
+                    <input  class="form-group" type="text" th:value="${dados.cliente.cli_id}" readonly>
                 </div>
-                
+                <div class="form-group">
+                    <h5>Concessionária</h5>
+                    <input type="text" class="form-group" th:value="${dados.concessionaria.conc_id}">
+                </div>
+                <div class="form-group">
+                    <h5>Instalação</h5>
+                    <input  class="form-group" type="text" th:value="${instalacao.codigo_identificador}" readonly>
+                </div>
+                <div class="form-group">
+                    <h5>Adicionar Conta</h5>
+                    <input type="file" class="form-control" name="document" required />
+                </div>
+                    <input type="submit" value="Enviar" class="btn btn-success"/>    
             </form>
         </div>
     </div>
