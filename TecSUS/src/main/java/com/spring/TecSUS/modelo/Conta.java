@@ -29,6 +29,8 @@ public class Conta {
 
     private Date uploadTime;
 
+    private String type;
+
     @Lob
     private byte[] content;
 
@@ -46,6 +48,14 @@ public class Conta {
     private Instalacao instalacao;
 
     
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public Cliente getCliente() {
         return cliente;

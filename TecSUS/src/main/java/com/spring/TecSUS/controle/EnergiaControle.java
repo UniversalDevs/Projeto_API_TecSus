@@ -2,6 +2,7 @@ package com.spring.TecSUS.controle;
 
 import java.util.List;
 
+import com.google.common.net.MediaType;
 import com.spring.TecSUS.modelo.Cliente;
 import com.spring.TecSUS.modelo.Concessionaria;
 import com.spring.TecSUS.modelo.Conta;
@@ -16,11 +17,16 @@ import com.spring.TecSUS.repositorio.EnergiaRepositorio;
 import com.spring.TecSUS.repositorio.InstalacaoRepositorio;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
+
+
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -82,6 +88,20 @@ public class EnergiaControle {
         mv.addObject("instalacoes", instalacoes);
         return mv;
     }
+
+    // @GetMapping("conta/{conta_id}")
+    // public ResponseEntity<Resource> obterArquivo(@PathVariable long conta_id){
+    //     Resource recurso = acaoConta.findById(conta_id);
+    //     if(recurso == null) {
+    //         ResponseEntity<Resource> resposta = new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    //         return resposta;
+    //     }
+    //     else{
+    //         Conta conta = acaoConta.findById(conta_id);
+    //         MediaType tipoArquivo = MediaType.parseMediaType(conta.getType());
+    //         ResponseEntity<Resource> resposta = ResponseEntity.ok().contentType(tipoArquivo).body(recurso);
+    //     }
+    // }
 
 
 }

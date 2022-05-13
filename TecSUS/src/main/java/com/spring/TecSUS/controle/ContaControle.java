@@ -91,6 +91,7 @@ public class ContaControle {
         conta.setCliente(contrato.getCliente());
         conta.setConcessionaria(contrato.getConcessionaria());
         conta.setInstalacao(instalacao);
+        conta.setType(multipartFile.getContentType());
         acao.save(conta);
 
         ra.addFlashAttribute("mensagem", "Arquivo Enviado com sucesso!");
