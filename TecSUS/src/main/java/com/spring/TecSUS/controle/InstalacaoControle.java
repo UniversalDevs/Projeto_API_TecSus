@@ -51,4 +51,5 @@ public class InstalacaoControle {
         instalacaoService.save(instalacao);
         return "redirect:/instalacoes";
     }
+
 }
