@@ -67,4 +67,11 @@ public class EnergiaControle {
         mv.addObject("contratos", contratos);
         return mv;
     }
+
+
+    @GetMapping("/aguaForm")
+    public String getaguaaForm(Model model){
+     
+        return "aguaForm";
+    }
 }
