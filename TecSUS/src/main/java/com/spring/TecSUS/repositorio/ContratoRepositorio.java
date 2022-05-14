@@ -16,4 +16,8 @@ public interface ContratoRepositorio extends CrudRepository<Contrato, Long>{
     List<Contrato> findByConcessionaria(Concessionaria concessionaria);
     List<Contrato> findByCliente(Cliente cliente);
 
+    @Query(nativeQuery = true,value = "SELECT * FROM contratos WHERE tipo_servico = 'Água'")
+    List<Contrato> findConcessionaria();
+
+
 }

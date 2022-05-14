@@ -154,129 +154,136 @@
                     </p>
                       <div class="collapse" id="collapseExample">
                         <div class="card card-body">
-                            <embed th:src="@{conta.name}" type="application/pdf" width="700px" height="630px">
+                           <embed th:src="@{/download_conta}" type="application/pdf" width="700px" height="630px">
                         </div>
                       </div>
-                      <p style="float: right;"><span style="float:right; margin-right: 15em;">Conta Do Mês <input type="text" class="form-control" style="border: 1px solid gray;"></span></p>
 
-                      <div class="linha1">
-                          
-                        <p style="color: red;">
-                            <span >Valor Total A Pagar <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
-                            <span>Número da Instalação <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
-                        </p>
-                        <p style="color: red;">
-                            <span>Consumo Mês/ kWh <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
-                            <span>Data de Vencimento  <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
-                        </p>
-                        <p style="float:center;">
-                            <a class="btn btn-secondary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Período de Faturamento</a>
-                            <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Bandeiras Tarifárias</button>
-                        </p>
-                          <div class="row">
-                            <div class="col">
-                              <div class="collapse multi-collapse" id="multiCollapseExample1">
-                                <div class="card card-body">
-                                    <p>
-                                    <p>
-                                        <span>Data de Emissão <input type="text" class="form-control" style="width:10em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>                                
-                                        <span>Leitura Anterior <input type="text" class="form-control" style="width:10em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
-                                    </p>
-                                    <p>
-                                        <span>Leitura Atual <input type="text" class="form-control" style="width:10em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
-                                        <span>Próxima Leitura <input type="text" class="form-control" style="width:10em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
-                                        <span>Nº Dias De Faturamento <input type="text" class="form-control" style="width:10em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
-                                    </p>                                
+                      <form th:action="@{'/energias/' + ${contrato_id}+ '/' + ${codigo_identificador} + '/novo'}" method="post">
+                          <!-- <input type="text" name="cli_id" th:value="${contrato.cliente.cli_id}" readonly hidden>
+                          <input type="text" name="conc_id" th:value="${contrato.concessionaria.conc_id}" readonly hidden>
+                          <input type="text" name="contrato_id" th:value="${contrato.contrato_id}" readonly hidden>
+                          <input type="text" name="codigo_identificador" th:value="${instalacao.codigo_identificador}" readonly hidden> -->
+                        <div class="linha1">
+                            <p style="float: right;"><span style="float:right; margin-right: 15em;">Conta Do Mês <input type="text" name="mes_referencia" class="form-control" style="border: 1px solid gray;"></span></p>
+
+                            <p style="color: red;">
+                                <span >Valor Total A Pagar <input type="number" name="valor_total_a_pagar" class="form-control" style="width:15em; margin-right: 1em;"></span>
+                                <span>Número da Instalação <input type="text" th:value="${instalacao.codigo_identificador}" class="form-control" style="width:15em; margin-right: 1em;" readonly></span>
+                            </p>
+                            <p style="color: red;">
+                                <span>Consumo Mês/ kWh <input type="number" name="consumo_mes_kwh" class="form-control" style="width:15em; margin-right: 1em;"></span>
+                                <span>Data de Vencimento  <input type="text" name ="data_de_vencimento" class="form-control" style="width:15em; margin-right: 1em;"></span>
+                            </p>
+                            <p style="float:center;">
+                                <a class="btn btn-secondary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Período de Faturamento</a>
+                                <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Bandeiras Tarifárias</button>
+                            </p>
+                              <div class="row">
+                                <div class="col">
+                                  <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                    <div class="card card-body">
+                                        <p>
+                                        <p>
+                                            <span>Data de Emissão <input type="text" name="data_emissão" class="form-control" style="width:10em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>                                
+                                            <span>Leitura Anterior <input type="text" name="leitura_anterior" class="form-control" style="width:10em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
+                                        </p>
+                                        <p>
+                                            <span>Leitura Atual <input type="text" name="leitura_atual" class="form-control" style="width:10em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
+                                            <span>Próxima Leitura <input type="text" name="proxima_leitura" class="form-control" style="width:10em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
+                                            <span>Nº Dias De Faturamento <input type="text" name="dias_faturamento" class="form-control" style="width:10em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
+                                        </p>                                
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col">
+                                  <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                    <div class="card card-body">
+                                        <p>
+                                            <span>Bandeira Tarifária Vigente <input type="text" class="form-control" name="bandeira_tarifaria" style="width:15em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
+                                        </p>
+                                        <p>
+                                            <span>Data Início <input type="text" name="data_inicio" class="form-control" style="width:15em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
+                                        </p>
+                                        <p>    
+                                            <span>Data Término <input type="text" name="data_termino" class="form-control" style="width:15em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
+                                        </p>                                
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                            <div class="col">
-                              <div class="collapse multi-collapse" id="multiCollapseExample2">
-                                <div class="card card-body">
-                                    <p>
-                                        <span>Bandeira Tarifária Vigente <input type="text" class="form-control" style="width:15em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
-                                    </p>
-                                    <p>
-                                        <span>Data Início <input type="text" class="form-control" style="width:15em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
-                                    </p>
-                                    <p>    
-                                        <span>Data Término <input type="text" class="form-control" style="width:15em; margin-right: 1em; border: 1px solid rgb(56, 56, 56);"></span>
-                                    </p>                                
-                                </div>
-                              </div>
-                            </div>
+                               <p style="color:black;background-color:rgb(163, 163, 163); text-align: center; width: 50em;">Descrição de Consumo</p>
+                               <p>
+                                <span>Const.Mult. <input type="number" name="const_mult" class="form-control" style="width:15em; margin-right: 1em;"></span>
+                                <span>Qtde. kWh mês <input type="number" name="qtde_kwh_mes" class="form-control" style="width:15em; margin-right: 1em;"></span>
+                                <span>Leitura Anterior <input type="number" name="valor_leitura_anterior" class="form-control" style="width:15em; margin-right: 1em;"></span>
+                                <span>Leitura Atual <input type="number" name="valor_leitura_atual" class="form-control" style="width:15em; margin-right: 1em;"></span>
+                               </p>
+                               <p style="color:black;background-color:rgb(163, 163, 163); text-align: center; width: 50em;">Detalhes de Faturamento</p>
+                               <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Descrição do Produto</th>
+                                    <th scope="col">Quantidade</th>
+                                    <th scope="col">Tarifa Aplicada</th>
+                                    <th scope="col">Valor Fonec</th>
+                                    <th scope="col">Tarifa c/ Impostos</th>
+                                    <th scope="col">B. CALC. ICMS</th>
+                                    <th scope="col">B. CALC. PIS/COFINS</th>
+    
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">TUSD - Consumo</th>
+                                    <td><input type="number" name="tusd_qtd_kwh" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                    <td><input type="number" name="tusd_tarifa_aplicada" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                    <td><input type="number" name="tusd_valor_fornec" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                    <td><input type="number" name="tusd_tarifa_imposto" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                    <td><input type="number" name="tusd_bcalc_icms" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                    <td><input type="number" name="tusd_bcalc_piscofins" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <table class="table">
+                                  <tbody>
+                                    <th scope="row">Itens Financeiros</th>
+                                    <td><input type="number" name="contribuicao_municipal_valor" class="form-control" style="width:10em; margin-right: 1em;" ></td>
+                                  </tbody>
+                              </table>
+    
+                              <table class="table table-hover">
+                                <thead style="background-color: rgb(255, 0, 0); color: white;">
+                                  <tr>
+                                    <th scope="col">Descrição</th>
+                                    <th scope="col">Base de Cálculo</th>
+                                    <th scope="col">Aliquota(%)</th>
+                                    <th scope="col">Valor(R$)</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">PIS</th>
+                                    <td><input type="number" name="pis_bcalc" class="form-control" style="width:10em; margin-right: 1em;" ></td>
+                                    <td><input type="number" name="pis_aliqota" class="form-control" style="width:10em; margin-right: 1em;" ></td>
+                                    <td><input type="number" name="pis_valor" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">COFINS</th>
+                                    <td><input type="number" name="cofins_bcalc" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                    <td><input type="number" name="cofins_aliqota" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                    <td><input type="number" name="cofins_valor" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">ICMS</th>
+                                    <td><input type="number" name="icms_bcalc" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                    <td><input type="number" name="icms_aliqota" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                    <td><input type="number" name="icms_valor" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                  </tr>
+                                </tbody>
+                              </table>
                           </div>
-                           <p style="color:black;background-color:rgb(163, 163, 163); text-align: center; width: 50em;">Descrição de Consumo</p>
-                           <p>
-                            <span>Leitura Anterior <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
-                            <span>Leitura Atual <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
-                            <span>Const.Mult. <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
-                            <span>Qtde. kWh mês <input type="text" class="form-control" style="width:15em; margin-right: 1em;"></span>
-                           </p>
-                           <p style="color:black;background-color:rgb(163, 163, 163); text-align: center; width: 50em;">Detalhes de Faturamento</p>
-                           <table class="table">
-                            <thead>
-                              <tr>
-                                <th scope="col">Descrição do Produto</th>
-                                <th scope="col">Quantidade</th>
-                                <th scope="col">Tarifa Aplicada</th>
-                                <th scope="col">Valor Fonec</th>
-                                <th scope="col">Tarifa c/ Impostos</th>
-                                <th scope="col">B. CALC. ICMS</th>
-                                <th scope="col">B. CALC. PIS/COFINS</th>
-
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row">TUSD - Consumo</th>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                          <table class="table">
-                              <tbody>
-                                <th scope="row">Itens Financeiros</th>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;" placeholder="Valor"></td>
-                              </tbody>
-                          </table>
-
-                          <table class="table table-hover">
-                            <thead style="background-color: rgb(255, 0, 0); color: white;">
-                              <tr>
-                                <th scope="col">Descrição</th>
-                                <th scope="col">Base de Cálculo</th>
-                                <th scope="col">Aliquota(%)</th>
-                                <th scope="col">Valor(R$)</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row">PIS</th>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                              </tr>
-                              <tr>
-                                <th scope="row">COFINS</th>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                              </tr>
-                              <tr>
-                                <th scope="row">ICMS</th>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                <td><input type="text" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                      </div>
+                          <input type="submit" value="Salvar" class="btn btn-danger" style="margin-left: 30em;">
+                      </form>
                 </div>
             </div>
 

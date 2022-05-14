@@ -22,11 +22,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
-
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -64,8 +68,27 @@ public class EnergiaControle {
         Instalacao instalacao = acaoInstalacao.findById(codigo_identificador);
         model.addAttribute("contrato", contrato);
         model.addAttribute("instalacao", instalacao);
-        model.addAttribute("conta", conta);
+        model.addAttribute("conta", conta); 
         return "energiaForm";
+    }
+
+    @PostMapping(value ="/energias/{contrato_id}/{codigo_identificador}/novo")
+    public String cadastrarContaEnergia(@Validated Energia energia,BindingResult result, RedirectAttributes redirect, @PathVariable long codigo_identificador, @PathVariable long contrato_id){
+        Contrato contrato = acaoContrato.findById(contrato_id);
+        Instalacao instalacao = acaoInstalacao.findById(codigo_identificador);
+
+        if(result.hasErrors()){
+            redirect.addFlashAttribute("mensagem","Verifique todos os campos!");
+            return "/";
+
+        }
+        energia.setContrato(contrato);
+        energia.setInstalacao(instalacao);
+        energia.setCliente(contrato.getCliente());
+        energia.setConcessionaria(contrato.getConcessionaria());
+        acao.save(energia);
+        redirect.addFlashAttribute("mensagem", "Arquivo Enviado com sucesso!");
+        return "redirect:/energias";
     }
 
     //Descricao Clientes
@@ -89,19 +112,7 @@ public class EnergiaControle {
         return mv;
     }
 
-    // @GetMapping("conta/{conta_id}")
-    // public ResponseEntity<Resource> obterArquivo(@PathVariable long conta_id){
-    //     Resource recurso = acaoConta.findById(conta_id);
-    //     if(recurso == null) {
-    //         ResponseEntity<Resource> resposta = new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    //         return resposta;
-    //     }
-    //     else{
-    //         Conta conta = acaoConta.findById(conta_id);
-    //         MediaType tipoArquivo = MediaType.parseMediaType(conta.getType());
-    //         ResponseEntity<Resource> resposta = ResponseEntity.ok().contentType(tipoArquivo).body(recurso);
-    //     }
-    // }
+
 
 
 }

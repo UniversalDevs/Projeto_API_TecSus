@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet"  type="text/css" href="" th:href="@{/css/style.css}">
+    <link rel="stylesheet"  type="text/css" href="" th:href="@{/css/agua_style.css}">
 
     <!-- Font Awesome JS -->
 
@@ -50,10 +50,10 @@
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu" style="font-size: 1em;">
                         <li>
-                            <a href="/energias">Energia</a>
+                            <a href="#">Energia</a>
                         </li>
                         <li>
-                            <a href="/aguas">Água</a>
+                            <a href="#">Água</a>
                         </li>
                         <li>
                             <a href="#">Gás</a>
@@ -101,32 +101,37 @@
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
-            <h2>Cliente</h2>
-            <table class="table table-hover" >
+            <p></p>
+            <h2>Concessionárias</h2>
+              <!-- <table class="table table-hover" >
                 <thead>
                   <tr>
-                    <th scope="col">ID:</th>
-                    <th scope="col">Nome:</th>
-                    <th scope="col">Data de Nascimento:</th>
-                    <th scope="col">RG:</th>
-                    <th scope="col">CPF:</th>
+                    <th scope="col">ID Cliente:</th>
+                    <th scope="col">Cliente:</th>
+                    <th scope="col">Concessionária:</th>
+                    <th scope="col">Serviço:</th>
                   </tr>
                 </thead>
                 <tbody>
-                     <tr th:each="cliente : ${clientes}">
-                    <th scope="row" th:text="${cliente.cli_id}"></th>
-                    <td><a th:href="${(#mvc.url('CC#detalhesCliente').arg(0, cliente.cli_id)).build()}" th:text="${cliente.cli_nome}" style="text-decoration: none;"></a></td> 
-                    <td th:text="${cliente.data_nascimento}"></td>
-                    <td th:text="${cliente.cli_rg}"></td>
-                    <td th:text="${cliente.cli_cpf}"></td>
-                    </tr>                   
-                      <td></td>
+                    <tr th:each="cliente : ${clientes}">
+                        <td th:text="${cliente[0]}"></td>
+                        <td><a th:href="@{'/energias/cliente/' + ${cliente[0]}}" th:text="${cliente[1]}"></a></td>
+                        <td th:text="${cliente[3]}"></td>
+                        <td th:text="${cliente[4]}"></td>
                   </tr>
                 </tbody>
-              </table>
+              </table> -->
 
-              <a class="btn btn-primary" href="/clientes/novo" role="button">Cadastrar</a>
+    <table class="table table-hover table-dark" style="width:20em;">
 
+                    <tbody th:each="c : ${concessionarias}">
+                    <tr>
+                        <td><a th:href="@{'/aguas/concessionarias/' + ${c.concessionaria.conc_id}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" th:text="${c.concessionaria.conc_nome}"></a>
+                            <span class="badge badge-primary badge-pill" th:text="${c.concessionaria.conc_id}"></span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             <div class="line"></div>
 
             <h2>Lorem Ipsum Dolor</h2>
@@ -159,4 +164,4 @@
         });
     </script>
 </body>
-</html>
+</html> 

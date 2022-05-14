@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet"  type="text/css" href="" th:href="@{/css/energia_style.css}">
+    <link rel="stylesheet"  type="text/css" href="" th:href="@{/css/agua_style.css}">
 
     <!-- Font Awesome JS -->
 
@@ -109,18 +109,18 @@
 
             <div class="form-group">
                 <div class="linha1"> <!--ALTERAR CAMPOS DO BD     ALTERAR O TIPO DO SPAN PARA FACILITAR MOVIMENTAÇÃO-->
-                    <p><span>Fornecimento: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_nome}" readonly></span>             <span style="float:right; margin-right: 15em;">Número Documento: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cnpj}" readonly></span></p>
-                    <p><span>Número Documento: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_end}" readonly></span>          <span style="float:right; margin-right: 15em;">I.E. <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_IE}" readonly></span></p>
-                    <p><span>Data de Emissão: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cxpst}" readonly></span>         <span style="float:right; margin-right: 15em;">Insc. Única Reg. Esp. <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_inscricao_unica_reg}" readonly></span></p>
-                    <p><span>Tipo Fornecimento: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
-                    <p><span>Cliente: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
-                    <p><span>CEP: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
-                    <p><span>Endereço: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
-                    <p><span>Cód. CLiente: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
-                    <p><span>Inscrição Estatual: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
-                    <p><span>PDE/RGI: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
-                    <p><span>Hidrômetro: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
-                    <p><span>Lacre: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
+                   <p><span>Fornecimento: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_nome}" readonly></span>             
+                   <p><span>Número Documento: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_end}" readonly></span>          <span style="float:right; margin-right: 15em;">I.E. <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_IE}" readonly></span></p>
+                   <p><span>Data de Emissão: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cxpst}" readonly></span>         <span style="float:right; margin-right: 15em;">Insc. Única Reg. Esp. <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_inscricao_unica_reg}" readonly></span></p>
+                   <p><span>Tipo Fornecimento: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
+                   <p><span>Cliente: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
+                   <p><span>CEP: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
+                   <p><span>Endereço: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
+                   <p><span>Cód. CLiente: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
+                   <p><span>Inscrição Estatual: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
+                   <p><span>PDE/RGI: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
+                   <p><span>Hidrômetro: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
+                   <p><span>Lacre: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cep}" readonly></span></p>
                 </div>
 
                 <p style="margin-top: 5em; color: black; font-weight: bold; border-bottom: 3px solid #1E75F9;"></p>

@@ -50,10 +50,10 @@
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu" style="font-size: 1em;">
                         <li>
-                            <a href="/energias">Energia</a>
+                            <a href="#">Energia</a>
                         </li>
                         <li>
-                            <a href="/aguas">Água</a>
+                            <a href="#">Água</a>
                         </li>
                         <li>
                             <a href="#">Gás</a>
@@ -95,55 +95,37 @@
             </ul>
         </nav>
 
+
         <!-- Page Content  -->
         <div id="content">
-
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
-            <h2>Cliente</h2>
-            <table class="table table-hover" >
-                <thead>
-                  <tr>
-                    <th scope="col">ID:</th>
-                    <th scope="col">Nome:</th>
-                    <th scope="col">Data de Nascimento:</th>
-                    <th scope="col">RG:</th>
-                    <th scope="col">CPF:</th>
-                  </tr>
-                </thead>
-                <tbody>
-                     <tr th:each="cliente : ${clientes}">
-                    <th scope="row" th:text="${cliente.cli_id}"></th>
-                    <td><a th:href="${(#mvc.url('CC#detalhesCliente').arg(0, cliente.cli_id)).build()}" th:text="${cliente.cli_nome}" style="text-decoration: none;"></a></td> 
-                    <td th:text="${cliente.data_nascimento}"></td>
-                    <td th:text="${cliente.cli_rg}"></td>
-                    <td th:text="${cliente.cli_cpf}"></td>
-                    </tr>                   
-                      <td></td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <a class="btn btn-primary" href="/clientes/novo" role="button">Cadastrar</a>
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h3>Lorem Ipsum Dolor</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <hr>
+            <div class="text-success">
+            </div>
+            <form method="post" th:action="@{'/aguas/concessionarias/cliente/' + ${dados.contrato.contrato_id} + '/' + ${cliente.cli_id} + '/conta/' + ${instalacao.codigo_identificador} + '/upload'}" enctype="multipart/form-data">
+                <div class="form-group">
+                    <h5>Cliente</h5>
+                    <input  class="form-group" type="text" th:value="${dados.cliente.cli_id}" readonly>
+                </div>
+                <div class="form-group">
+                    <h5>Concessionária</h5>
+                    <input type="text" class="form-group" th:value="${dados.concessionaria.conc_id}">
+                </div>
+                <div class="form-group">
+                    <h5>Instalação</h5>
+                    <input  class="form-group" type="text" th:value="${instalacao.codigo_identificador}" readonly>
+                </div>
+                <div class="form-group">
+                    <h5>Adicionar Conta</h5>
+                    <input type="file" class="form-control" name="document" required />
+                </div>
+                    <input type="submit" value="Enviar" class="btn btn-success"/>    
+            </form>
         </div>
     </div>
-
+    
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
@@ -160,3 +142,5 @@
     </script>
 </body>
 </html>
+<!-- https://www.youtube.com/watch?v=ctwRpskAeIU&t=1434s -->
+<!-- 01:15:49 -->
