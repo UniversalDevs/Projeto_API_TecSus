@@ -23,7 +23,31 @@ public class Instalacao implements Serializable{
     @ManyToOne
     @JoinColumn(name = "contrato_id", nullable = false)
     private Contrato contrato;
+
+    @ManyToOne
+    @JoinColumn(name = "cli_id", nullable = false)
+    private Cliente cliente;
+
+    @ManyToOne
+    @JoinColumn(name = "conc_id", nullable = false)
+    private Concessionaria concessionaria;
     
+    public Concessionaria getConcessionaria() {
+        return concessionaria;
+    }
+
+    public void setConcessionaria(Concessionaria concessionaria) {
+        this.concessionaria = concessionaria;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
     public Contrato getContrato() {
         return contrato;
     }

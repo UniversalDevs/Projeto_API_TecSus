@@ -1,4 +1,4 @@
-package com.spring.TecSUS.controle;
+    package com.spring.TecSUS.controle;
 
 import java.util.List;
 
@@ -51,4 +51,5 @@ public class InstalacaoControle {
         instalacaoService.save(instalacao);
         return "redirect:/instalacoes";
     }
+
 }

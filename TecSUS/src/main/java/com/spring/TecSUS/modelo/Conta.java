@@ -29,14 +29,49 @@ public class Conta {
 
     private Date uploadTime;
 
+    private String type;
+
     @Lob
     private byte[] content;
+
+    @ManyToOne
+    @JoinColumn(name =  "cli_id", nullable = false)
+    private Cliente cliente;
+
+    @ManyToOne
+    @JoinColumn(name =  "conc_id", nullable = false)
+    private Concessionaria concessionaria;
+
 
     @ManyToOne
     @JoinColumn(name =  "codigo_identificador", nullable = false)
     private Instalacao instalacao;
 
     
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Concessionaria getConcessionaria() {
+        return concessionaria;
+    }
+
+    public void setConcessionaria(Concessionaria concessionaria) {
+        this.concessionaria = concessionaria;
+    }
 
     public Instalacao getInstalacao() {
         return instalacao;

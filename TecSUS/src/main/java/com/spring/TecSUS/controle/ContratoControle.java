@@ -120,6 +120,8 @@ public class ContratoControle {
             model.addAttribute("listInstalacoes", listInstalacoes);
             Contrato contrato =  acao.findById(contrato_id);
             instalacao.setContrato(contrato);
+            instalacao.setCliente(contrato.getCliente());
+            instalacao.setConcessionaria(contrato.getConcessionaria());
             acaoInstalacao.save(instalacao);
             return "redirect:/contratos/{contrato_id}";
         }
