@@ -107,6 +107,12 @@ public class EnergiaControle {
      
         return "aguaForm";
     }
+    @GetMapping("/visualizarContaAgua")
+    public String gevisualizarContaAgua(Model model){
+     
+        return "visualizarContaAgua";
+    }
+
 
     @GetMapping("/energias/concessionarias/cliente/{cli_id}")
     public  ModelAndView detalhesClienteEnergia(@PathVariable long cli_id){
