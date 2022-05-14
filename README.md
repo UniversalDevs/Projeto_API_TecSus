@@ -1,4 +1,4 @@
-<h1 align="center">:chart_with_upwards_trend: Sprint 1 :chart_with_upwards_trend:</h1>
+<h1 align="center">:chart_with_upwards_trend: Sprint 2 :chart_with_upwards_trend:</h1>
 <p align="center">
 <p>:ballot_box_with_check: Cadastro da Conta de Energia</p>
 <p>:ballot_box_with_check: Cadastro de Conta de Água</p>
@@ -15,8 +15,8 @@
 <hr>
 
 <h3>:heavy_exclamation_mark: Informações Destaque</h3>
-<p><strong> Duração:</strong> de 25/04/2022 à 15/05/2022</p>
-<p> O projeto do site encontra se em: <a href="">Backend Main</a>
+<p><strong> Duração da Sprint:</strong> de 25/04/2022 à 15/05/2022</p>
+<p> O projeto do site encontra-se em: <a href="">Backend Main</a>
 <hr>
 
 
