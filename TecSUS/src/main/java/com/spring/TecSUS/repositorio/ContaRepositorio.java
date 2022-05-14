@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 public interface ContaRepositorio extends JpaRepository<Conta, Long>{
     List<Conta> findAll();
     Conta findById(long conta_id);    
-    @Query(nativeQuery = true, value = "SELECT * FROM contas ORDER BY conta_id LIMIT 1")
+    @Query(nativeQuery = true, value = "SELECT * FROM contas ORDER BY conta_id DESC LIMIT 1")
     Conta findConta();
 
 }

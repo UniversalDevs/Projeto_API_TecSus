@@ -101,14 +101,13 @@ public class EnergiaControle {
         return mv;
     }
 
-<<<<<<< HEAD
 
     @GetMapping("/aguaForm")
     public String getaguaaForm(Model model){
      
         return "aguaForm";
     }
-=======
+
     @GetMapping("/energias/concessionarias/cliente/{cli_id}")
     public  ModelAndView detalhesClienteEnergia(@PathVariable long cli_id){
         ModelAndView mv = new ModelAndView("energiaCliente");
@@ -123,5 +122,5 @@ public class EnergiaControle {
 
 
 
->>>>>>> 74f3beaf598c69d05058b614543c490cb76fbc0d
+
 }

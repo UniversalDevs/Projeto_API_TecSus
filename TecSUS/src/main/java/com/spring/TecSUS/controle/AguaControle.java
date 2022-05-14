@@ -99,6 +99,8 @@ public class AguaControle {
             Instalacao instalacao = acaoInstalacao.findById(codigo_identificador);
             Cliente cliente = acaoCliente.findById(cli_id);
             Instalacao dados = acaoInstalacao.findDados(codigo_identificador);
+            Conta conta = acaoConta.findConta();
+            mv.addObject("conta", conta);
             mv.addObject("cliente", cliente);
             mv.addObject("dados", dados);
             mv.addObject("instalacao", instalacao);
@@ -119,8 +121,7 @@ public class AguaControle {
             conta.setConcessionaria(contrato.getConcessionaria());
             conta.setInstalacao(instalacao);
             conta.setType(multipartFile.getContentType());
-            acaoConta.save(conta);
-    
+            acaoConta.save(conta);    
             ra.addFlashAttribute("mensagem", "Arquivo Enviado com sucesso!");
     
             return "redirect:/aguas/concessionarias/cliente/{contrato_id}/{cli_id}/conta/{codigo_identificador}/novo";
@@ -131,7 +132,6 @@ public class AguaControle {
         public String cadastrarContaAgua(@Validated Agua agua,BindingResult result, RedirectAttributes redirect, @PathVariable long codigo_identificador, @PathVariable long contrato_id){
             Contrato contrato = acaoContrato.findById(contrato_id);
             Instalacao instalacao = acaoInstalacao.findById(codigo_identificador);
-    
             if(result.hasErrors()){
                 redirect.addFlashAttribute("mensagem","Verifique todos os campos!");
                 return "/";

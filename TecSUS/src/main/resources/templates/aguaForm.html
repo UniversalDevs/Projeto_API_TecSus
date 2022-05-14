@@ -11,11 +11,11 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-<<<<<<< HEAD
+
     <link rel="stylesheet"  type="text/css" href="" th:href="@{/css/aguaForm.css}">
-=======
+
     <link rel="stylesheet"  type="text/css" href="" th:href="@{/css/agua_style.css}">
->>>>>>> 74f3beaf598c69d05058b614543c490cb76fbc0d
+
 
     <!-- Font Awesome JS -->
 
@@ -41,23 +41,12 @@
                     <strong style="font-size: 20px; margin-bottom: -20px;"><p style="display: inline-block; font-weight: bold; color: #5652c7;">t</p><p style="display: inline-block; font-weight: bold; color: #74DB23">s</p></strong>
 
             </div>
-<<<<<<< HEAD
-            
-            <ul class="list-unstyled components" >
-
-                <li>
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-bars" style="color: white;"></i>
-                    </button>
-
-                    <a href="#" style="">
-=======
 
             <ul class="list-unstyled components" >
 
                 <li>
                     <a href="#" style=" ">
->>>>>>> 74f3beaf598c69d05058b614543c490cb76fbc0d
+
                         <i class="fas fa-home"></i>
                         Home
                     </a>
@@ -113,24 +102,43 @@
         </nav>
 
 
-
-<!----------------------------------------------------------------------------------------------------------------------------------------------------->
-
-    
         <!-- Page Content  -->
         <div id="content">
+
             <!--botao aqui do menu estava aqui-->
 
-            <!--barra pesquisa-->
-            <div class="d-flex justify-content-end">
-                <p><span class="border border-success rounded"><input class="form-control mr-sm-2" type="search" style="text-align: right; width: 30em; height:1.5em;" placeholder="Pesquisar" aria-label="Pesquisar"></span>
-                <button class="btn btn-outline-success my-2 my-sm-0" style="background-color:#5652c7; color: white; height:1.5em;"type="submit;">Voltar</button> </p>
-            </div>
 
+    <button type="button" id="sidebarCollapse" class="btn btn-info">
+        <i class="fas fa-bars" style="color: white;"></i>
+    </button>
+    <!--barra pesquisa-->
+    <div class="d-flex justify-content-end" style="float: right;">
+        <p><span style="margin-right: 1em;"><input class="form-control mr-sm-2 border border-success rounded" type="search" style="text-align: right; width: 30em; height:1.5em;" placeholder="Pesquisar" aria-label="Pesquisar"></span>
+        <button class="btn btn-outline-success my-2 my-sm-0" style="background-color:#5652c7; color: white; height:2em;"type="submit;">Voltar</button> </p>
+    </div>
+    <p></p>
+
+<center>
+    <p>
+        <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" style="align-items: center; justify-content: center;">Visualizar Fatura</a>
+    </p>
+
+      <div class="row">
+        <div class="col">
+          <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <div class="card card-body">
+                <center>
+                    <embed th:src="@{/download_conta}" type="application/pdf" width="700px" height="630px">
+                </center>
+            </div>
+          </div>
+        </div>
+      </div>
+</center>
 
             <div class="form-group">
                 <div class="linha1"> <!--ALTERAR CAMPOS DO BD  -->
-
+                    
                     <div class="d-flex justify-content-start">
                         <p><span>Fornecimento: <input type="text" class="form-control" style="margin-right: 9em;" readonly></span>             
                         <p><span>Número Documento: <input type="text" class="form-control" style="margin-right: 9em;"  readonly></span>
@@ -207,9 +215,10 @@
                   </tr>
                 </tbody>
               </table>
-
+              
             <input class="btn btn-primary" type="submit" style="width: 15em; margin-right:5em; margin-top: 2em;"value="Cadastrar">
             <input class="btn btn-primary" type="reset" style="width: 10em; margin-top: 2em;" value="Limpar">
+
 
     </div>
     
