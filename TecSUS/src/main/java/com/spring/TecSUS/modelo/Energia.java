@@ -19,7 +19,8 @@ public class Energia implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long energia_id;
-    
+    private String ano;
+    private String mes;
     private Float valor_total_a_pagar;
     private Integer consumo_mes_kwh;
     private String data_de_vencimento;
@@ -372,5 +373,22 @@ public class Energia implements Serializable{
         this.icms_valor = icms_valor;
     }
 
+    public String getAno() {
+        return ano;
+    }
+
+    public void setAno(String ano) {
+        this.ano = ano;
+    }
+
+    public String getMes() {
+        return mes;
+    }
+
+    public void setMes(String mes) {
+        this.mes = mes;
+    }
+
+    
     
 }

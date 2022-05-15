@@ -136,89 +136,122 @@
       </div>
 </center>
 
-            <div class="form-group">
-                <div class="linha1"> <!--ALTERAR CAMPOS DO BD  -->
-                    
-                    <div class="d-flex justify-content-start">
-                        <p><span>Fornecimento: <input type="text" class="form-control" style="margin-right: 9em;"  ></span>             
-                        <p><span>Número Documento: <input type="text" class="form-control" style="margin-right: 9em;"   ></span>
-                        <p><span>Data de Emissão: <input type="text" class="form-control"    ></span> 
-                    </div>
+<form th:action="@{'/aguas/concessionarias/cliente/' + ${contrato.contrato_id} + '/' + ${contrato.cliente.cli_id} + '/conta/' + ${instalacao.codigo_identificador} + '/novo'}" method="post">
+    <div class="form-group">
+        <div class="linha1"> <!--ALTERAR CAMPOS DO BD  -->
+            <div class="linha1" >
+                <p><span>Ano</span></p>
+                <select class="form-select form-select-sm"  style="width: 10em;" name="ano">
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                </select>             
+            </div>
+            <div class="linha1" >
+                <p><span>Mês</span></p>
+                <select class="form-select form-select-lg" style="width: 10em;" name="mes">
+                    <option value="Janeiro">Janeiro</option>
+                    <option value="Fevereiro">Fevereiro</option>
+                    <option value="Março">Março</option>
+                    <option value="Abril">Abril</option>
+                    <option value="Maio">Maio</option>
+                    <option value="Junho">Junho</option>
+                    <option value="Julho">Julho</option>
+                    <option value="Agosto">Agosto</option>
+                    <option value="Setembro">Setembro</option>
+                    <option value="Outubro">Outubro</option>
+                    <option value="Novembro">Novembro</option>
+                    <option value="Dezembro">Dezembro</option>
+                </select>             
+            </div>
+            <div class="d-flex justify-content-start">
+                <p><span>Fornecimento: <input type="text" class="form-control" style="margin-right: 9em;" th:value="${contrato.contrato_id}" readonly></span>             
+                <p><span>Número Documento: <input type="text" class="form-control" name="numero_documento" style="margin-right: 9em;"   ></span>
+                <p><span>Data de Emissão: <input type="text" class="form-control"  name="data_emissao" ></span> 
+            </div>
+            <p><span>Data de Vencimento: <input type="text" class="form-control"  name="data_vencimento" ></span> 
+            <p><span>Tipo Fornecimento: <input type="text" class="form-control"  name="fornecimento" ></span></p>
+            <p><span>Cliente: <input type="text" class="form-control" style="width:40em;" th:value="${contrato.cliente.cli_nome}" readonly></span></p>
 
-                    <p><span>Tipo Fornecimento: <input type="text" class="form-control"   ></span></p>
-                    <p><span>Cliente: <input type="text" class="form-control" style="width:78em;"  ></span></p>
-
-                    <div class="d-flex justify-content-start">
-                        <p><span>CEP: <input type="text" class="form-control" style="margin-right: 8em;"  ></span></p>
-                        <p><span>Endereço: <input type="text" class="form-control" style="width: 50em;"  ></span></p>
-                    </div>
-
-                    <div class="d-flex justify-content-start">
-                        <p><span>Cód. CLiente: <input type="text" class="form-control" style="margin-right: 38em;"  ></span></p>
-                        <p><span>Inscrição Estatual: <input type="text" class="form-control"   ></span></p>
-                    </div>
-
-                    <div class="d-flex justify-content-start">
-                        <p><span>PDE/RGI: <input type="text" class="form-control" style="margin-right: 8em;"  ></span></p>
-                        <p><span>Hidrômetro: <input type="text" class="form-control" style="margin-right: 10em;"  ></span></p>
-                        <p><span>Lacre: <input type="text" class="form-control"  ></span></p>
-                    </div>
-                </div>
-
-                <p style="margin-top: 2em; color: black; font-weight: bold; border-bottom: 3px solid #1E75F9;"></p>
-
-                <div class="linha1">
-                    <div class="d-flex justify-content-start">
-                        <p><span>Economias:<input type="text" class="form-control" style="margin-right: 38em;"  ></span></p>
-                        <p><span>Tipo de ligação:<input type="text" class="form-control"   /></span></p>   
-                    </div>
-
-                    <div class="d-flex justify-content-start">
-                        <p><span>Data da apresentação:   <input type="text"class="form-control" style="margin-right: 8em;" /> </span></p>
-                        <p><span>Proxima Leitura: <input type="text" class="form-control" style="margin-right: 10em;"  /></span></p>
-                        <p><span>Tipo Mercado: <input type="text" class="form-control"   /> </span></p>
-                    </div>
-                        <p><span>Condição de leitura: <input type="text" class="form-control" /></span></p>
-                    </p>                                                                                                               
-                </div>
+            <div class="d-flex justify-content-start">
+                <p><span>CEP: <input type="text" class="form-control" style="margin-right: 8em;" th:value="${contrato.cep}" readonly></span></p>
+                <p><span>Endereço: <input type="text" class="form-control" style="width: 50em;" th:value="${contrato.endereco}"readonly></span></p>
             </div>
 
+            <div class="d-flex justify-content-start">
+                <p><span>Cód. CLiente: <input type="text" class="form-control" style="margin-right: 38em;" th:value="${contrato.cliente.cli_id}" readonly></span></p>
+                <p><span>Inscrição Estatual: <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_IE}" readonly></span></p>
+            </div>
 
-            <!--mini relatorio-->
-            <!--<div class="form-group">
-                <div class="linha1">
-                    <div class="d-flex justify-content-start">
-                        <p><span>Leitura anterior: <input type="text" class="form-control" style="margin-right: 5em; width: 8em;"  ></span> </p>            
-                        <p><span>Leitura Atual: <input type="text" class="form-control" style="margin-right: 5em; width: 8em;"   ></span></p>
-                        <p><span>Consumo(M3): <input type="text" class="form-control" style="margin-right: 5em;"   ></span> </p>
-                        <p><span>Período: <input type="text" class="form-control"    ></span> </p>
-                    </div>
-                </div>
-            </div>-->
+            <div class="d-flex justify-content-start">
+                <p><span>PDE/RGI: <input type="text" class="form-control" style="margin-right: 8em;" th:value="${instalacao.codigo_identificador}" readonly></span></p>
+                <p><span>Hidrômetro: <input type="text" class="form-control" style="margin-right: 10em;" name="hidrometro" ></span></p>
+                <p><span>Lacre: <input type="text" class="form-control" name="lacre" ></span></p>
+            </div>
+        </div>
 
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col"> </th>
-                    <th scope="col">Leitura Anterior:</th>
-                    <th scope="col">Leitura Atual:</th>
-                    <th scope="col">Consumo (M3):</th>
-                    <th scope="col">Período: (M3):</th>
-                    <th scope="col">Média (M3):</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row"></th>
-                    <td>00 / 00 / 0000.</td>
-                    <td>00 / 00 / 0000.</td>
-                  </tr>
-                </tbody>
-              </table>
-              
-            <input class="btn btn-primary" type="submit" style="width: 15em; margin-right:5em; margin-top: 2em;"value="Cadastrar">
-            <input class="btn btn-primary" type="reset" style="width: 10em; margin-top: 2em;" value="Limpar">
+        <p style="margin-top: 2em; color: black; font-weight: bold; border-bottom: 3px solid #1E75F9;"></p>
 
+        <div class="linha1">
+            <div class="d-flex justify-content-start">
+                <p><span>Economias:<input type="text" class="form-control" style="margin-right: 38em;" name="economia" ></span></p>
+                <p><span>Tipo de ligação:<input type="text" class="form-control" name="tipo_ligacao"  /></span></p>   
+            </div>
+
+            <div class="d-flex justify-content-start">
+                <p><span>Data da apresentação:   <input type="text"class="form-control" style="margin-right: 8em;"  name="data_apresentacao"/> </span></p>
+                <p><span>Proxima Leitura: <input type="text" class="form-control" style="margin-right: 10em;" name="proxima_leitura" /></span></p>
+                <p><span>Tipo Mercado: <input type="text" class="form-control" name="tipo_mercado" /> </span></p>
+            </div>
+                <p><span>Condição de leitura: <input type="text" class="form-control" name="condicao_leitura"/></span></p>
+            </p>                                                                                                               
+        </div>
+    </div>
+
+<div class="linha1">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"> </th>
+            <th scope="col">Leitura Anterior:</th>
+            <th scope="col">Leitura Atual:</th>
+            <th scope="col">Consumo (M3):</th>
+            <th scope="col">Período: (M3):</th>
+            <th scope="col">Média (M3):</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td><input type="text" class="form-control" name="leitura_anterior"></td>
+            <td><input type="text" class="form-control" name="leitura_atual"></td>
+            <td><input type="number" class="form-control" name="consumo"></td>
+            <td><input type="text" class="form-control" name="periodo"></td>
+            <td><input type="number" class="form-control" name="media"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="linha1">
+          <h6 style="color: white; background-color:#1E75F9">DISCRIMINAÇÃO DO FATURAMENTO</h6>
+        <div class="d-flex justify-content-start" >
+            <p><span>Água:<input type="number" class="form-control" style="margin-right: 38em;" name="agua" ></span></p>
+        </div>
+        <div class="d-flex justify-content-start">
+            <p><span>Esgoto:<input type="number" class="form-control" style="margin-right: 38em;" name="esgoto" ></span></p>
+            <p><span>TOTAL (R$) VENCIMENTO:<input type="number" class="form-control" name="total" /></span></p>   
+        </div>
+        <div class="d-flex justify-content-start">
+            <p><span>Taxa:<input type="number" class="form-control" style="margin-right: 38em;" name="taxa" ></span></p> 
+        </div>
+      </div>
+</div>
+      
+       
+    <input class="btn btn-primary" type="submit" style="width: 15em; margin-right:5em; margin-top: 2em;"value="Cadastrar">
+
+</form>
 
     </div>
     

@@ -89,26 +89,26 @@ public class ContaControle {
         return mv;
     }
 
-    @PostMapping("/energias/concessionarias/cliente/conta/upload/{contrato_id}/{codigo_identificador}")
-    public String uploadFile(@PathVariable long contrato_id,@PathVariable long codigo_identificador,@RequestParam("document") MultipartFile multipartFile, RedirectAttributes ra) throws IOException{
-        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-        Contrato contrato = acaoContrato.findById(contrato_id);
-        Instalacao instalacao = acaoInstalacao.findById(codigo_identificador);
-        Conta conta = new Conta();
-        conta.setName(fileName);
-        conta.setContent(multipartFile.getBytes());
-        conta.setSize(multipartFile.getSize());
-		conta.setUploadTime(Date.valueOf(LocalDate.now(ZoneId.of("UTC"))));
-        conta.setCliente(contrato.getCliente());
-        conta.setConcessionaria(contrato.getConcessionaria());
-        conta.setInstalacao(instalacao);
-        conta.setType(multipartFile.getContentType());
-        acao.save(conta);
+    // @PostMapping("/energias/concessionarias/cliente/conta/upload/{contrato_id}/{codigo_identificador}")
+    // public String uploadFile(@PathVariable long contrato_id,@PathVariable long codigo_identificador,@RequestParam("document") MultipartFile multipartFile, RedirectAttributes ra) throws IOException{
+    //     String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+    //     Contrato contrato = acaoContrato.findById(contrato_id);
+    //     Instalacao instalacao = acaoInstalacao.findById(codigo_identificador);
+    //     Conta conta = new Conta();
+    //     conta.setName(fileName);
+    //     conta.setContent(multipartFile.getBytes());
+    //     conta.setSize(multipartFile.getSize());
+	// 	conta.setUploadTime(Date.valueOf(LocalDate.now(ZoneId.of("UTC"))));
+    //     conta.setCliente(contrato.getCliente());
+    //     conta.setConcessionaria(contrato.getConcessionaria());
+    //     conta.setInstalacao(instalacao);
+    //     conta.setType(multipartFile.getContentType());
+    //     acao.save(conta);
 
-        ra.addFlashAttribute("mensagem", "Arquivo Enviado com sucesso!");
+    //     ra.addFlashAttribute("mensagem", "Arquivo Enviado com sucesso!");
 
-        return "redirect:/energias/{contrato_id}/{codigo_identificador}/novo";
-    }
+    //     return "redirect:/energias/{contrato_id}/{codigo_identificador}/novo";
+    // }
 
     @GetMapping("/conta/{conta_id}")
     public ResponseEntity<Resource> obterArquivo(@PathVariable long conta_id){

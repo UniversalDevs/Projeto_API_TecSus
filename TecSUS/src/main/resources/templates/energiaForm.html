@@ -104,6 +104,7 @@
             </button>
 
             <div class="form-group">
+
                 <div class="linha1">
                     <p><span>Concessionária <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_nome}" readonly></span> <span style="float:right; margin-right: 15em;">CNPJ <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_cnpj}" readonly></span></p>
                     <p><span>Endereço <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_end}" readonly></span> <span style="float:right; margin-right: 15em;">I.E. <input type="text" class="form-control" th:value="${contrato.concessionaria.conc_IE}" readonly></span></p>
@@ -158,11 +159,38 @@
                         </div>
                       </div>
 
-                      <form th:action="@{'/energias/' + ${contrato_id}+ '/' + ${codigo_identificador} + '/novo'}" method="post">
+                      <form th:action="@{'/energias/concessionarias/cliente/' + ${contrato.contrato_id} + '/' + ${contrato.cliente.cli_id} + '/conta/' + ${instalacao.codigo_identificador} + '/novo'}" method="post">
                           <!-- <input type="text" name="cli_id" th:value="${contrato.cliente.cli_id}" readonly hidden>
                           <input type="text" name="conc_id" th:value="${contrato.concessionaria.conc_id}" readonly hidden>
                           <input type="text" name="contrato_id" th:value="${contrato.contrato_id}" readonly hidden>
                           <input type="text" name="codigo_identificador" th:value="${instalacao.codigo_identificador}" readonly hidden> -->
+                          <div class="linha1" >
+                            <p><span>Ano</span></p>
+                            <select class="form-select form-select-sm"  style="width: 10em;" name="ano">
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                            </select>             
+                        </div>
+                        <div class="linha1" >
+                            <p><span>Mês</span></p>
+                            <select class="form-select form-select-lg" style="width: 10em;" name="mes">
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>             
+                        </div>
                         <div class="linha1">
                             <p style="float: right;"><span style="float:right; margin-right: 15em;">Conta Do Mês <input type="text" name="mes_referencia" class="form-control" style="border: 1px solid gray;"></span></p>
 

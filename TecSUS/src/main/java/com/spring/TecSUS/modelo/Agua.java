@@ -16,10 +16,13 @@ public class Agua {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long agua_id;
 
+    private String ano;
+    private String mes;
     private String numero_documento;
     private String data_emissao;
     private String hidrometro;
     private String lacre;
+    private String fornecimento;
 
     //Azul
     private String economia;
@@ -59,6 +62,7 @@ public class Agua {
     @JoinColumn(name="codigo_identificador", nullable = false)
     private Instalacao instalacao;
 
+    
     public Long getAgua_id() {
         return agua_id;
     }
@@ -257,6 +261,30 @@ public class Agua {
 
     public void setInstalacao(Instalacao instalacao) {
         this.instalacao = instalacao;
+    }
+
+    public String getAno() {
+        return ano;
+    }
+
+    public void setAno(String ano) {
+        this.ano = ano;
+    }
+
+    public String getMes() {
+        return mes;
+    }
+
+    public void setMes(String mes) {
+        this.mes = mes;
+    }
+
+    public String getFornecimento() {
+        return fornecimento;
+    }
+
+    public void setFornecimento(String fornecimento) {
+        this.fornecimento = fornecimento;
     }
 
     

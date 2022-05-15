@@ -57,7 +57,7 @@ public class AguaControle {
         return mv;
     }
 
-        //Descricao Clientes
+        //Lista de Clientes
         @GetMapping("/aguas/concessionarias/{conc_id}")
         public ModelAndView clienteAgua(@PathVariable long conc_id){
             ModelAndView mv = new ModelAndView("aguaConcessionariaCliente");
@@ -74,7 +74,8 @@ public class AguaControle {
             Cliente cliente = acaoCliente.findById(cli_id);
             Contrato contrato = acaoContrato.findById(contrato_id);
             List<Instalacao> instalacoes = acaoInstalacao.findByContrato(contrato);
-
+            List<Agua> contasAgua = acao.findByContrato(contrato);
+            mv.addObject("contas", contasAgua);
             mv.addObject("contrato", contrato);
             mv.addObject("cliente", cliente);
             mv.addObject("instalacoes", instalacoes);
@@ -135,7 +136,7 @@ public class AguaControle {
             if(result.hasErrors()){
                 redirect.addFlashAttribute("mensagem","Verifique todos os campos!");
                 return "/";
-    
+                
             }
             agua.setContrato(contrato);
             agua.setInstalacao(instalacao);
@@ -143,8 +144,17 @@ public class AguaControle {
             agua.setConcessionaria(contrato.getConcessionaria());
             acao.save(agua);
             redirect.addFlashAttribute("mensagem", "Arquivo Enviado com sucesso!");
-            return "redirect:/aguas";
+            return "redirect:/aguas/concessionarias/cliente/{contrato_id}/{cli_id}  ";
         }
 
-
+        @GetMapping("/aguas/visualizarContaAgua")
+        public ModelAndView VisualizarConta(){
+            ModelAndView mv = new ModelAndView("visualizarContaAgua");
+            mv.addObject("clientes", acao.findClientes());
+            List<Contrato> concessionarias = acaoContrato.findConcessionaria();
+            List<Conta> contas = acaoConta.findAll();
+            mv.addObject("contas", contas);
+            mv.addObject("concessionarias", concessionarias);
+            return mv;
+        }
 }

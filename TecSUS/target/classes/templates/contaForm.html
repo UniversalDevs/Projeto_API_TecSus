@@ -104,7 +104,7 @@
             <hr>
             <div class="text-success">
             </div>
-            <form method="post" th:action="@{'/energias/concessionarias/cliente/conta/upload/' + ${dados.contrato.contrato_id} + '/' + ${dados.codigo_identificador}}" enctype="multipart/form-data">
+            <form method="post" th:action="@{'/energias/concessionarias/cliente/' + ${dados.contrato.contrato_id} + '/' + ${cliente.cli_id} + '/conta/' + ${instalacao.codigo_identificador} +'/upload'}" enctype="multipart/form-data">
                 <div class="form-group">
                     <h5>Cliente</h5>
                     <input  class="form-group" type="text" th:value="${dados.cliente.cli_id}" readonly>

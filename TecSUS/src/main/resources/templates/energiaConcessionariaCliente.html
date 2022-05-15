@@ -142,9 +142,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                     <tr th:each="contrato : ${contratos}">
+                     <tr th:each="contrato : ${contratos}"> 
                     <th scope="row" th:text="${contrato.cliente.cli_id}"></th>
-                    <td scope="row"><a th:href="@{'/energias/concessionarias/cliente/' + ${contrato.cliente.cli_id}}" th:text="${contrato.cliente.cli_nome}"></a></td> 
+                    <td scope="row"><a th:href="@{'/energias/concessionarias/cliente/'+ ${contrato.contrato_id}+ '/' + ${contrato.cliente.cli_id}}" th:text="${contrato.cliente.cli_nome}"></a></td> 
                     <td scope="row" th:text="${contrato.cidade}"></td> 
                     <td scope="row" th:text="${contrato.estado}"></td> 
                     </tr>                   

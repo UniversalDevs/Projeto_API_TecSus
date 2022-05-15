@@ -1,5 +1,9 @@
 package com.spring.TecSUS.controle;
 
+import java.io.IOException;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.List;
 
 import com.google.common.net.MediaType;
@@ -22,6 +26,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +36,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 
 @Controller
@@ -60,46 +68,119 @@ public class EnergiaControle {
         return mv;
     }
 
-
-    @GetMapping("/energias/{contrato_id}/{codigo_identificador}/novo")
-    public String getEnergiaForm(@PathVariable long contrato_id, @PathVariable long codigo_identificador,Model model){
-        Contrato contrato = acaoContrato.findById(contrato_id);
-        Conta conta = acaoConta.findConta();
-        Instalacao instalacao = acaoInstalacao.findById(codigo_identificador);
-        model.addAttribute("contrato", contrato);
-        model.addAttribute("instalacao", instalacao);
-        model.addAttribute("conta", conta); 
-        return "energiaForm";
-    }
-
-    @PostMapping(value ="/energias/{contrato_id}/{codigo_identificador}/novo")
-    public String cadastrarContaEnergia(@Validated Energia energia,BindingResult result, RedirectAttributes redirect, @PathVariable long codigo_identificador, @PathVariable long contrato_id){
-        Contrato contrato = acaoContrato.findById(contrato_id);
-        Instalacao instalacao = acaoInstalacao.findById(codigo_identificador);
-
-        if(result.hasErrors()){
-            redirect.addFlashAttribute("mensagem","Verifique todos os campos!");
-            return "/";
-
+        //Listas  Clientes
+        @GetMapping("/energias/concessionarias/{conc_id}")
+        public ModelAndView clienteEnergia(@PathVariable long conc_id){
+            ModelAndView mv = new ModelAndView("energiaConcessionariaCliente");
+            Concessionaria concessionaria = acaoConcessonaria.findById(conc_id);
+            List<Contrato> contratos = acaoContrato.findByConcessionaria(concessionaria);
+            mv.addObject("contratos", contratos);
+            return mv;
         }
-        energia.setContrato(contrato);
-        energia.setInstalacao(instalacao);
-        energia.setCliente(contrato.getCliente());
-        energia.setConcessionaria(contrato.getConcessionaria());
-        acao.save(energia);
-        redirect.addFlashAttribute("mensagem", "Arquivo Enviado com sucesso!");
-        return "redirect:/energias";
-    }
 
-    //Descricao Clientes
-    @GetMapping("/energias/concessionarias/{conc_id}")
-    public ModelAndView clienteEnergia(@PathVariable long conc_id){
-        ModelAndView mv = new ModelAndView("energiaConcessionariaCliente");
-        Concessionaria concessionaria = acaoConcessonaria.findById(conc_id);
-        List<Contrato> contratos = acaoContrato.findByConcessionaria(concessionaria);
-        mv.addObject("contratos", contratos);
-        return mv;
-    }
+        //Listar Cliente por Concessionaria
+        @GetMapping("/energias/concessionarias/cliente/{contrato_id}/{cli_id}")
+        public  ModelAndView detalhesClienteEnergia(@PathVariable long cli_id, @PathVariable long contrato_id){
+            ModelAndView mv = new ModelAndView("energiaCliente");
+            Cliente cliente =  acaoCliente.findById(cli_id);
+            Contrato contrato = acaoContrato.findById(contrato_id);
+            List<Instalacao> instalacoes = acaoInstalacao.findByContrato(contrato);
+            List<Energia> contasEnergia = acao.findByContrato(contrato);
+            // List<Instalacao> instalacoes = acaoInstalacao.findByContrato(contrato);
+            mv.addObject("contrato", contrato);
+            mv.addObject("contas",contasEnergia);
+            mv.addObject("cliente", cliente);
+            mv.addObject("instalacoes", instalacoes);
+            return mv;
+        }
+
+        //Form conta de Energia 
+        @GetMapping("/energias/concessionarias/cliente/{contrato_id}/{cli_id}/conta/{codigo_identificador}/novo")
+        public String getenergiaForm(@PathVariable long contrato_id, @PathVariable long codigo_identificador,Model model){
+            Contrato contrato = acaoContrato.findById(contrato_id);
+            Conta conta = acaoConta.findConta();
+            Instalacao instalacao = acaoInstalacao.findById(codigo_identificador);
+            model.addAttribute("contrato", contrato);
+            model.addAttribute("instalacao", instalacao);
+            model.addAttribute("conta", conta); 
+            return "energiaForm";
+        }
+
+        @GetMapping("/energias/concessionarias/cliente/{contrato_id}/{cli_id}/conta/{codigo_identificador}")
+        public ModelAndView cadastrarConta(@PathVariable long contrato_id, @PathVariable long cli_id,@PathVariable long codigo_identificador){
+            ModelAndView mv = new ModelAndView("contaForm");
+            Instalacao instalacao = acaoInstalacao.findById(codigo_identificador);
+            Cliente cliente = acaoCliente.findById(cli_id);
+            Instalacao dados = acaoInstalacao.findDados(codigo_identificador);
+            Conta conta = acaoConta.findConta();
+            mv.addObject("conta", conta);
+            mv.addObject("cliente", cliente);
+            mv.addObject("dados", dados);
+            mv.addObject("instalacao", instalacao);
+            return mv;
+        }
+        @PostMapping("/energias/concessionarias/cliente/{contrato_id}/{cli_id}/conta/{codigo_identificador}/upload")
+        public String uploadFile(@PathVariable long contrato_id,@PathVariable long codigo_identificador,@PathVariable long cli_id,@RequestParam("document") MultipartFile multipartFile, RedirectAttributes ra) throws IOException{
+            String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+            Contrato contrato = acaoContrato.findById(contrato_id);
+            Instalacao instalacao = acaoInstalacao.findById(codigo_identificador);
+            Conta conta = new Conta();
+            conta.setName(fileName);
+            conta.setContent(multipartFile.getBytes());
+            conta.setSize(multipartFile.getSize());
+            conta.setUploadTime(Date.valueOf(LocalDate.now(ZoneId.of("UTC"))));
+            conta.setCliente(contrato.getCliente());
+            conta.setConcessionaria(contrato.getConcessionaria());
+            conta.setInstalacao(instalacao);
+            conta.setType(multipartFile.getContentType()); 
+            acaoConta.save(conta);    
+            ra.addFlashAttribute("mensagem", "Arquivo Enviado com sucesso!");
+    
+            return "redirect:/energias/concessionarias/cliente/{contrato_id}/{cli_id}/conta/{codigo_identificador}/novo";
+        }
+
+        //Salvar conta cadastrada
+        @PostMapping(value ="/energias/concessionarias/cliente/{contrato_id}/{cli_id}/conta/{codigo_identificador}/novo")
+        public String cadastrarContaAgua(@Validated Energia energia,BindingResult result, RedirectAttributes redirect, @PathVariable long codigo_identificador, @PathVariable long contrato_id){
+            Contrato contrato = acaoContrato.findById(contrato_id);
+            Instalacao instalacao = acaoInstalacao.findById(codigo_identificador);
+            if(result.hasErrors()){
+                redirect.addFlashAttribute("mensagem","Verifique todos os campos!");
+                return "/";
+                
+            }
+            energia.setContrato(contrato);
+            energia.setInstalacao(instalacao);
+            energia.setCliente(contrato.getCliente());
+            energia.setConcessionaria(contrato.getConcessionaria());
+            acao.save(energia);
+            redirect.addFlashAttribute("mensagem", "Arquivo Enviado com sucesso!");
+            return "redirect:/energias/concessionarias/cliente/{contrato_id}/{cli_id}  ";
+        }
+
+    // @PostMapping(value ="/energias/concessionarias/cliente/{contrato_id}/{cli_id}/conta/{codigo_identificador}/novo")
+    // public String cadastrarContaEnergia(@Validated Energia energia,BindingResult result, RedirectAttributes redirect, @PathVariable long codigo_identificador, @PathVariable long contrato_id){
+    //     Contrato contrato = acaoContrato.findById(contrato_id);
+    //     Instalacao instalacao = acaoInstalacao.findById(codigo_identificador);
+
+    //     if(result.hasErrors()){
+    //         redirect.addFlashAttribute("mensagem","Verifique todos os campos!");
+    //         return "/";
+
+    //     }
+    //     energia.setContrato(contrato);
+    //     energia.setInstalacao(instalacao);
+    //     energia.setCliente(contrato.getCliente());
+    //     energia.setConcessionaria(contrato.getConcessionaria());
+    //     acao.save(energia);
+    //     redirect.addFlashAttribute("mensagem", "Arquivo Enviado com sucesso!");
+    //     return "redirect:/energias";
+    // }
+
+
+
+
+
 
 
     @GetMapping("/aguaForm")
@@ -114,16 +195,8 @@ public class EnergiaControle {
     }
 
 
-    @GetMapping("/energias/concessionarias/cliente/{cli_id}")
-    public  ModelAndView detalhesClienteEnergia(@PathVariable long cli_id){
-        ModelAndView mv = new ModelAndView("energiaCliente");
-        Cliente cliente =  acaoCliente.findById(cli_id);
-        List<Instalacao> instalacoes = acaoInstalacao.findByCliente(cliente);
-        // List<Instalacao> instalacoes = acaoInstalacao.findByContrato(contrato);
-        mv.addObject("cliente", cliente);
-        mv.addObject("instalacoes", instalacoes);
-        return mv;
-    }
+    
+
 
 
 
