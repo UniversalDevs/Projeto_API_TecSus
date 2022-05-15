@@ -34,16 +34,16 @@
 <p></p>
 <p></p>
 <hr>
-<h3> Cadastro De Clientes </h3>
+<h3> Cadastro da Conta de Energia</h3>
 <img src=""/>
 <hr>
-<h3> Cadastro de Concessionárias </h3>
+<h3> Cadastro de Conta de Água </h3>
 <img src=""/>
 <hr>
-<h3> Cadastro de Contratos </h3>
+<h3> Página do Mês de Referência das Contas </h3>
 <img src=""/>
 <hr>
-<h3> Cadastro de Unidades </h3>
+<h3> Interligar a página de contrato com a página das contas </h3>
 <img src=""/>
 <hr>
 
