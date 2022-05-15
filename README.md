@@ -35,16 +35,20 @@
 <p></p>
 <hr>
 <h3> Cadastro da Conta de Energia</h3>
-<img src=""/>
+<p> As contas podem ser cadastradas desde que o cliente possua um contrato ativo com uma concessionária, assim ele pode ser redirecionado para o 
+formulários onde poderá preencher os campos junto à sua fatura em pdf para auxiliá-lo
+</p>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/cadastroEnergia.gif"/>
 <hr>
 <h3> Cadastro de Conta de Água </h3>
-<img src=""/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/cadastroAgua.gif"/>
 <hr>
 <h3> Página do Mês de Referência das Contas </h3>
-<img src=""/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/pgMesReferencia-Energia.gif"/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/pgMesReferenciaAgua.gif"/>
 <hr>
 <h3> Interligar a página de contrato com a página das contas </h3>
-<img src=""/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/VinculoContratoConta.gif"/>
 <hr>
 
 
