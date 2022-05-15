@@ -16,7 +16,7 @@
 
 <h3>:heavy_exclamation_mark: Informações Destaque</h3>
 <p><strong> Duração da Sprint:</strong> de 25/04/2022 à 15/05/2022</p>
-<p> O projeto do site encontra-se em: <a href="">Backend Main</a>
+<p> O projeto do site encontra-se em: <a href="https://github.com/UniversalDevs/Projeto_API_TecSus/tree/sprint2/TecSUS">Backend Main</a>
 <hr>
 
 
