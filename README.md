@@ -22,12 +22,12 @@
 
 <h3>:chart_with_downwards_trend: Burndown Chart </h3>
 <p>Lista de Atividades</p>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Burndowns/ListaAtividades.png" width="900"/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint2/Documentos/AtvidaSprint02.png" width="900"/>
 <p>Gráfico Burndown</p>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Burndowns/GraficoBurndownSprint1.png" width="500"/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint2/Documentos/GraficoSprint02.png" width="500"/>
 <hr>
 <p>Tempo das Atividades</p>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Burndowns/TempoAtividades.png" width="500"/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint2/Documentos/HorasSprint02.png" width="500"/>
 <hr>
 
 <h3>Demonstração das Funcionalidades</h3>
@@ -35,16 +35,16 @@
 <p></p>
 <hr>
 <h3> Cadastro De Clientes </h3>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/CadastroCliente_1.gif"/>
+<img src=""/>
 <hr>
 <h3> Cadastro de Concessionárias </h3>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/CadastroConce._1.gif"/>
+<img src=""/>
 <hr>
 <h3> Cadastro de Contratos </h3>
 <img src=""/>
 <hr>
 <h3> Cadastro de Unidades </h3>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/CadastroInstalacao_1.gif"/>
+<img src=""/>
 <hr>
 
 
