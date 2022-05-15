@@ -53,6 +53,10 @@
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/TecnologiasUtilizadas.png" width="800"/>
 <hr>
 
+<h3>:watch: Linha do Tempo</h3>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/Linha%20do%20tempo.png" width="800"/>
+<hr>
+
 <h3>:arrows_counterclockwise: Atividades Por Sprint</h3>
 <h4>Sprint 1</h4>
 <ul>
