@@ -6,5 +6,4 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface Administradores extends CrudRepository<Administrador, Integer>{
     
-
 }

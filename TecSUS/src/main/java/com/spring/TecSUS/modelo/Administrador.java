@@ -10,13 +10,13 @@ public class Administrador {
     @Column(name= "id")
     private int id;
     
-    @Column(name= "nome")
+    @Column(name= "nome", length = 100, nullable = false)
     private String nome;
 
-    @Column(name= "email")
+    @Column(name= "email", length = 100, nullable = false)
     private String email;
 
-    @Column(name= "senha")
+    @Column(name= "senha", length = 100, nullable = false)
     private String senha;
 
     public int getId() {
@@ -50,6 +50,5 @@ public class Administrador {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
 
 }
