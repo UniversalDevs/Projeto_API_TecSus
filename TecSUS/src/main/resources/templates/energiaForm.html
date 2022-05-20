@@ -148,7 +148,7 @@
                     </p>    
                     <p style="margin-top: 5em; color: black; font-weight: bold; border-bottom: 3px solid #fd0000;">Dados da Conta</p>             
                     <p></p>
-                    <p>
+                    <!-- <p>
                         <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                           Visualizar Conta
                         </button>
@@ -157,13 +157,13 @@
                         <div class="card card-body">
                            <embed th:src="@{/download_conta}" type="application/pdf" width="700px" height="630px">
                         </div>
-                      </div>
-
+                      </div> -->
+                      <button class="btn btn-danger" type="button" onclick="window.open('/download_conta','popUpWindow','height=800,width=600,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');"  >
+                        Visualizar Conta
+                      </button>
+                      <!-- <input type="button" class="form-control" value="Visualizar Conta" onclick="window.open('/download_conta','popUpWindow','height=800,width=600,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');"> -->
                       <form th:action="@{'/energias/concessionarias/cliente/' + ${contrato.contrato_id} + '/' + ${contrato.cliente.cli_id} + '/conta/' + ${instalacao.codigo_identificador} + '/novo'}" method="post">
-                          <!-- <input type="text" name="cli_id" th:value="${contrato.cliente.cli_id}" readonly hidden>
-                          <input type="text" name="conc_id" th:value="${contrato.concessionaria.conc_id}" readonly hidden>
-                          <input type="text" name="contrato_id" th:value="${contrato.contrato_id}" readonly hidden>
-                          <input type="text" name="codigo_identificador" th:value="${instalacao.codigo_identificador}" readonly hidden> -->
+
                           <div class="linha1" >
                             <p><span>Ano</span></p>
                             <select class="form-select form-select-sm"  style="width: 10em;" name="ano">
