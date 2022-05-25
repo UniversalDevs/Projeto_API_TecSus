@@ -24,22 +24,7 @@
 <hr>
 <h3> :pushpin: Requisitos do Cliente</h3>
 <ul>
-    <li>Cadastros de Unidades, Concessionárias, Contratos;</li>
-    <li>Cadastro do usuário e seus perfis (administrador, gestor e digitador);</li>
-    <li>Cadastro (digitação) da conta de água, energia e gás;</li>
-    <li>Registro de log de operações (cadastro e deleção);</li>
-    <li>Relatório de consumo total de água mensal, anual e média;</li>
-    <li>Relatório de consumo total de energia mensal, anual e média;</li>
-    <li>Relatório de consumo total de gás mensal, anual e média;</li>
-    <li>Geração de alertas de consumo acima da média (a média pode ser definida no cadastro do contrato).</li>
-</ul>
-<hr>
-
-<h3> :pushpin: Requisitos Não Funcionais</h3>
-<ul>
-    <li>Prezar pelo UXda tela de digitação das contas;</li>
-    <li>Incluir atalhos no teclado;</li>
-    <li>Permitir navegação entre campos por TAB ou seta;</li>
+<img src="" width="800"/>
 </ul>
 <hr>
 <h3>:arrows_counterclockwise: Sprints</h3>
@@ -51,10 +36,6 @@
 
 <h3>:wrench: Ferramentas & Tecnologias utilizadas</h3>
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/TecnologiasUtilizadas.png" width="800"/>
-<hr>
-
-<h3>:watch: Linha do Tempo</h3>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/Linha%20do%20tempo.png" width="800"/>
 <hr>
 
 <h3>:arrows_counterclockwise: Atividades Por Sprint</h3>
@@ -99,18 +80,9 @@
 
 <h3>:memo: Product Backlog</h3>
     <h5>Legenda:</h5>
-    <p>Prioridade Alta - Laranja</p>
+    <p>Prioridade Alta - Vermelho</p>
     <p>Prioridade Média - Amarela</p>
     <p>Prioridade Baixa - Verde</p>
-
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/BacklogProduto.PNG"/>
-<hr>
-
-
-
-
-
-
 
 
 <h2>:globe_with_meridians: Equipe de Desenvolvedores</h2>
