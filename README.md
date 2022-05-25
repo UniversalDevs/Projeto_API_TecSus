@@ -22,9 +22,9 @@
 <h3> :dart: Objetivos do Projeto</h3>
 <p>Coleta e processamento de contas de energia, água e gás para diversas empresas dos setores do atacado e varejo. Cada conta coletada precisa ter todos os seus campos digitados e salvos  em  banco  de  dados  para  eventuais  consultas  e  análises  técnicas/financeiras  que  podem trazer ao cliente oportunidades de redução de custos e alteração de contratos.Cada unidade do cliente pode possuir vários contratos (água, energia ou gás), cada contrato pode possuir uma ou mais contas (faturas de água, energia ou gás) por mês.Todos esses contratos estão ligados a uma concessionária de abastecimento.É importante observar que a interface de digitação (cadastro) das contas, deve possuir um UX que facilite a operação de visualização da conta em PDF para digitação dos campos da conta, com uso de atalhos no teclado e navegação via teclas.</p>
 <hr>
-<h3> :pushpin: Requisitos do Cliente</h3>
+<h3> :pushpin: Product Backlog</h3>
 <ul>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/Product%20Backlog.png" width="800"/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/Product%20Backlog.png" width="500"/>
 </ul>
 <hr>
 <h3>:arrows_counterclockwise: Sprints</h3>
