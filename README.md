@@ -22,11 +22,6 @@
 <h3> :dart: Objetivos do Projeto</h3>
 <p>Coleta e processamento de contas de energia, água e gás para diversas empresas dos setores do atacado e varejo. Cada conta coletada precisa ter todos os seus campos digitados e salvos  em  banco  de  dados  para  eventuais  consultas  e  análises  técnicas/financeiras  que  podem trazer ao cliente oportunidades de redução de custos e alteração de contratos.Cada unidade do cliente pode possuir vários contratos (água, energia ou gás), cada contrato pode possuir uma ou mais contas (faturas de água, energia ou gás) por mês.Todos esses contratos estão ligados a uma concessionária de abastecimento.É importante observar que a interface de digitação (cadastro) das contas, deve possuir um UX que facilite a operação de visualização da conta em PDF para digitação dos campos da conta, com uso de atalhos no teclado e navegação via teclas.</p>
 <hr>
-<h3> :pushpin: Product Backlog</h3>
-<ul>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/Product%20Backlog.png" width="300"/>
-</ul>
-<hr>
 <h3>:arrows_counterclockwise: Sprints</h3>
 <p>:white_check_mark: Kick-off do Projeto - 16/08 à 22/08</p>
 <p>:white_check_mark: <a href="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint1/README.md"> Sprint 1 </a>- 25/03 à 14/04</p>
@@ -34,56 +29,24 @@
 <p>:black_square_button:<a href=""> Sprint 3 </a> - 16/05 à 05/06</p>
 <hr>
 
+<h3> :pushpin: Product Backlog</h3>
+<ul>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/Product%20Backlog.png" width="300"/>
+</ul>
+<hr>
+
+<h3>:arrows_counterclockwise: Atividades Por Sprint</h3>
+<ul>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/LINHA%20DO%20TEMPO.png" width="700"/>
+</ul>
+<hr>
+
 <h3>:wrench: Ferramentas & Tecnologias utilizadas</h3>
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/TecnologiasUtilizadas.png" width="800"/>
 <hr>
 
-<h3>:arrows_counterclockwise: Atividades Por Sprint</h3>
-<h4>Sprint 1</h4>
-<ul>
-    <li> Cadastro Cliente </li>
-    <li> Cadastro Concessionária</li>
-    <li> Cadastro Unidade</li>
-    <li> Interligar os dados do cliente e concessionária com o contrato</li>
-    <li> Implementação do Banco de Dados</li>
-    <li>Página para armazenamento das contas </li>
-</ul>
-<hr>
-<h4>Sprint 2</h4>
-<ul>
-    <li> Página para cadastrar conta de água </li>
-    <li> Página para cadastrar conta de energia</li>
-    <li> Página contendo as contas separadas pelo mês de referência</li>
-    <li>Interligar a página de contrato com a página das contas</li>
-</ul>
-<hr>
-<h4>Sprint 3</h4>
-<ul>
-    <li> Página contendo o relatório com a média de consumo anual</li>
-    <li> Tela de confirmação dos dados digitados</li>
-    <li> Página de cadastro do Usuário</li>
-    <li> Tela de Login</li>    
-    <li> Recuperação de Senha</li>
-    <li> Página de perfil do usuário</li>
-    <li> Página de registro das atividades</li>
-    <li> Página para gerar um relatório de alerta de consumo</li>
-    <li> Criar níveis de acesso ao sistema</li>
-    <li> Criar filtros de visualização e busca</li>
-
-</ul>
-<hr>
-
-
 <h3>:computer: Wireframe Disponível em: <a href="https://www.figma.com/file/ycmcA62yH9gHgNh4iTWHP4/PrototipoTecSus?node-id=0%3A1">FIGMA<a/></h3>
-
 <hr>
-
-<h3>:memo: Product Backlog</h3>
-    <h5>Legenda:</h5>
-    <p>Prioridade Alta - Vermelho</p>
-    <p>Prioridade Média - Amarela</p>
-    <p>Prioridade Baixa - Verde</p>
-
 
 <h2>:globe_with_meridians: Equipe de Desenvolvedores</h2>
   <table align="left">
