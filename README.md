@@ -24,7 +24,7 @@
 <hr>
 <h3> :pushpin: Product Backlog</h3>
 <ul>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/Product%20Backlog.png" width="500"/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Documentos/Product%20Backlog.png" width="300"/>
 </ul>
 <hr>
 <h3>:arrows_counterclockwise: Sprints</h3>
