@@ -7,12 +7,14 @@ import java.time.ZoneId;
 import java.util.List;
 
 import com.google.common.net.MediaType;
+import com.spring.TecSUS.modelo.Agua;
 import com.spring.TecSUS.modelo.Cliente;
 import com.spring.TecSUS.modelo.Concessionaria;
 import com.spring.TecSUS.modelo.Conta;
 import com.spring.TecSUS.modelo.Contrato;
 import com.spring.TecSUS.modelo.Energia;
 import com.spring.TecSUS.modelo.Instalacao;
+import com.spring.TecSUS.repositorio.AguaRepositorio;
 import com.spring.TecSUS.repositorio.ClienteRepositorio;
 import com.spring.TecSUS.repositorio.ConcessionariaRepositorio;
 import com.spring.TecSUS.repositorio.ContaRepositorio;
@@ -59,6 +61,9 @@ public class EnergiaControle {
     @Autowired
     private ContaRepositorio acaoConta;
 
+    @Autowired
+    private AguaRepositorio acaoAgua;
+
     @GetMapping("/energias")
     public ModelAndView listarClientesAndView(){
         ModelAndView mv = new ModelAndView("energias");
@@ -93,6 +98,24 @@ public class EnergiaControle {
             mv.addObject("instalacoes", instalacoes);
             return mv;
         }
+
+        //Get Mapping os dados do banco
+        @GetMapping("/energias/concessionarias/cliente/{contrato_id}/{cli_id}/relatorios")
+        public ModelAndView relatorio(@PathVariable long cli_id, @PathVariable long contrato_id){
+            ModelAndView mv = new ModelAndView("RelatorioInstalacao");
+            Cliente cliente = acaoCliente.findById(cli_id);
+            Contrato contrato = acaoContrato.findById(contrato_id);
+            List<Instalacao> instalacoes = acaoInstalacao.findByContrato(contrato);
+            List<Energia> contasEnergias = acao.findByContrato(contrato);
+            List<Agua> contAguas = acaoAgua.findByCliente(cliente);
+            mv.addObject("cliente", cliente);
+            mv.addObject("contrato", contrato);
+            mv.addObject("instalacoes", instalacoes);
+            mv.addObject("energia", contasEnergias);
+            mv.addObject("agua", contAguas);
+            return mv;
+        }
+
 
         //Form conta de Energia 
         @GetMapping("/energias/concessionarias/cliente/{contrato_id}/{cli_id}/conta/{codigo_identificador}/novo")
