@@ -18,6 +18,7 @@
     <script scr="https://kit.fontawesome.com/eac8819838.js" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="" th:src="@{js/scripts.js}"></script>
+    <script type="text/javascript" src="js/calculoImpostos.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -263,12 +264,12 @@
                                 <tbody>
                                   <tr>
                                     <th scope="row">TUSD - Consumo</th>
-                                    <td><input type="number" name="tusd_qtd_kwh" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                    <td><input type="number" name="tusd_tarifa_aplicada" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                    <td><input type="number" name="tusd_valor_fornec" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                    <td><input type="number" name="tusd_tarifa_imposto" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                    <td><input type="number" name="tusd_bcalc_icms" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                    <td><input type="number" name="tusd_bcalc_piscofins" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                    <td><input type="number" name="tusd_qtd_kwh" class="form-control" style="width:10em; margin-right: 1em;" id="quantidade" oninput="calculoFornecimento()"></td>
+                                    <td><input type="number" name="tusd_tarifa_aplicada" class="form-control" style="width:10em; margin-right: 1em;" id="calculoFornecimento2" oninput="calculoFornecimento()"></td>
+                                    <td><input type="number" name="tusd_valor_fornec" class="form-control" style="width:10em; margin-right: 1em;" id="totalFornecimento" readonly></td>
+                                    <td><input type="number" name="tusd_tarifa_imposto" class="form-control" style="width:10em; margin-right: 1em;"id="imposto" oninput="calculoBcalc()"></td>
+                                    <td><input type="number" name="tusd_bcalc_icms" class="form-control" style="width:10em; margin-right: 1em;" id="bcalc_icms" readonly></td>
+                                    <td><input type="number" name="tusd_bcalc_piscofins" class="form-control" style="width:10em; margin-right: 1em;" id="bcalc_pis_cofins" readonly></td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -291,19 +292,19 @@
                                 <tbody>
                                   <tr>
                                     <th scope="row">PIS</th>
-                                    <td><input type="number" name="pis_bcalc" class="form-control" style="width:10em; margin-right: 1em;" ></td>
+                                    <td><input type="number" name="pis_bcalc" class="form-control" style="width:10em; margin-right: 1em;" id="bcalc_pis" readonly></td>
                                     <td><input type="number" name="pis_aliqota" class="form-control" style="width:10em; margin-right: 1em;" ></td>
                                     <td><input type="number" name="pis_valor" class="form-control" style="width:10em; margin-right: 1em;"></td>
                                   </tr>
                                   <tr>
                                     <th scope="row">COFINS</th>
-                                    <td><input type="number" name="cofins_bcalc" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                    <td><input type="number" name="cofins_bcalc" class="form-control" style="width:10em; margin-right: 1em;" id="bcalc_cofins" readonly></td>
                                     <td><input type="number" name="cofins_aliqota" class="form-control" style="width:10em; margin-right: 1em;"></td>
                                     <td><input type="number" name="cofins_valor" class="form-control" style="width:10em; margin-right: 1em;"></td>
                                   </tr>
                                   <tr>
                                     <th scope="row">ICMS</th>
-                                    <td><input type="number" name="icms_bcalc" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                    <td><input type="number" name="icms_bcalc" class="form-control" style="width:10em; margin-right: 1em;" id="bcalc_icm" readonly></td>
                                     <td><input type="number" name="icms_aliqota" class="form-control" style="width:10em; margin-right: 1em;"></td>
                                     <td><input type="number" name="icms_valor" class="form-control" style="width:10em; margin-right: 1em;"></td>
                                   </tr>
@@ -312,6 +313,7 @@
                           </div>
                           <input type="submit" value="Salvar" class="btn btn-danger" style="margin-left: 30em;">
                       </form>
+
                 </div>
             </div>
 
@@ -330,6 +332,26 @@
                 $('#sidebar').toggleClass('active');
             });
         });
+        
+        function calculoFornecimento()
+        {
+            calculoFornecimento1 = document.getElementById("quantidade").value;
+            calculoFornecimento2 = document.getElementById("calculoFornecimento2").value;
+            document.getElementById("totalFornecimento").value = calculoFornecimento1 * calculoFornecimento2;
+        }
+
+        function calculoBcalc()
+        {
+            calculoBcalc1 = document.getElementById("quantidade").value;
+            calculoBcalc2 = document.getElementById("imposto").value;
+            document.getElementById("bcalc_icms").value = calculoBcalc1 * calculoBcalc2;
+            document.getElementById("bcalc_pis_cofins").value = calculoBcalc1 * calculoBcalc2;
+            document.getElementById("bcalc_pis_cofins").value = calculoBcalc1 * calculoBcalc2;
+            document.getElementById("bcalc_pis").value = calculoBcalc1 * calculoBcalc2;
+            document.getElementById("bcalc_cofins").value = calculoBcalc1 * calculoBcalc2;
+            document.getElementById("bcalc_icm").value = calculoBcalc1 * calculoBcalc2;
+        }
+
     </script>
 </body>
 </html>
