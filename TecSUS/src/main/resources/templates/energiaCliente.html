@@ -129,12 +129,11 @@
                   </ul>
                   
                 <p></p>
-                <h6 style="margin-left: 2em;">Contas 2021</h6>
-                <div th:each="conta : ${contas}" >
+                <!-- <div th:each="conta : ${contas}" >
                     <p></p>
                     <button type="button" class="btn btn-danger" id="basicToastBtn" th:text="${conta.mes}" style="margin-left: 2em;"></button>
 
-                    <div class="toast-container position-fixed top-0 end-0 p-3">
+                    <div class="toast-container position-fixed top-0 end-0 p-3" >
                       <div id="basicToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                         <div class="toast-header bg-danger text-light">
                           <h5 class="my-0">Resumo da Fatura <span class="bagde bg-dark" th:text="${conta.mes}" style="float: right;"></span></h5>
@@ -148,19 +147,46 @@
                         </div>
                       </div>  
                     </div>
-                </div>
+                </div> -->
+                
                 <a class="btn btn-primary" style="margin-left: auto; margin-right: auto; width: 6em;" th:href="@{'/energias/concessionarias/cliente/'+ ${contrato.contrato_id}+ '/' + ${contrato.cliente.cli_id} + '/relatorios'}">Relatórios</a>
                 <p></p>
-                <a href="/energias" class="btn btn-success btn-lg active" role="button" aria-pressed="true" style="margin-left: auto; margin-right: auto; width: 4.5em;">Voltar</a>
-                <p></p>
-                <!-- style="margin-left: auto; margin-right: auto;" -->
-            </div>
-           
-           
-            <div class="line"></div>
 
+                <!-- style="margin-left: auto; margin-right: auto;" -->
+                <h6 style="margin-left: 2em;">Contas 2021</h6>
+                <div th:each="conta : ${contas}">
+                    <div class="offcanvas offcanvas-end" th:id="${'demo' + conta.energia_id}">
+                        <div class="offcanvas-header">
+                          <h1 class="offcanvas-title" th:text="${conta.mes + '/'+ conta.ano}"></h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <h6>Código Identificador <span class="badge bg-secondary" th:text="${conta.instalacao.codigo_identificador}" style="float: right;"></span></h6>
+                            <h6>Número medidor <span class="badge bg-secondary" th:text="${conta.instalacao.numero_medidor}" style="float: right;"></span></h6>
+                            <h6>Data de Vencimento <span class="badge bg-secondary" th:text="${conta.data_de_vencimento}" style="float: right;"></span></h6>
+                            <h6>Quantidade kWh <span class="badge bg-secondary" th:text="${conta.qtde_kwh_mes}" style="float: right;"></span></h6>
+                            <h6>Total A Pagar(R$) <span class="badge bg-secondary" th:text="${conta.valor_total_a_pagar}" style="float: right;"></span></h6>
+                        </div>
+                      </div>
+                </div>
+                  
+                  <div class="container-fluid mt-3" th:each="conta : ${contas}">
+                    <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" th:data-bs-target="${'#demo' + conta.energia_id}" th:text="${conta.mes} + '/' + ${conta.ano}">
+                    </button>
+                  </div>
+                  
+
+                  <p></p>
+                  <a href="/energias" class="btn btn-success btn-lg active" role="button" aria-pressed="true" style="margin-left: auto; margin-right: auto; width: 4.5em;">Voltar</a>
+                  <p></p>
+            </div>
+
+            
+            <div class="line"></div>
         </div>
+        
     </div>
+
 </main>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -169,16 +195,13 @@
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });
         });
-            document.querySelector("#basicToastBtn").onclick = function() {
-    new bootstrap.Toast(document.querySelector('#basicToast')).show();
-    }
 
     </script>
 </body>

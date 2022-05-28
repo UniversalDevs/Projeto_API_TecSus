@@ -90,9 +90,11 @@ public class EnergiaControle {
             Cliente cliente =  acaoCliente.findById(cli_id);
             Contrato contrato = acaoContrato.findById(contrato_id);
             List<Instalacao> instalacoes = acaoInstalacao.findByContrato(contrato);
-            List<Energia> contasEnergia = acao.findByContrato(contrato);
+            List<Energia> contasEnergia = acao.findByContratoOrderByAno(contrato);
+            List<Energia> contasPorAno = acao.findContasAno();
             // List<Instalacao> instalacoes = acaoInstalacao.findByContrato(contrato);
             mv.addObject("contrato", contrato);
+            mv.addObject("anos", contasPorAno);
             mv.addObject("contas",contasEnergia);
             mv.addObject("cliente", cliente);
             mv.addObject("instalacoes", instalacoes);
@@ -106,13 +108,13 @@ public class EnergiaControle {
             Cliente cliente = acaoCliente.findById(cli_id);
             Contrato contrato = acaoContrato.findById(contrato_id);
             List<Instalacao> instalacoes = acaoInstalacao.findByContrato(contrato);
-            List<Energia> contasEnergias = acao.findByContrato(contrato);
+            List<Energia> contasEnergias = acao.findByContratoOrderByAno(contrato);
             List<Agua> contAguas = acaoAgua.findByCliente(cliente);
             mv.addObject("cliente", cliente);
             mv.addObject("contrato", contrato);
             mv.addObject("instalacoes", instalacoes);
             mv.addObject("energia", contasEnergias);
-            mv.addObject("agua", contAguas);
+            mv.addObject("agua", contAguas  );
             return mv;
         }
 

@@ -15,5 +15,7 @@ public interface EnergiaRepositorio extends CrudRepository<Energia, Long>{
     Energia findById(long energia_id);
     @Query(nativeQuery = true,value = "SELECT c.cli_id, c.cli_nome, conc.conc_id, conc.conc_nome, ct.tipo_servico FROM clientes c, contratos ct, concessionarias conc WHERE ct.cli_id = c.cli_id AND ct.tipo_servico = 'Energia';")
     List<Object[]> findClientes();
-    List<Energia> findByContrato(Contrato contrato);
+    List<Energia> findByContratoOrderByAno(Contrato contrato);
+    @Query(nativeQuery= true, value ="SELECT * FROM energias GROUP BY ano")
+    List<Energia> findContasAno();
 }
