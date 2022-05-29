@@ -153,28 +153,76 @@
                 <p></p>
 
                 <!-- style="margin-left: auto; margin-right: auto;" -->
-                <h6 style="margin-left: 2em;">Contas 2021</h6>
                 <div th:each="conta : ${contas}">
                     <div class="offcanvas offcanvas-end" th:id="${'demo' + conta.energia_id}">
                         <div class="offcanvas-header">
-                          <h1 class="offcanvas-title" th:text="${conta.mes + '/'+ conta.ano}"></h1>
+                          <h1 class="offcanvas-title" th:text="${conta.mes}"></h1>
                           <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
                         </div>
                         <div class="offcanvas-body">
-                            <h6>Código Identificador <span class="badge bg-secondary" th:text="${conta.instalacao.codigo_identificador}" style="float: right;"></span></h6>
-                            <h6>Número medidor <span class="badge bg-secondary" th:text="${conta.instalacao.numero_medidor}" style="float: right;"></span></h6>
-                            <h6>Data de Vencimento <span class="badge bg-secondary" th:text="${conta.data_de_vencimento}" style="float: right;"></span></h6>
-                            <h6>Quantidade kWh <span class="badge bg-secondary" th:text="${conta.qtde_kwh_mes}" style="float: right;"></span></h6>
-                            <h6>Total A Pagar(R$) <span class="badge bg-secondary" th:text="${conta.valor_total_a_pagar}" style="float: right;"></span></h6>
+                            <h6>Código Identificador <span class="badge bg-danger" th:text="${conta.instalacao.codigo_identificador}" style="float: right;"></span></h6>
+                            <h6>Número medidor <span class="badge bg-danger" th:text="${conta.instalacao.numero_medidor}" style="float: right;"></span></h6>
+                            <h6>Data de Vencimento <span class="badge bg-danger" th:text="${conta.data_de_vencimento}" style="float: right;"></span></h6>
+                            <h6>Quantidade kWh <span class="badge bg-danger" th:text="${conta.qtde_kwh_mes}" style="float: right;"></span></h6>
+                            <h6>Total A Pagar(R$) <span class="badge bg-danger" th:text="${conta.valor_total_a_pagar}" style="float: right;"></span></h6>
                         </div>
                       </div>
                 </div>
                   
-                  <div class="container-fluid mt-3" th:each="conta : ${contas}">
+                  <div class="container-fluid mt-3" th:each="conta : ${contas}" hidden>
                     <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" th:data-bs-target="${'#demo' + conta.energia_id}" th:text="${conta.mes} + '/' + ${conta.ano}">
                     </button>
                   </div>
+                  <p></p>
                   
+
+<!-- Demo header-->
+<section class="py-5 header">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-3">
+                <!-- Tabs nav
+                    
+                     linha 207
+                -->
+                <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist" aria-orientation="vertical"th:each="ano : ${anos}">
+                    <a class="nav-link mb-3 p-3 shadow btn-danger" id="v-pills-profile-tab" data-toggle="pill" th:href="${'#ano' + ano.ano}" role="tab" th:aria-controls="${'view-ano' + ano.ano}" aria-selected="false">
+                        <i class="fa fa-calendar-minus-o mr-2"></i>
+                        <span class="font-weight-bold small text-uppercase" th:text="${ano.ano}"></span>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col-md-9">
+                <!-- Tabs content -->
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <h2 class="font-italic mb-4">Contas <span class="badge bg-danger">Energia</span></h2>
+                        <p class="font-italic text-muted mb-2">Resumo de todas as contas por ano</p>
+                    </div>
+                    
+                    <div th:each="ano : ${anos}">
+                        <div class="tab-pane fade shadow rounded bg-white p-5" th:id="${'ano' + ano.ano}" role="tabpanel" th:aria-labelledby="${'view-ano' + ano.ano}">
+                            <h3>Contas do ano de <span class="badge bg-danger" th:text="${ano.ano}" ></span></h3>
+
+                              
+                              <div class="container-fluid mt-3" th:each="conta : ${contas}">
+                                  <div th:if="${conta.ano == ano.ano}">
+                                    <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" th:data-bs-target="${'#demo' + conta.energia_id}" th:text="${conta.mes}">
+                                  </div>
+                                
+                                </button>
+                              </div>
+                              <p></p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
                   <p></p>
                   <a href="/energias" class="btn btn-success btn-lg active" role="button" aria-pressed="true" style="margin-left: auto; margin-right: auto; width: 4.5em;">Voltar</a>
@@ -186,7 +234,7 @@
         </div>
         
     </div>
-
+    
 </main>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -204,5 +252,6 @@
         });
 
     </script>
+
 </body>
 </html>
