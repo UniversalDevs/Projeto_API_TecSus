@@ -173,6 +173,7 @@
                                 <option value="2019">2019</option>
                                 <option value="2020">2020</option>
                                 <option value="2021">2021</option>
+                                <option value="2021">2022</option>
                             </select>             
                         </div>
                         <div class="linha1" >
@@ -276,7 +277,7 @@
                               <table class="table">
                                   <tbody>
                                     <th scope="row">Itens Financeiros</th>
-                                    <td><input type="number" name="contribuicao_municipal_valor" class="form-control" style="width:10em; margin-right: 1em;" ></td>
+                                    <td><input type="number" step="0.01" name="contribuicao_municipal_valor" class="form-control" style="width:10em; margin-right: 1em;" id="itens_financeiros" oninput="itens()"></td>
                                   </tbody>
                               </table>
     
@@ -292,32 +293,55 @@
                                 <tbody>
                                   <tr>
                                     <th scope="row">PIS</th>
-                                    <td><input type="number" name="pis_bcalc" class="form-control" style="width:10em; margin-right: 1em;" id="bcalc_pis" readonly></td>
-                                    <td><input type="number" name="pis_aliqota" class="form-control" style="width:10em; margin-right: 1em;" ></td>
-                                    <td><input type="number" name="pis_valor" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                    <td><input type="number" step="0.01" name="pis_bcalc" class="form-control" style="width:10em; margin-right: 1em;" id="bcalc_pis" readonly></td>
+                                    <td><input type="number" step="0.01" name="pis_aliqota" class="form-control" style="width:10em; margin-right: 1em;" id="aliquota_pis" oninput="calculoAliquota()"></td>
+                                    <td><input type="number" step="0.01" name="pis_valor" class="form-control" style="width:10em; margin-right: 1em;" id="valor_pis" readonly></td>
                                   </tr>
                                   <tr>
                                     <th scope="row">COFINS</th>
-                                    <td><input type="number" name="cofins_bcalc" class="form-control" style="width:10em; margin-right: 1em;" id="bcalc_cofins" readonly></td>
-                                    <td><input type="number" name="cofins_aliqota" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                    <td><input type="number" name="cofins_valor" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                    <td><input type="number" step="0.01" name="cofins_bcalc" class="form-control" style="width:10em; margin-right: 1em;" id="bcalc_cofins" readonly></td>
+                                    <td><input type="number" step="0.01" name="cofins_aliqota" class="form-control" style="width:10em; margin-right: 1em;" id="aliquota_cofins" oninput="calculoAliquota()"></td>
+                                    <td><input type="number" step="0.01" name="cofins_valor" class="form-control" style="width:10em; margin-right: 1em;" id="valor_cofins" readonly></td>
                                   </tr>
                                   <tr>
                                     <th scope="row">ICMS</th>
-                                    <td><input type="number" name="icms_bcalc" class="form-control" style="width:10em; margin-right: 1em;" id="bcalc_icm" readonly></td>
-                                    <td><input type="number" name="icms_aliqota" class="form-control" style="width:10em; margin-right: 1em;"></td>
-                                    <td><input type="number" name="icms_valor" class="form-control" style="width:10em; margin-right: 1em;"></td>
+                                    <td><input type="number" step="0.01" name="icms_bcalc" class="form-control" style="width:10em; margin-right: 1em;" id="bcalc_icm" readonly></td>
+                                    <td><input type="number" step="0.01" name="icms_aliqota" class="form-control" style="width:10em; margin-right: 1em;" id="aliquota_icms" oninput="calculoAliquota()"></td>
+                                    <td><input type="number" step="0.01" name="icms_valor" class="form-control" style="width:10em; margin-right: 1em;" id="valor_icms" readonly></td>
                                   </tr>
                                 </tbody>
                               </table>
                           </div>
-                          <input type="submit" value="Salvar" class="btn btn-danger" style="margin-left: 30em;">
+                          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="margin-left: 25em; width: 20em; font-size: 20px;">
+                            Salvar
+                          </button>
+                           <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Deseja salvar essas alterações?</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Caso deseje salvar os dados cadastrados, aperte em "Salvar". Caso contrario pressione "Cancelar".
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                      <input type="submit" value="Salvar" class="btn btn-success" style="margin-left: 30em;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+    </div>
                       </form>
-
+                      
                 </div>
             </div>
-
-    </div>
+              
+             
     
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -347,11 +371,27 @@
             document.getElementById("bcalc_icms").value = calculoBcalc1 * calculoBcalc2;
             document.getElementById("bcalc_pis_cofins").value = calculoBcalc1 * calculoBcalc2;
             document.getElementById("bcalc_pis_cofins").value = calculoBcalc1 * calculoBcalc2;
-            document.getElementById("bcalc_pis").value = calculoBcalc1 * calculoBcalc2;
-            document.getElementById("bcalc_cofins").value = calculoBcalc1 * calculoBcalc2;
-            document.getElementById("bcalc_icm").value = calculoBcalc1 * calculoBcalc2;
         }
 
+        function itens()
+        {
+            itensFinanceiros = document.getElementById("itens_financeiros").value;
+            bcalc = document.getElementById("bcalc_pis_cofins").value;
+            document.getElementById("bcalc_pis").value =  parseFloat(itensFinanceiros) + parseFloat(bcalc);
+            document.getElementById("bcalc_cofins").value = parseFloat(itensFinanceiros) + parseFloat(bcalc);
+            document.getElementById("bcalc_icm").value = parseFloat(itensFinanceiros) + parseFloat(bcalc);
+        }
+
+        function calculoAliquota(){
+            calculoAliquota1 = document.getElementById("bcalc_pis").value;
+            calculoAliquota2 = document.getElementById("aliquota_pis").value;
+            calculoAliquota3 = document.getElementById("aliquota_cofins").value;
+            calculoAliquota4 = document.getElementById("aliquota_icms").value;
+            document.getElementById("valor_pis").value = calculoAliquota1 * (calculoAliquota2/100);
+            document.getElementById("valor_cofins").value = calculoAliquota1 * (calculoAliquota3/100);
+            document.getElementById("valor_icms").value = calculoAliquota1 * (calculoAliquota4/100);
+
+        }
     </script>
 </body>
 </html>
