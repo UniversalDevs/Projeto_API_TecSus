@@ -5,6 +5,8 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import com.google.common.net.MediaType;
 import com.spring.TecSUS.modelo.Agua;
@@ -109,12 +111,25 @@ public class EnergiaControle {
             Contrato contrato = acaoContrato.findById(contrato_id);
             List<Instalacao> instalacoes = acaoInstalacao.findByContrato(contrato);
             List<Energia> contasEnergias = acao.findByContratoOrderByAno(contrato);
+            List<Energia> contas = acao.findByContrato(contrato);
             List<Agua> contAguas = acaoAgua.findByCliente(cliente);
+            List<Energia> contasPorAno = acao.findContasAno();
+
             mv.addObject("cliente", cliente);
             mv.addObject("contrato", contrato);
             mv.addObject("instalacoes", instalacoes);
             mv.addObject("energia", contasEnergias);
             mv.addObject("agua", contAguas  );
+
+
+            Map<String, Integer> graphData = new TreeMap<>();
+            for (Energia conta : contas) {
+                graphData.put(conta.getMes(), conta.getConsumo_mes_kwh());
+            
+            }
+            mv.addObject("chartData", graphData);
+
+
             return mv;
         }
 
@@ -182,6 +197,18 @@ public class EnergiaControle {
             redirect.addFlashAttribute("mensagem", "Arquivo Enviado com sucesso!");
             return "redirect:/energias/concessionarias/cliente/{contrato_id}/{cli_id}  ";
         }
+
+        @GetMapping("/graficos")
+        public String getPieChart(Model model) {
+            Map<String, Integer> graphData = new TreeMap<>();
+            graphData.put("2016", 147);
+            graphData.put("2017", 1256);
+            graphData.put("2018", 3856);
+            graphData.put("2019", 200);
+            model.addAttribute("chartData", graphData);
+            return "graficos";
+        }
+    
 
     // @PostMapping(value ="/energias/concessionarias/cliente/{contrato_id}/{cli_id}/conta/{codigo_identificador}/novo")
     // public String cadastrarContaEnergia(@Validated Energia energia,BindingResult result, RedirectAttributes redirect, @PathVariable long codigo_identificador, @PathVariable long contrato_id){

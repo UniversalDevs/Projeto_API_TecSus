@@ -21,7 +21,12 @@
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-
+    <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script type="text/javascript"
+    src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
@@ -132,13 +137,49 @@
                 <p></p>
             </div> -->
 
-           
+            <div align="center" style="width: 1000px;">
+                <h2>Spring Boot Google Charts Example</h2>
+                <div id="chart_div"></div>
+            </div>
+            <script th:inline="javascript">
+                var real_data = /*[[${chartData}]]*/'noValue';
+                $(document).ready(function() {
+                    google.charts.load('current', {
+                        packages : [ 'corechart', 'bar' ]
+                    });
+                    google.charts.setOnLoadCallback(drawColumnChart);
+                    google.charts.setOnLoadCallback(drawPieChart);
+                });
+                function drawColumnChart() {
+                    var data = new google.visualization.DataTable();
+                    data.addColumn('string', 'Meses');
+                    data.addColumn('number', 'Consumo');
+                    Object.keys(real_data).forEach(function(key) {
+                        data.addRow([ key, real_data[key] ]);
+                    });
+                    var options = {
+                        title : 'Consumo KW',
+                        hAxis : {
+                            title : 'Meses',
+                        },
+                        vAxis : {
+                            title : 'Kilo Watts'
+                        }
+                    };
+                    var chart = new google.visualization.ColumnChart(document
+                            .getElementById('chart_div'));
+                    chart.draw(data, options);
+                }
+
+            </script>
            
             <div class="line"></div>
 
         </div>
     </div>
 </main>
+    <!-- Charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
