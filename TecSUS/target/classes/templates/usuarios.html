@@ -28,72 +28,73 @@
 <body>
     
     <div class="wrapper">
-        <!-- Sidebar  -->
-        
-        <nav id="sidebar">
+        <div class="wrapper">
+            <!-- Sidebar  -->
             
-            <div class="sidebar-header">
-                    <img src="" th:src="@{/img/logo_tecsus_horizontal.png}" alt=""/>
-                    <strong style="font-size: 20px; margin-bottom: -20px;"><p style="display: inline-block; font-weight: bold; color: #5652c7;">t</p><p style="display: inline-block; font-weight: bold; color: #74DB23">s</p></strong>
-            </div>
-
-            <ul class="list-unstyled components">
-
-                <li>
-                    <a href="#">
-                        <i class="fas fa-home"></i>
-                        Home
-                    </a>
-                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <nav id="sidebar">
+                
+                <div class="sidebar-header">
+                        <img src="" th:src="@{/img/logo_tecsus_horizontal.png}" alt=""/>
+                        <strong style="font-size: 20px; margin-bottom: -20px;"><p style="display: inline-block; font-weight: bold; color: #5652c7;">t</p><p style="display: inline-block; font-weight: bold; color: #74DB23">s</p></strong>
+                </div>
+    
+                <ul class="list-unstyled components">
+    
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-home"></i>
+                            Home
+                        </a>
+                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="fas fa-file-invoice"></i>
+                            Contas
+                        </a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu" style="font-size: 1em;">
+                            <li>
+                                <a href="/energias">Energia</a>
+                            </li>
+                            <li>
+                                <a href="/aguas">Água</a>
+                            </li>
+                            <li>
+                                <a href="#">Gás</a>
+                            </li>
+                        </ul> 
+                        
+                    </li>
+                    <li>
+                        <a href="/clientes">
+                            <i class="fas fa-users"></i>
+                            Clientes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="far fa-building"></i>
+                            Concessionárias
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/instalacoes">
+                            <i class="fas fa-home "></i>
+                            Instalação
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
                             <i class="fas fa-file-invoice"></i>
-                        Contas
-                    </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu" style="font-size: 1em;">
-                        <li>
-                            <a href="/energias">Energia</a>
-                        </li>
-                        <li>
-                            <a href="/aguas">Água</a>
-                        </li>
-                        <li>
-                            <a href="#">Gás</a>
-                        </li>
-                    </ul> 
-                    
-                </li>
-                <li>
-                    <a href="/clientes">
-                        <i class="fas fa-users"></i>
-                        Clientes
-                    </a>
-                </li>
-                <li>
-                    <a href="/concessionarias">
-                        <i class="far fa-building"></i>
-                        Concessionárias
-                    </a>
-                </li>
-                <li>
-                    <a href="/instalacoes">
-                        <i class="fas fa-home "></i>
-                        Instalação
-                    </a>
-                </li>
-                <li>
-                    <a href="/contratos">
-                        <i class="fas fa-file-invoice"></i>
-                        Contrato
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="far fa-file-alt"></i>
-                        Relatórios
-                    </a>
-                </li>
-
-            </ul>
-        </nav>
+                            Contrato
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="far fa-file-alt"></i>
+                            Relatórios
+                        </a>
+                    </li>
+    
+                </ul>
+            </nav>
 
         <!-- Page Content  -->
         <div id="content">
@@ -101,6 +102,26 @@
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
+            <h2>Usuarios</h2>
+             <table class="table table-hover" >
+                <thead>
+                  <tr>
+                    <th scope="col">ID:</th>
+                    <th>Nome:</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="contrato : ${contratos}">
+                    <th scope="row"><a th:href="${(#mvc.url('CC#detalhesContrato').arg(0, contrato.contrato_id)).build()}" th:text="${contrato.contrato_id}" style="text-decoration: none;"></a></th>
+                    <td th:text="${contrato.cliente.cli_nome}"></td>   
+                    <td th:text="${contrato.tipo_servico}"></td>                         
+                    <td th:text="${contrato.concessionaria.conc_nome}"></td>              
+                  </tr>
+                </tbody>
+              </table> 
+
+              <a class="btn btn-primary" href="/usuarios/novo" role="button">Cadastrar</a>
 
             <div class="line"></div>
 

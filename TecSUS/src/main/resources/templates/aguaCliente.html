@@ -53,10 +53,10 @@
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu" style="font-size: 1em;">
                         <li>
-                            <a href="#">Energia</a>
+                            <a href="/energias">Energia</a>
                         </li>
                         <li>
-                            <a href="#">Água</a>
+                            <a href="/aguas">Água</a>
                         </li>
                         <li>
                             <a href="#">Gás</a>
@@ -127,7 +127,8 @@
                         <span class="badge badge-primary badge-pill" th:text="${instalacao.codigo_identificador}"></span>
                     </li>
                   </ul>
-                  
+                <p></p>
+                <a class="btn btn-primary" href="" style="width: 10em; margin-left: 20em;">Relatorios</a>
                 <p></p>                  
                 <h6 style="margin-left: 2em;">Contas 2021</h6>
                 <div th:each="conta : ${contas}" >

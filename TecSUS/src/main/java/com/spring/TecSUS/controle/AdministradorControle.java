@@ -20,7 +20,7 @@ public class AdministradorControle {
     public String index(Model model){
         List<Administrador>administradores = (List<Administrador>)repo.findAll();
         model.addAttribute("administradores", administradores);
-        return "administradores/administradores";
+        return "/administradores";
     }
 
 }

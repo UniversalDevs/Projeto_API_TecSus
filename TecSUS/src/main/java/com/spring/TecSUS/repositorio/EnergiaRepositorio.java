@@ -19,4 +19,6 @@ public interface EnergiaRepositorio extends CrudRepository<Energia, Long>{
     List<Energia> findByContrato(Contrato contrato);
     @Query(nativeQuery= true, value ="SELECT * FROM energias GROUP BY ano")
     List<Energia> findContasAno();
+    
+
 }

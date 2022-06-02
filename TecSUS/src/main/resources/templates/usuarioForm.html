@@ -95,30 +95,84 @@
             </ul>
         </nav>
 
+
         <!-- Page Content  -->
         <div id="content">
-
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header" th:if="${mensagem}"></div>
+                <div class="card-body">
+                  <p class="card-text" th:text="${mensagem}"></p>
+                </div>
+              </div>
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
+            <hr>
+            <h2>Cadastrar <span class="badge badge-secondary" style="background-color: #5652c7;">Contrato</span></h2>
 
-            <div class="line"></div>
+             <div style="width: 30em; margin-left: 9em;">
+                <form th:action="@{/usuarios/save}" th:object="${usuario}" method="post">
+                    <div class="form-group">
+                    <small class="form-text text-muted">(*) Campos obrigatórios</small>
 
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <!-- <div class="form-group">
+                        <select th:field="*{cliente}" class="form-control" required>
+                            <th:block th:each="cli : ${listaClientes}">
+                                <option th:text="${cli.cli_nome}" th:value="${cli.cli_id}"></option>
+                            </th:block>
+                        </select>
+                    </div>        -->
+                     <div class="form-group">
+                        <label class="col-form-label col-sm-4">Nome</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" th:field="*{usuario}" required>
+                                <th:block th:each="usuario : ${listUsuarios}">
+                                    <option th:text="${usuario.user_nome}" th:value="${usuario.user_id}"/>
+                                </th:block>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label col-sm-4">Concessionaria</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" th:field="*{concessionaria}" required>
+                                <th:block th:each="concessionaria : ${listConcessionarias}">
+                                    <option th:text="${concessionaria.conc_nome}" th:value="${concessionaria.conc_id}"/>
+                                </th:block>
+                            </select>
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <select class="form-select" aria-label="Default select example" name="tipo_servico">
+                            <option selected>Tipo de Serviço</option>
+                            <option value="Água">Água</option>
+                            <option value="Energia">Energia</option>
+                            <option value="Gás">Gás</option>
+                          </select>
+                    </div> 
+                    <div class="form-group">
+                        <input type="text" class="form-control" th:field="*{cep}" placeholder="CEP *">
+                    </div> 
+                    <div class="form-group">
+                        <input type="text" class="form-control" th:field="*{endereco}" placeholder="Endereço *">
+                    </div> 
+                    <div class="form-group">
+                        <input type="text" class="form-control" th:field="*{bairro}" placeholder="Bairro *">
+                    </div> 
+                    <div class="form-group">
+                        <input type="text" class="form-control" th:field="*{cidade}" placeholder="Cidade *">
+                    </div> 
+                    <div class="form-group">
+                        <input type="text" class="form-control" th:field="*{estado}" placeholder="Estado *">
+                    </div> 
+                    <button type="submit" class="btn btn-primary" style="margin-top: 10px;"><a href="/contratoDetails" style="color: white; text-decoration: none;"></a>Salvar</button>
+                    <a href="/contratos" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
+                </form>
 
-            <div class="line"></div>
 
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h3>Lorem Ipsum Dolor</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
+            </div>
     </div>
-
+    
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
@@ -135,3 +189,5 @@
     </script>
 </body>
 </html>
+<!-- https://www.youtube.com/watch?v=ctwRpskAeIU&t=1434s -->
+<!-- 01:15:49 -->
