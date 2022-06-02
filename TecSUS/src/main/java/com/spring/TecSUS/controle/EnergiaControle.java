@@ -4,9 +4,11 @@ import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 import com.google.common.net.MediaType;
 import com.spring.TecSUS.modelo.Agua;
@@ -43,6 +45,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -115,23 +118,29 @@ public class EnergiaControle {
             List<Agua> contAguas = acaoAgua.findByCliente(cliente);
             List<Energia> contasPorAno = acao.findContasAno();
 
+
+
             mv.addObject("cliente", cliente);
             mv.addObject("contrato", contrato);
             mv.addObject("instalacoes", instalacoes);
             mv.addObject("energia", contasEnergias);
-            mv.addObject("agua", contAguas  );
+            mv.addObject("agua", contAguas);
 
-
+            List<String> meses = acao.findByContrato(contrato).stream().map(x->x.getMes()).collect(Collectors.toList());
+            List<Integer> consumos = acao.findByContrato(contrato).stream().map(y->y.getConsumo_mes_kwh()).collect(Collectors.toList());
             Map<String, Integer> graphData = new TreeMap<>();
             for (Energia conta : contas) {
                 graphData.put(conta.getMes(), conta.getConsumo_mes_kwh());
             
             }
             mv.addObject("chartData", graphData);
+            mv.addObject("meses", meses);
+            mv.addObject("consumos", consumos);
 
 
             return mv;
         }
+
 
 
         //Form conta de Energia 
