@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class UsuarioControle {
 
     @Autowired
-    private UsuarioRepositorio acao;
+    private UsuarioRepositorio repo;
 
     @GetMapping("/usuarios/novo")
     public String index(Model model){
@@ -27,7 +27,7 @@ public class UsuarioControle {
     @GetMapping("/usuarios")
     public ModelAndView listarContratos(){
         ModelAndView mv = new ModelAndView("usuarios");
-        List<Usuario> usuarios = acao.findAll();
+        List<Usuario> usuarios = repo.findAll();
         mv.addObject("usuarios", usuarios);
         return mv;
     }
