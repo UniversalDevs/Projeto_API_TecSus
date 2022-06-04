@@ -117,7 +117,7 @@ public class EnergiaControle {
             List<Energia> contas = acao.findByContrato(contrato);
             List<Agua> contAguas = acaoAgua.findByCliente(cliente);
             List<Energia> contasPorAno = acao.findContasAno();
-
+            
 
 
             mv.addObject("cliente", cliente);
@@ -129,7 +129,7 @@ public class EnergiaControle {
             List<String> meses = acao.findByContrato(contrato).stream().map(x->x.getMes()).collect(Collectors.toList());
             List<Integer> consumos = acao.findByContrato(contrato).stream().map(y->y.getConsumo_mes_kwh()).collect(Collectors.toList());
             float total = 0;
-            //GrFICOS
+            //Graficos
             Map<String, Integer> graphData = new TreeMap<>();
             for (Energia conta : contas) {
                 graphData.put(conta.getMes(), conta.getConsumo_mes_kwh());

@@ -186,7 +186,7 @@ public class AguaControle {
             mv.addObject("cliente", cliente);
             mv.addObject("contrato", contrato);
             mv.addObject("instalacoes", instalacoes);
-            mv.addObject("energia", contasAguas);
+            mv.addObject("agua", contasAguas);
             mv.addObject("aguas", contAguas);
             mv.addObject("anos", contasPorAno);
 

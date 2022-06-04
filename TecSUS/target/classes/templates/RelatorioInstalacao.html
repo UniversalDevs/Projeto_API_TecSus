@@ -66,6 +66,12 @@
                     
                 </li>
                 <li>
+                    <a href="/administradores">
+                        <i class="fas fa-users"></i>
+                        Administradores
+                    </a>
+                </li>
+                <li>
                     <a href="/clientes">
                         <i class="fas fa-users"></i>
                         Clientes
@@ -98,7 +104,6 @@
 
             </ul>
         </nav>
-
 
         <!-- Page Content  -->
         <div id="content">
@@ -136,14 +141,28 @@
                 <a href="/energias" class="btn btn-success btn-lg active" role="button" aria-pressed="true" style="margin-left: auto; margin-right: auto; width: 4.5em;">Voltar</a>
                 <p></p>
             </div> -->
+            <div class="panel panel-danger" style="width: 25em;">
+                <div class="panel-heading" th:text="${'Meses Acima da Média de Consumo (' + energia[0].contrato.media + ')'}">Meses Acima da Média</div>
+                    <div class="panel-body">
+                        <ul class="list-group" >
+                            <li class="list-group-item d-flex justify-content-between align-items-center"
+                            th:each="energia : ${energia}"
+                            th:if="${energia.consumo_mes_kwh > energia.contrato.media}"
+                            >
+                              <h4 th:text="${energia.mes  + '/' + energia.ano}"></h4>
+                              <span class="label label-danger" style="font-size:1.2em;" th:text="${'&utrif; ' + (energia.consumo_mes_kwh - energia.contrato.media)}">Danger Label</span>
+                            </li>
 
+                          </ul>
+                    </div>
+              </div>
             <div class="container">
                 <h2 align="center">Consumo mensal de kHw</h2>
         
                 <div id="container"
                     style="width: 1100px; height: 500px; margin: 0 auto"></div>
             </div>
-            <table class="table table-hover" style="width: 40em;">
+            <table class="table table-hover" style="width: 40em; margin-left: 5em;" >
  
                 <thead>
                
@@ -173,13 +192,17 @@
                
                 </tbody>
                 <tr>
-                    <tr>
                     <th scope="row"> Valor Total</th>
+                    <td></td>
                     <td th:text="${total}"></td>
                   </tr>
                
               </table>
-
+              <script>
+                $(document).ready(function(){
+                    $('[data-toggle="popover"]').popover();   
+                });
+                </script>
             <script
                 src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
             <!-- Latest compiled and minified JavaScript -->
@@ -225,7 +248,7 @@
                     }
                 },
                 series: [{
-                    name: 'Meses',
+                    name: 'Consumo',
                     data: [[${consumos}]],
                     color: "red"
                 }]
@@ -247,7 +270,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {

@@ -28,6 +28,7 @@ public class Contrato implements Serializable{
     @JoinColumn(name =  "conc_id", nullable = false)
     private Concessionaria concessionaria;
 
+    private Float media;
 
     private String endereco;
 
@@ -110,8 +111,16 @@ public class Contrato implements Serializable{
     public void setConcessionaria(Concessionaria concessionaria) {
         this.concessionaria = concessionaria;
     }
-    
 
+    public Float getMedia() {
+        return media;
+    }
+
+    public void setMedia(Float media) {
+        this.media = media;
+    }
+    
+        
     
 }
 
