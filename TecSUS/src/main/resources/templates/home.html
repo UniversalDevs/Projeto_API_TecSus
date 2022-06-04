@@ -91,13 +91,19 @@
                         Relatórios
                     </a>
                 </li>
+                <li>
+                    <a href="#" th:text="${administrador}">
+                        <i class="far fa-file-alt"></i>
+                        Administrador
+                    </a>
+                </li>
 
             </ul>
         </nav>
 
         <!-- Page Content  -->
         <div id="content">
-
+            <p th:text="${administrador}"></p>
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>

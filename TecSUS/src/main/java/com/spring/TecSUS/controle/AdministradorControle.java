@@ -25,4 +25,20 @@ public class AdministradorControle {
         return "/administradores";
     }
 
+    @GetMapping("/administradores/novo")
+    public String novoAdministrador(Model model) {
+        return "administradorForm";
+    }
+
+    @PostMapping("/administradores/criar")
+    public String criar(Administrador administrador){
+        repo.save(administrador);
+        return "redirect:/administradores";
+    }
+
+    @GetMapping("/administradores/{id}/excluir")
+    public String excluir(@PathVariable int id){
+        repo.deleteById(id);;
+        return "redirect:/administradores";
+    }
 }

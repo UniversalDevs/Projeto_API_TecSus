@@ -19,6 +19,17 @@ public class Administrador {
     @Column(name= "senha", length = 100, nullable = false)
     private String senha;
 
+    @Column(name = "cargo", nullable = false)
+    private String cargo;
+    
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
     public int getId() {
         return id;
     }
