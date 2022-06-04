@@ -111,48 +111,84 @@
             </button>
             <hr>
             <h2>Relatórios</h2>
-            <div class="container">
-                <h2 align="center">Consumo mensal de Agua</h2>
-        
-                <div id="container"
-                    style="width: 1100px; height: 500px; margin: 0 auto"></div>
-            </div>
-            <table class="table table-hover" style="width: 40em;">
+                <div class="container">
+                    <h2 align="center">Consumo mensal de Agua</h2>
+            
+                    <div id="container"
+                        style="width: 1100px; height: 500px; margin: 0 auto"></div>
+                </div>
+            <div>
+                <table class="table table-hover" style="width: 40em;">
  
-                <thead>
-               
-                  <tr style="color:white">
-               
-                    <th class="bg-primary">Meses</th>
-               
-                    <th class="bg-primary">Consumo</th>
-               
-                    <th class="bg-primary">Total</th>
-               
-                  </tr>
-               
-                </thead>
-               
-                <tbody th:each="agua : ${agua}">
-               
-                  <tr>
-               
-                    <th scope="row" th:text="${agua.mes}"></th>
-               
-                    <td th:text="${agua.consumo_mes_w3}"></td>
-               
-                    <td th:text="${'R$' + agua.valor_total_a_pagar + '0'}"></td>
-               
-                  </tr>
-               
-                </tbody>
-                <tr>
-                    <tr>
-                    <th scope="row"> Valor Total</th>
-                    <td th:text="${total}"></td>
-                  </tr>
-               
-              </table>
+                    <thead>
+                   
+                      <tr style="color:white" >
+                        <th class="bg-primary"></th>
+                        <th class="bg-primary"th:each="ano : ${anos}" th:text="${ano.ano}"></th>
+                      </tr>
+
+                    </thead>
+                   
+                    <tbody  >
+                        <tr>
+                          <th scope="row">Gasto Anual</th>
+                          <th scope="row"th:each="total : ${totais}" th:text="${'R$'+ total + '0'}"></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">Consumo Total Anual</th>
+                            <th scope="row"th:each="agua : ${totaisAguas}" th:text="${agua}"></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">Media Consumo Anual</th>
+                            <th scope="row" th:each="mediaAgua : ${mediaConsumo}" th:text="${mediaAgua}"></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">Media Total Anual</th>
+                            <th scope="row" th:each="mediaGasto : ${mediaTotal}" th:text="${mediaGasto}"></th>
+                        </tr>
+                     
+                      </tbody>
+
+                   
+                  </table>
+            </div>
+            <div th:each="ano : ${anos}">
+                <h2>Tabela de Consumo do ano de <span class="badge badge-primary" th:text="${ano.ano}">New</span></h2>
+                <p></p>
+                    <table class="table table-hover" style="width: 40em;">
+ 
+                        <thead>
+                       
+                          <tr style="color:white">
+                       
+                            <th class="bg-primary">Meses</th>
+                       
+                            <th class="bg-primary">Consumo</th>
+                       
+                            <th class="bg-primary">Total</th>
+                       
+                          </tr>
+                       
+                        </thead>
+                       
+                        <tbody th:each="agua : ${aguas}">
+                       
+                          <tr th:if="${agua.ano == ano.ano}">
+                       
+                            <th scope="row" th:text="${agua.mes + '/' + agua.ano}"></th>
+                       
+                            <td th:text="${agua.agua}"></td>
+                       
+                            <td th:text="${'R$' + agua.total + '0'}"></td>
+                            
+                          </tr>
+                       
+                        </tbody>
+
+                       
+                      </table>
+                    
+            </div>
 
             <script
                 src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -179,7 +215,7 @@
                 },
                 yAxis: {
                     min: 0,
-                    max:500,
+                    max:250,
                     title: {
                         text: 'Consumo w3'
                     }
@@ -194,7 +230,7 @@
                 },
                 plotOptions: {
                     column: {
-                        pointPadding: 0.1,
+                        pointPadding: 0.2,
                         borderWidth: 0,
                     }
                 },

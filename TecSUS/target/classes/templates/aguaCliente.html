@@ -128,7 +128,7 @@
                     </li>
                   </ul>
                 <p></p>
-                <a class="btn btn-primary" href="" style="width: 10em; margin-left: 20em;">Relatorios</a>
+                <a class="btn btn-primary" th:href="@{'/aguas/concessionarias/cliente/'+ ${contrato.contrato_id}+ '/' + ${contrato.cliente.cli_id} + '/relatorios'}" style="width: 10em; margin-left: 20em;">Relatorios</a>
                 <p></p>                  
                 <h6 style="margin-left: 2em;">Contas 2021</h6>
                 <div th:each="conta : ${contas}" >

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -172,7 +173,7 @@ public class AguaControle {
         //Get Mapping os dados do banco
         @GetMapping("/aguas/concessionarias/cliente/{contrato_id}/{cli_id}/relatorios")
         public ModelAndView relatorio(@PathVariable long cli_id, @PathVariable long contrato_id){
-            ModelAndView mv = new ModelAndView("RelatorioInstalacao");
+            ModelAndView mv = new ModelAndView("RelatorioAgua");
             Cliente cliente = acaoCliente.findById(cli_id);
             Contrato contrato = acaoContrato.findById(contrato_id);
             List<Instalacao> instalacoes = acaoInstalacao.findByContrato(contrato);
@@ -181,30 +182,34 @@ public class AguaControle {
             //List<Energia> contas = acao.findByContrato(contrato);
             List<Agua> contas = acao.findByContrato(contrato);
             List<Agua> contAguas = acaoAgua.findByCliente(cliente);
-            //List<Energia> contasPorAno = acao.findContasAno();
-
-
-
+            List<Agua> contasPorAno = acao.findContasAno();
             mv.addObject("cliente", cliente);
             mv.addObject("contrato", contrato);
             mv.addObject("instalacoes", instalacoes);
             mv.addObject("energia", contasAguas);
-            mv.addObject("agua", contAguas);
+            mv.addObject("aguas", contAguas);
+            mv.addObject("anos", contasPorAno);
 
+            List<Float> totais = acao.totalAno();
+            List<Float> consumoAguas = acao.totalAnoAgua();
             List<String> meses = acao.findByContrato(contrato).stream().map(x->x.getMes()).collect(Collectors.toList());
-            List<Integer> consumos = acao.findByContrato(contrato).stream().map(y->y.getConsumo_mes_w3()).collect(Collectors.toList());
-            float total = 0;
+            List<Float> consumos = acao.findByContrato(contrato).stream().map(y->y.getAgua()).collect(Collectors.toList());
             //GrFICOS
-            Map<String, Integer> graphData = new TreeMap<>();
+            Map<String, Float> graphData = new TreeMap<>();
             for (Agua conta : contas) {
-                graphData.put(conta.getMes(), conta.getConsumo_mes_w3());
-                total+= conta.getValor_total_a_pagar();
-            
+                graphData.put(conta.getMes(), conta.getAgua());   
+                
             }
+
+            List<Float> mediaConsumoAnual = acao.mediaConsumoAnual();
+            List<Float> mediaTotalAnual = acao.mediaTotalAnual();
             mv.addObject("chartData", graphData);
             mv.addObject("meses", meses);
             mv.addObject("consumos", consumos);
-            mv.addObject("total", total);
+            mv.addObject("totais", totais);
+            mv.addObject("totaisAguas", consumoAguas);
+            mv.addObject("mediaTotal", mediaTotalAnual);
+            mv.addObject("mediaConsumo", mediaConsumoAnual);
 
             return mv;
         }
