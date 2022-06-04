@@ -1,4 +1,4 @@
-<h1 align="center">:chart_with_upwards_trend: Sprint 2 :chart_with_upwards_trend:</h1>
+<h1 align="center">:chart_with_upwards_trend: Sprint 3 :chart_with_upwards_trend:</h1>
 <p align="center">
 <p>:ballot_box_with_check: Cadastro da Conta de Energia</p>
 <p>:ballot_box_with_check: Cadastro de Conta de Água</p>
