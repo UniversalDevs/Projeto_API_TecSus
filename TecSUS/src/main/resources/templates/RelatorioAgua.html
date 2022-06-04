@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Cadastrar conta de água</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+
+    <link rel="stylesheet"  type="text/css" href="" th:href="@{/css/aguaForm.css}">
+
+    <link rel="stylesheet"  type="text/css" href="" th:href="@{/css/agua_style.css}">
+
+
+    <!-- Font Awesome JS -->
+
+    <script scr="https://kit.fontawesome.com/eac8819838.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="" th:src="@{js/scripts.js}"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+    
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        
+        <nav id="sidebar" style=" ">
+            
+            <div class="sidebar-header">
+                    <img src="" th:src="@{/img/logo_tecsus_horizontal.png}" alt=""/>
+                    <strong style="font-size: 20px; margin-bottom: -20px;"><p style="display: inline-block; font-weight: bold; color: #5652c7;">t</p><p style="display: inline-block; font-weight: bold; color: #74DB23">s</p></strong>
+
+            </div>
+
+            <ul class="list-unstyled components" >
+
+                <li>
+                    <a href="#" style=" ">
+
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"  >
+                            <i class="fas fa-file-invoice"></i>
+                        Contas
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu" style="font-size: 1em;">
+                        <li>
+                            <a href="/energias" >Energia</a>
+                        </li>
+                        <li>
+                            <a href="/aguas" style=" ">Água</a>
+                        </li>
+                        <li>
+                            <a href="#" style=" ">Gás</a>
+                        </li>
+                    </ul> 
+                    
+                </li>
+                <li>
+                    <a href="/clientes" style=" ">
+                        <i class="fas fa-users"></i>
+                        Clientes
+                    </a>
+                </li>
+                <li>
+                    <a href="/concessionarias"  >
+                        <i class="far fa-building"></i>
+                        Concessionárias
+                    </a>
+                </li>
+                <li>
+                    <a href="/instalacoes" style=" ">
+                        <i class="fas fa-home "></i>
+                        Instalação
+                    </a>
+                </li>
+                <li>
+                    <a href="/contratos"  >
+                        <i class="fas fa-file-invoice"></i>
+                        Contrato
+                    </a>
+                </li>
+                <li>
+                    <a href="#" style=" ">
+                        <i class="far fa-file-alt"></i>
+                        Relatórios
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+
+
+
+        <div id="content">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-bars" style="color: white;"></i>
+            </button>
+            <hr>
+            <h2>Relatórios</h2>
+            <div class="container">
+                <h2 align="center">Consumo mensal de Agua</h2>
+        
+                <div id="container"
+                    style="width: 1100px; height: 500px; margin: 0 auto"></div>
+            </div>
+            <table class="table table-hover" style="width: 40em;">
+ 
+                <thead>
+               
+                  <tr style="color:white">
+               
+                    <th class="bg-primary">Meses</th>
+               
+                    <th class="bg-primary">Consumo</th>
+               
+                    <th class="bg-primary">Total</th>
+               
+                  </tr>
+               
+                </thead>
+               
+                <tbody th:each="agua : ${agua}">
+               
+                  <tr>
+               
+                    <th scope="row" th:text="${agua.mes}"></th>
+               
+                    <td th:text="${agua.consumo_mes_w3}"></td>
+               
+                    <td th:text="${'R$' + agua.valor_total_a_pagar + '0'}"></td>
+               
+                  </tr>
+               
+                </tbody>
+                <tr>
+                    <tr>
+                    <th scope="row"> Valor Total</th>
+                    <td th:text="${total}"></td>
+                  </tr>
+               
+              </table>
+
+            <script
+                src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <!-- Latest compiled and minified JavaScript -->
+            <script
+                src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+            <script th:inline="javascript">
+            $(function(){
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Consumo w3'
+                },
+                subtitle: {
+                    text: 'Details'
+                },
+                xAxis: {
+                    categories: [[${meses}]],
+                    crosshair: true
+                },
+                yAxis: {
+                    min: 0,
+                    max:500,
+                    title: {
+                        text: 'Consumo w3'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:15px; color:blue;">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:blue;padding:0; font-size:15px;">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} W3</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.1,
+                        borderWidth: 0,
+                    }
+                },
+                series: [{
+                    name: 'Meses',
+                    data: [[${consumos}]], ////// [[${consumos}]]
+                    color: "blue"
+                }]
+              });
+            });
+        </script>
+
+           
+            <div class="line"></div>
+
+        </div>
+    </div>
+</main>
+    <!-- Charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>

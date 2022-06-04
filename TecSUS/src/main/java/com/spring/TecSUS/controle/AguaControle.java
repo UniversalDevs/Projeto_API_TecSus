@@ -5,6 +5,9 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 import com.spring.TecSUS.modelo.Agua;
 import com.spring.TecSUS.modelo.Cliente;
@@ -47,6 +50,8 @@ public class AguaControle {
     private ContratoRepositorio acaoContrato;
     @Autowired
     private ContaRepositorio acaoConta;
+    @Autowired
+    private AguaRepositorio acaoAgua;
 
     @GetMapping("/aguas")
     public ModelAndView listarClientes(){
@@ -156,6 +161,51 @@ public class AguaControle {
             List<Conta> contas = acaoConta.findAll();
             mv.addObject("contas", contas);
             mv.addObject("concessionarias", concessionarias);
+            return mv;
+        }
+
+
+
+
+
+
+        //Get Mapping os dados do banco
+        @GetMapping("/aguas/concessionarias/cliente/{contrato_id}/{cli_id}/relatorios")
+        public ModelAndView relatorio(@PathVariable long cli_id, @PathVariable long contrato_id){
+            ModelAndView mv = new ModelAndView("RelatorioInstalacao");
+            Cliente cliente = acaoCliente.findById(cli_id);
+            Contrato contrato = acaoContrato.findById(contrato_id);
+            List<Instalacao> instalacoes = acaoInstalacao.findByContrato(contrato);
+            //List<Energia> contasAguas = acao.findByContratoOrderByAno(contrato);
+            List<Agua> contasAguas = acao.findByContratoOrderByAno(contrato);
+            //List<Energia> contas = acao.findByContrato(contrato);
+            List<Agua> contas = acao.findByContrato(contrato);
+            List<Agua> contAguas = acaoAgua.findByCliente(cliente);
+            //List<Energia> contasPorAno = acao.findContasAno();
+
+
+
+            mv.addObject("cliente", cliente);
+            mv.addObject("contrato", contrato);
+            mv.addObject("instalacoes", instalacoes);
+            mv.addObject("energia", contasAguas);
+            mv.addObject("agua", contAguas);
+
+            List<String> meses = acao.findByContrato(contrato).stream().map(x->x.getMes()).collect(Collectors.toList());
+            List<Integer> consumos = acao.findByContrato(contrato).stream().map(y->y.getConsumo_mes_w3()).collect(Collectors.toList());
+            float total = 0;
+            //GrFICOS
+            Map<String, Integer> graphData = new TreeMap<>();
+            for (Agua conta : contas) {
+                graphData.put(conta.getMes(), conta.getConsumo_mes_w3());
+                total+= conta.getValor_total_a_pagar();
+            
+            }
+            mv.addObject("chartData", graphData);
+            mv.addObject("meses", meses);
+            mv.addObject("consumos", consumos);
+            mv.addObject("total", total);
+
             return mv;
         }
 }

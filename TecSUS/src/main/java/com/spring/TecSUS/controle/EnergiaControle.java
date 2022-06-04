@@ -258,6 +258,12 @@ public class EnergiaControle {
         return "visualizarContaAgua";
     }
 
+   
+    @GetMapping("/RelatorioAgua")
+    public String gevisualizarRelatorioAgua(Model model){
+     
+        return "RelatorioAgua";
+    }
 
     
 

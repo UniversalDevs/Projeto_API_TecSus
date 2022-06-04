@@ -287,6 +287,14 @@ public class Agua {
         this.fornecimento = fornecimento;
     }
 
+    public float getValor_total_a_pagar() {
+        return 0;
+    }
+
+    public Integer getConsumo_mes_w3() {
+        return null;
+    }
+
     
 
 
