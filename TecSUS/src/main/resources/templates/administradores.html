@@ -102,21 +102,25 @@
                 <i class="fas fa-bars" style="color: white;"></i>
             </button>
             <h2>Administradores</h2>
-            <table class="table table-hover" >
+            <a th:href="@{/administradores/novo}" class="btn btn-primary">Novo</a>
+            <p></p>
+            <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th scope="col">ID:</th>
-                    <th scope="col">Usuario:</th>
-                    <th scope="col">Email:</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Açoes</th>
                   </tr>
                 </thead>
-                <tbody>
-                    <tr th:each="usuario : ${usuarios}">
-                    <th scope="row" th:text="${usuarios.id}"></th>
-                    <td><a th:href="@{'/usuarios/' + ${usuario.id}}" th:text="${usuario.nome}" style="text-decoration: none;"></a></td> 
-                    <td th:text="${usuario.email}"></td>
-                                        
-                      <td></td>
+                <tbody th:each="adm : ${administradores}">
+                  <tr>
+                    <th scope="row" th:text="${adm.id}"></th>
+                    <td th:text="${adm.nome}"></td>
+                    <td th:text="${adm.email}"></td>
+                    <td th:text="${adm.cargo}"></td>
+                    <td><a href="#" class="btn btn-warning">Alterar</a><a th:href="@{'administradores/'+${adm.id}+ '/excluir' } " class="btn btn-danger">Excluir</a></td>
                   </tr>
                 </tbody>
               </table>

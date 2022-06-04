@@ -11,4 +11,6 @@ public interface AdministradoresRepositorio extends CrudRepository<Administrador
   
   @Query(value = "select * from administradores where email = :email and senha = :senha", nativeQuery = true)
   public Administrador Login(String email, String senha);
+
+  Administrador findById(int id);
 }
