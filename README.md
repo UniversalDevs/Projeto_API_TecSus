@@ -34,26 +34,20 @@
 <p></p>
 <p></p>
 <hr>
-<h3> Cadastro da Conta de Energia</h3>
-<p> As contas de energia podem ser cadastradas desde que o cliente possua um contrato ativo com uma concessionária, assim ele pode ser redirecionado para o 
-formulário onde poderá preencher os campos junto à sua fatura em pdf para auxiliá-lo.
-</p>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/cadastroEnergia.gif"/>
+<h3> Tela de Login</h3>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/login.gif"/>
 <hr>
-<h3> Cadastro de Conta de Água </h3>
-<p> As contas de água podem ser cadastradas desde que o cliente possua um contrato ativo com uma concessionária, assim ele pode ser redirecionado para o 
-formulário onde poderá preencher os campos junto à sua fatura em pdf para auxiliá-lo.
-</p>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/cadastroAgua.gif"/>
+<h3> Cadastro E Deleção de Usuario  </h3>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/cadUsuario.gif"/>
 <hr>
-<h3> Página do Mês de Referência das Contas </h3>
-<p>As faturas podem ser lidas encontradas de acordo com seu mês de referência.</p>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/pgMesReferencia-Energia.gif"/>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/pgMesReferenciaAgua.gif"/>
+<h3> Página de Média de Consumo Anual </h3>
+<h4>Água</h4>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/relatEnergia.gif"/>
+<h4>Energia</h4>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/relatEnergia.gif"/>
 <hr>
-<h3> Interligar a página de contrato com a página das contas </h3>
-<p> Para auxiliar na digitação das contas, os dados do contrato que estiver ativo, serão implementados sempre que uma digitação de conta for solicitada, para que o usuário não precise digitar a cada nova fatura campos fixos.</p>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/VinculoContratoConta.gif"/>
+<h3> Pop-up de PDF Conta - Cálculo automático de tarifas - Tela de Confirmação de Dados</h3>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/cadEnergis.gif"/>
 <hr>
 
 
