@@ -42,7 +42,7 @@
 <hr>
 <h3> Página de Média de Consumo Anual </h3>
 <h4>Água</h4>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/relatEnergia.gif"/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/relatAgua.gif"/>
 <h4>Energia</h4>
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/relatEnergia.gif"/>
 <hr>
