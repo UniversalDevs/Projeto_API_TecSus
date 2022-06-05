@@ -17,19 +17,19 @@
 <hr>
 
 <h3>:heavy_exclamation_mark: Informações Destaque</h3>
-<p><strong> Duração da Sprint:</strong> de 25/04/2022 à 15/05/2022</p>
+<p><strong> Duração da Sprint:</strong> de 16/05/2022 à 05/06/2022</p>
 <p> O projeto do site encontra-se em: <a href="https://github.com/UniversalDevs/Projeto_API_TecSus/tree/sprint2/TecSUS">Backend Main</a>
 <hr>
 
 
 <h3>:chart_with_downwards_trend: Burndown Chart </h3>
 <p>Lista de Atividades</p>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint2/Documentos/AtvidaSprint02.png" width="900"/>
+<img src="" width="900"/>
 <p>Gráfico Burndown</p>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint2/Documentos/GraficoSprint02.png" width="500"/>
+<img src="" width="500"/>
 <hr>
 <p>Tempo das Atividades</p>
-<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint2/Documentos/HorasSprint02.png" width="500"/>
+<img src="" width="500"/>
 <hr>
 
 <h3>Demonstração das Funcionalidades</h3>
