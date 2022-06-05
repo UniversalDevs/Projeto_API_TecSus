@@ -1,9 +1,11 @@
 <h1 align="center">:chart_with_upwards_trend: Sprint 3 :chart_with_upwards_trend:</h1>
 <p align="center">
-<p>:ballot_box_with_check: Cadastro da Conta de Energia</p>
-<p>:ballot_box_with_check: Cadastro de Conta de Água</p>
-<p>:ballot_box_with_check: Página do Mês de Referência das Contas</p>
-<p>:ballot_box_with_check: Interligar a página de contrato com a página das contas</p>
+<p>:ballot_box_with_check: Tela de Login</p>
+<p>:ballot_box_with_check: PDF das Contas</p>
+<p>:ballot_box_with_check: Tela de Confirmação de Dados</p>
+<p>:ballot_box_with_check: Página Média Anual de Consumo</p>
+<p>:ballot_box_with_check: Cadastro de Usuário</p>
+<p>:ballot_box_with_check: Cálculo de tarifa automático</p>
 
 </p>
 <hr>
