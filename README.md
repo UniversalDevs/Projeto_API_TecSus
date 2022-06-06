@@ -24,12 +24,12 @@
 
 <h3>:chart_with_downwards_trend: Burndown Chart </h3>
 <p>Lista de Atividades</p>
-<img src="" width="900"/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/tarefas03.png" width="900"/>
 <p>Gráfico Burndown</p>
-<img src="" width="500"/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/burndown03.png" width="500"/>
 <hr>
 <p>Tempo das Atividades</p>
-<img src="" width="500"/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/Tempo03.png" width="500"/>
 <hr>
 
 <h3>Demonstração das Funcionalidades</h3>
