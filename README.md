@@ -26,7 +26,7 @@
 <p>:white_check_mark: Kick-off do Projeto - 16/08 à 22/08</p>
 <p>:white_check_mark: <a href="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint1/README.md"> Sprint 1 </a>- 25/03 à 14/04</p>
 <p>:white_check_mark: <a href="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint2/README.md"> Sprint 2 </a> - 25/04 à 15/05</p>
-<p>:black_square_button:<a href=""> Sprint 3 </a> - 16/05 à 05/06</p>
+<p>:white_check_mark: <a href="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/README.md"> Sprint 3 </a> - 16/05 à 05/06</p>
 <hr>
 
 <h3> :pushpin: Product Backlog</h3>
