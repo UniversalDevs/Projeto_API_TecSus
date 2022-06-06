@@ -39,7 +39,7 @@
 <h3> Tela de Login</h3>
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/login.gif"/>
 <hr>
-<h3> Cadastro E Deleção de Usuario  </h3>
+<h3> Cadastro de Usuários  </h3>
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/main/Gifs/cadUsuario.gif"/>
 <hr>
 <h3> Página de Média de Consumo Anual </h3>
