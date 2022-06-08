@@ -18,8 +18,6 @@
 <hr>
 <h3> Modelo de Dados </h3>
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/TecSus_MER.png" width="900">
-
-
 <h3>:heavy_exclamation_mark: Informações Destaque</h3>
 <p><strong> Duração da Sprint:</strong> de 16/05/2022 à 05/06/2022</p>
 <p> O projeto do site encontra-se em: <a href="https://github.com/UniversalDevs/Projeto_API_TecSus/tree/sprint2/TecSUS">Backend Main</a>
