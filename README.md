@@ -7,7 +7,7 @@
   <a href =""> Demonstração das Funcionadades</a>  • 
 </p>
 <h2>Planjamento da Sprint</h2>
-<img src=""/>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/SprintBacklog.png" width="400px"/>
 <hr>
 <h2>:globe_with_meridians: User Cases</h2>
   <table align="left">
