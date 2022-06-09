@@ -1,13 +1,45 @@
 <h1 align="center">:chart_with_upwards_trend: Sprint 3 :chart_with_upwards_trend:</h1>
 <p align="center">
 <h2>Planjamento da Sprint</h2>
-<p>:ballot_box_with_check: Tela de Login</p>
-<p>:ballot_box_with_check: PDF das Contas</p>
-<p>:ballot_box_with_check: Tela de Confirmação de Dados</p>
-<p>:ballot_box_with_check: Página Média Anual de Consumo</p>
-<p>:ballot_box_with_check: Cadastro de Usuário</p>
-<p>:ballot_box_with_check: Cálculo de tarifa automático</p>
-
+<img src=""/>
+<hr>
+<h2></h2>
+<h2>:globe_with_meridians: Equipe de Desenvolvedores</h2>
+  <table align="left">
+    <thead>
+      <th>Como um</th>
+      <th>Eu quero</th>
+      <th>Para que eu possa</th>
+      <th>Prioridade</th>
+    </thead>
+    <tbody>
+      <tr>
+      <td>Digitador/Gestor/Administrador</td>
+      <td></td>
+      <td></td>
+      <td></td>
+     </tr>
+     <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+     </tr>
+     <tr>
+     <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+     </tr>
+     <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+     </tr>
+    </tbody>
+  </table>
 </p>
 <hr>
 <p align="center">
