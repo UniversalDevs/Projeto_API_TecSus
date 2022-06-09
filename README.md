@@ -46,6 +46,9 @@
     </tbody>
   </table>
 <hr>
+
+
+
 <h3> Modelo de Dados </h3>
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/TecSus_MER.png" width="900">
 <h3>:heavy_exclamation_mark: Informações Destaque</h3>
