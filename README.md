@@ -2,9 +2,8 @@
 <p align="center"></p>
   <hr>
 <p align="center">
-  <a href =""> Informações Importantes</a>  • 
-  <a href =""> Burndown Chart</a>  • 
-  <a href =""> Demonstração das Funcionadades</a>  • 
+  <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/tree/sprint3#planjamento-da-sprint"> Definition of Ready</a>  • 
+  <a href ="https://github.com/UniversalDevs/Projeto_API_TecSus/tree/sprint3#chart_with_downwards_trend-burndown-chart-"> Definition of Done</a>  • 
 </p>
 <h2>Planjamento da Sprint</h2>
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/SprintBacklog.png" width="400px"/>
@@ -75,7 +74,7 @@
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/CalculoTarifaMockup.PNG"/>
 <p>Cadastro de Usuário</p>
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/Cadastro%20UsuárioMockup.PNG"/>
-
+<hr>
 <h3>:chart_with_downwards_trend: Burndown Chart </h3>
 <p>Lista de Atividades</p>
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/tarefas03.png" width="900"/>
