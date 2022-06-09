@@ -1,5 +1,11 @@
 <h1 align="center">:chart_with_upwards_trend: Sprint 3 :chart_with_upwards_trend:</h1>
+<p align="center"></p>
+  <hr>
 <p align="center">
+  <a href =""> Informações Importantes</a>  • 
+  <a href =""> Burndown Chart</a>  • 
+  <a href =""> Demonstração das Funcionadades</a>  • 
+</p>
 <h2>Planjamento da Sprint</h2>
 <img src=""/>
 <hr>
@@ -40,12 +46,7 @@
      </tr>
     </tbody>
   </table>
-<hr>
-<p align="center">
-  <a href =""> Informações Importantes</a>  • 
-  <a href =""> Burndown Chart</a>  • 
-  <a href =""> Demonstração das Funcionadades</a>  • 
-</p>
+
 <hr>
 <h3> Modelo de Dados </h3>
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/TecSus_MER.png" width="900">
