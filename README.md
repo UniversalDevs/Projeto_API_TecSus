@@ -20,28 +20,40 @@
     <tbody>
       <tr>
       <td>Digitador/Gestor/Administrador</td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>Fazer login com email e senha</td>
+      <td>Acessar o sistema e suas funcionalidades</td>
+      <td>Média</td>
      </tr>
      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>Digitador</td>
+        <td>Clicar em no botão de abrir PDF</td>
+        <td>Acessar o documento da conta em outa aba de navegação</td>
+        <td>Baixa</td>
      </tr>
      <tr>
      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>Administrador</td>
+        <td>Cadastrar usuários e seus níveis de acessibilidade.</td>
+        <td>Limitar as funcionalidades dos sistemas entre os perfis.</td>
+        <td>Média</td>
      </tr>
      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>Digitador</td>
+        <td>Gerar relatórios de consumo anual.</td>
+        <td>Informar o cliente seus gastos e gerar estratégias de diminiuição de custo.</td>
+        <td>Alta</td>
+     </tr>
+     <tr>
+        <td>Digitador</td>
+        <td>Cadastrar automaticamente os dados tarifários das contas.</td>
+        <td>Facilitar no preenchimento de dados do cliente.</td>
+        <td>Baixa</td>
+     </tr>
+     <tr>
+        <td>Digitador</td>
+        <td>Confirmar o preenchimento de dados através de um pop-up.</td>
+        <td>Salvar os dados do cliente somente quando houver certeza do que foi preenchido.</td>
+        <td>Baixa</td>
      </tr>
     </tbody>
   </table>
