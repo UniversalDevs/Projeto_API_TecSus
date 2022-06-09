@@ -40,7 +40,6 @@
      </tr>
     </tbody>
   </table>
-</p>
 <hr>
 <p align="center">
   <a href =""> Informações Importantes</a>  • 
