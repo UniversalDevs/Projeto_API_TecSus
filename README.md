@@ -68,6 +68,13 @@
 <p> O projeto do site encontra-se em: <a href="https://github.com/UniversalDevs/Projeto_API_TecSus/tree/sprint2/TecSUS">Backend Main</a>
 <hr>
 
+<h2>Mockup</h2>
+<p>Login</p>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/Login.PNG"/>
+<p>Calculo de Tarifa</p>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/CalculoTarifaMockup.PNG"/>
+<p>Cadastro de Usuário</p>
+<img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/Cadastro%20UsuárioMockup.PNG"/>
 
 <h3>:chart_with_downwards_trend: Burndown Chart </h3>
 <p>Lista de Atividades</p>
