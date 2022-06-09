@@ -27,7 +27,7 @@
      <tr>
         <td>Digitador</td>
         <td>Clicar em no botão de abrir PDF.</td>
-        <td>Acessar o documento da conta em outa aba de navegação.</td>
+        <td>Acessar o documento da conta em outra aba de navegação.</td>
         <td>Baixa</td>
      </tr>
      <tr>
