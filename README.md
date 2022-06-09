@@ -9,7 +9,6 @@
 <h2>Planjamento da Sprint</h2>
 <img src=""/>
 <hr>
-<h2></h2>
 <h2>:globe_with_meridians: Equipe de Desenvolvedores</h2>
   <table align="left">
     <thead>
@@ -46,7 +45,6 @@
      </tr>
     </tbody>
   </table>
-
 <hr>
 <h3> Modelo de Dados </h3>
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/TecSus_MER.png" width="900">
