@@ -20,14 +20,14 @@
     <tbody>
       <tr>
       <td>Digitador/Gestor/Administrador</td>
-      <td>Fazer login com email e senha</td>
-      <td>Acessar o sistema e suas funcionalidades</td>
+      <td>Fazer login com email e senha.</td>
+      <td>Acessar o sistema e suas funcionalidades.</td>
       <td>Média</td>
      </tr>
      <tr>
         <td>Digitador</td>
-        <td>Clicar em no botão de abrir PDF</td>
-        <td>Acessar o documento da conta em outa aba de navegação</td>
+        <td>Clicar em no botão de abrir PDF.</td>
+        <td>Acessar o documento da conta em outa aba de navegação.</td>
         <td>Baixa</td>
      </tr>
      <tr>
