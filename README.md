@@ -8,7 +8,7 @@
 <h2>Planjamento da Sprint</h2>
 <img src="https://github.com/UniversalDevs/Projeto_API_TecSus/blob/sprint3/Documentos/SprintBacklog.png" width="400px"/>
 <hr>
-<h2>:globe_with_meridians: User Cases</h2>
+<h2>:globe_with_meridians: User Story</h2>
   <table align="left">
     <thead>
       <th>Como um</th>
