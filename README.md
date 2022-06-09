@@ -9,7 +9,7 @@
 <h2>Planjamento da Sprint</h2>
 <img src=""/>
 <hr>
-<h2>:globe_with_meridians: Equipe de Desenvolvedores</h2>
+<h2>:globe_with_meridians: User Cases</h2>
   <table align="left">
     <thead>
       <th>Como um</th>
